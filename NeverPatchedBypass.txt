@@ -158,7 +158,7 @@ credit.BackgroundTransparency = 1
 credit.Font = Enum.Font.Arial
 credit.TextSize = 12
 credit.TextWrapped = true
-credit.Active = true
+credit.Active = false
 credit.Parent = secm
 
 -- all function
