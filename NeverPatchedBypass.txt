@@ -270,8 +270,22 @@ loadb.TextSize = 15
 loadb.Visible = false
 loadb.Parent = by
 
+local loadc = Instance.new("TextButton")
+loadc.Size = UDim2.new(0.9, 0, 0.2, 0)
+loadc.Position = UDim2.new(0.05, 0, 0.5, 0)
+loadc.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+loadc.BorderColor3 = Color3.new(0, 0, 0)
+loadc.BorderSizePixel = 0
+loadc.Text = "Fixer Only No Anti Logger"
+loadc.TextColor3 = Color3.new(255, 255, 255)
+loadc.BackgroundTransparency = 0
+loadc.Font = Enum.Font.Arial
+loadc.TextSize = 15
+loadc.Visible = false
+loadc.Parent = by
+
 local bot = Instance.new("TextBox")
-bot.Size = UDim2.new(0.9, 0, 0.2, 0)
+bot.Size = UDim2.new(0.9, 0, 0.15, 0)
 bot.Position = UDim2.new(0.05, 0, 0.5, 0)
 bot.BackgroundColor3 = Color3.new(0, 0, 0)
 bot.BorderColor3 = Color3.new(0, 0, 0)
@@ -294,10 +308,12 @@ wait(3)
 bet.Text = "loadstring(game:HttpGet('https://pastebin.com/raw/qfmByDZ3'))()"
 loadb.Visible = true
 loada.Visible = false
+loadc.Visible = true
 end)
 
 loadb.MouseButton1Click:connect(function()
 loadb:Destroy()
+loadc:Destroy()
 bot.Visible = true
 wait(0,000001)
         local script = bet.Text
@@ -306,6 +322,20 @@ wait(0,000001)
     end
 wait(4)
 bot.Visible = false
+bet.Text = "🟩Fixer Loaded🟩"
+wait(1)
+bet.Text = "Loading Script"
+wait(2)
+by:Destroy()
+end)
+
+loadc.MouseButton1Click:connect(function()
+loadc:Destroy()
+loadb:Destroy()
+bot.Visible = true
+loadstring(game:HttpGet("https://pastebin.com/raw/hq9FKvrC"))()
+bet.Text = "Loading Fixer"
+wait(2)
 bet.Text = "🟩Fixer Loaded🟩"
 wait(1)
 bet.Text = "Loading Script"
