@@ -146,8 +146,21 @@ clear.Font = Enum.Font.Arial
 clear.TextSize = 15
 clear.Parent = secm
 
+local chb = Instance.new("TextButton")
+chb.Size = UDim2.new(1, 0, 0.15, 0)
+chb.Position = UDim2.new(0.3, 0, 0.9, 0)
+chb.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+chb.BorderColor3 = Color3.new(0, 0, 0)
+chb.BorderSizePixel = 0
+chb.Text = "Send Clean"
+chb.TextColor3 = Color3.new(255, 255, 255)
+chb.BackgroundTransparency = 0
+chb.Font = Enum.Font.Arial
+chb.TextSize = 15
+chb.Parent = secm
+
 local credit = Instance.new("TextBox")
-credit.Size = UDim2.new(1, 0, 0.4, 0)
+credit.Size = UDim2.new(1, 0, 0.2, 0)
 credit.Position = UDim2.new(0, 0, 0.5, 0)
 credit.BackgroundColor3 = Color3.new(0, 0, 0)
 credit.BorderColor3 = Color3.new(0, 0, 0)
@@ -194,7 +207,35 @@ end
 box.Text = convertedText
 end
 
-send.MouseButton1Click:connect(function()
+local function convertTextb()
+local textb = box.Text
+local convertedTextb = ""
+
+local conversionTableUpperb = {
+    A = "Ạ", B = "B", C = "С", D = "Ḍ", E = "Ẹ",
+    F = "F", G = "Ģ", H = "Ḥ", I = "Ị", J = "J",
+    K = "Ḳ", L = "Ḷ", M = "Ṃ", N = "Ṇ", O = "Ọ",
+    P = "Р", Q = "Q", R = "Ṛ", S = "Ṣ", T = "Ṭ",
+    U = "Ụ", V = "V", W = "W", X = "Х", Y = "Ỵ", Z = "Ẓ"
+}
+
+local conversionTableLowerb = {
+    a = "ạ", b = "b", c = "с", d = "ḍ", e = "ẹ",
+    f = "f", g = "g", h = "ḥ", i = "ị", j = "ј",
+    k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
+    p = "р", q = "q", r = "ṛ", s = "ṣ", t = "ṭ",
+    u = "ụ", v = "v", w = "w", x = "х", y = "ỵ", z = "ẓ"
+}
+
+for char in textb:gmatch(".") do
+local convertedCharb = conversionTableUpperb[char] or conversionTableLowerb[char] or char
+convertedTextb = convertedTextb .. convertedCharb .. "̱"
+end
+
+box.Text = convertedTextb
+end
+
+local function sending()
     local TextChatService = game:GetService("TextChatService")
     local Players = game:GetService("Players")
 
@@ -206,16 +247,24 @@ send.MouseButton1Click:connect(function()
         game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
     end
     end
-    convertText()
-    sendMessage(box.Text)
+sendMessage(box.Text)
+end
+
+chb.MouseButton1Click:connect(function()
+convertTextb()
+sending()
+box.Text = ""
+end)
+
+send.MouseButton1Click:connect(function()
+convertText()
+sending()
     box.Text = ""
     end)
 
 convert.MouseButton1Click:connect(function()
 convertText()
 end)
-
--- loader
 
 local by = Instance.new("Frame")
 by.Size = UDim2.new(1, 0, 1, 0)
