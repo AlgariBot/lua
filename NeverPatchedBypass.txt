@@ -232,7 +232,7 @@ local convertedCharb = conversionTableUpperb[char] or conversionTableLowerb[char
 convertedTextb = convertedTextb .. convertedCharb .. "̱"
 end
 
-box.Text = convertedTextb
+box.Text = "<> ".. convertedTextb
 end
 
 local function sending()
