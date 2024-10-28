@@ -174,7 +174,6 @@ credit.TextWrapped = true
 credit.Active = false
 credit.Parent = secm
 
--- all function
 clear.MouseButton1Click:connect(function()
 box.Text = ""
 end)
@@ -347,6 +346,7 @@ bot.BackgroundTransparency = 1
 bot.Font = Enum.Font.Arial
 bot.TextSize = 15
 bot.Visible = false
+bot.Active = false
 bot.Parent = by
 
 loada.MouseButton1Click:connect(function()
