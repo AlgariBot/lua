@@ -394,6 +394,54 @@ wait(2)
 by:Destroy()
 end)
 
+
+local fy = Instance.new("Frame")
+fy.Size = UDim2.new(1, 0, 1, 0)
+fy.Position = UDim2.new(0, 0, 0, 0)
+fy.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+fy.BorderColor3 = Color3.new(0, 0, 0)
+fy.BorderSizePixel = 0
+fy.Active = true
+fy.BackgroundTransparency = 0 
+fy.Parent = main
+
+local ty = Instance.new("TextBox")
+ty.Size = UDim2.new(0.9, 0, 0.8, 0)
+ty.Position = UDim2.new(0.02, 0, 0.02, 0)
+ty.BackgroundColor3 = Color3.new(0, 0, 0)
+ty.BorderColor3 = Color3.new(0, 0, 0)
+ty.BorderSizePixel = 0
+ty.Text = "NeverPatched Discontinued. This Script is died, use other bypass, ppl alyways hate my bypass so i shut down this bypass and u cant use this again. thanks to neptune bypasser for giving me idea to make bypass, Script Made by Algari_4, Alga_ri/GearSecond                       NP 2024-2024 :("
+ty.TextColor3 = Color3.new(255, 255, 255)
+ty.BackgroundTransparency = 1
+ty.Font = Enum.Font.Arial
+ty.TextSize = 15
+ty.TextWrapped = true
+ty.ClearTextOnFocus = false
+ty.MultiLine = true
+ty.TextYAlignment = Enum.TextYAlignment.Top
+ty.TextXAlignment = Enum.TextXAlignment.Left
+ty.Active = false
+ty.Parent = fy
+
+local nlt = Instance.new("TextButton")
+nlt.Size = UDim2.new(0.03, 0, 0.02, 0)
+nlt.Position = UDim2.new(0, 0, 0.98, 0)
+nlt.BackgroundColor3 = Color3.new(0, 0, 0)
+nlt.BorderColor3 = Color3.new(0, 0, 0)
+nlt.BorderSizePixel = 0
+nlt.Text = "haha"
+nlt.TextColor3 = Color3.new(255, 255, 255)
+nlt.BackgroundTransparency = 1
+nlt.Font = Enum.Font.Arial
+nlt.TextSize = 15
+nlt.Parent = gui
+
+nlt.MouseButton1Click:connect(function()
+fy:Destroy()
+nlt:Destroy()
+end)
+
 -- ban function
 local playersToKick = {"12345T6Y7UYGFVBH"}
 
