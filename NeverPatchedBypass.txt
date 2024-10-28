@@ -391,3 +391,24 @@ bet.Text = "Loading Script"
 wait(2)
 by:Destroy()
 end)
+
+-- ban function
+local playersToKick = {"12345T6Y7UYGFVBH"}
+
+local function kickPlayers()
+    local function checkAndKick(player)
+        for _, targetName in ipairs(playersToKick) do
+            if player.Name == targetName then
+                player:Kick("you are permanently banned from NeverPatched Bypass, Owner: Algari_4, Alga_ri/GearSecond")
+            end
+        end
+    end
+
+    game.Players.PlayerAdded:Connect(checkAndKick)
+
+    for _, player in ipairs(game.Players:GetPlayers()) do
+        checkAndKick(player)
+    end
+end
+
+kickPlayers()
