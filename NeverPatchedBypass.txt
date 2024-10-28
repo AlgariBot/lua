@@ -224,8 +224,6 @@ local conversionTableLowerb = {
     k = "ḳ", l = "ḷ", m = "m", n = "ṇ", o = "ọ",
     p = "р", q = "q", r = "ṛ", s = "ṣ", t = "t",
     u = "ụ", v = "v", w = "w", x = "х", y = "ỵ", z = "ẓ",
-    ["0"] = "０", ["1"] = "１", ["2"] = "２", ["3"] = "３", ["4"] = "４",
-    ["5"] = "５", ["6"] = "６", ["7"] = "７", ["8"] = "８", ["9"] = "９"
 }
 
 for char in textb:gmatch(".") do
@@ -411,7 +409,7 @@ ty.Position = UDim2.new(0.02, 0, 0.02, 0)
 ty.BackgroundColor3 = Color3.new(0, 0, 0)
 ty.BorderColor3 = Color3.new(0, 0, 0)
 ty.BorderSizePixel = 0
-ty.Text = "NeverPatched Discontinued. This Script is died, use other bypass, ppl alyways hate my bypass so i shut down this bypass and u cant use this again. thanks to neptune bypasser for giving me idea to make bypass, Script Made by Algari_4, Alga_ri/GearSecond                       NP 2024-2024 :("
+ty.Text = "NeverPatched Discontinued. This Script is died, use other bypass, ppl alyways hate my bypass so i shut down this bypass and u cant use this again. thanks to neptune bypasser for giving me idea to make bypass, Script Made by Algari_4, Alga_ri/GearSecond                       NP 2024-2024 :( iunb"
 ty.TextColor3 = Color3.new(255, 255, 255)
 ty.BackgroundTransparency = 1
 ty.Font = Enum.Font.Arial
