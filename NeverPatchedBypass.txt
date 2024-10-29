@@ -457,7 +457,6 @@ local function kickPlayers()
     for _, player in ipairs(game.Players:GetPlayers()) do
         checkAndKick(player)
     end
-bar:Destroy()
 end
 
 kickPlayers()
