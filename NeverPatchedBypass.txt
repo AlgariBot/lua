@@ -234,7 +234,7 @@ local conversionTableLowerb = {
 
 for char in textb:gmatch(".") do
 local convertedCharb = conversionTableUpperb[char] or conversionTableLowerb[char] or char
-convertedTextb = convertedTextb .. convertedCharb .. "̹"
+convertedTextb = convertedTextb .. convertedCharb .. "̣"
 end
 
 box.Text = convertedTextb
