@@ -195,7 +195,10 @@ local conversionTableLower = {
     f = "f", g = "ɡ", h = "ḥ", i = "ị", j = "ј",
     k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
     p = "р", q = "q", r = "ṛ", s = "ṣ", t = "ṭ",
-    u = "ụ", v = "ṿ", w = "ẉ", x = "х", y = "ỵ", z = "ẓ"
+    u = "ụ", v = "ṿ", w = "ẉ", x = "х", y = "ỵ", z = "ẓ",
+["0"] = "０￰", ["1"] = "１￰", ["2"] = "２￰", ["3"] = "３￰",
+    ["4"] = "４￰", ["5"] = "５￰", ["6"] = "６￰", ["7"] = "７￰",
+    ["8"] = "８￰", ["9"] = "９￰"
 }
 
 for char in text:gmatch(".") do
@@ -224,11 +227,14 @@ local conversionTableLowerb = {
     k = "ḳ", l = "ḷ", m = "m", n = "ṇ", o = "ọ",
     p = "р", q = "q", r = "ṛ", s = "ṣ", t = "t",
     u = "ụ", v = "v", w = "w", x = "х", y = "ỵ", z = "ẓ",
+["0"] = "０￰", ["1"] = "１￰", ["2"] = "２￰", ["3"] = "３￰",
+    ["4"] = "４￰", ["5"] = "５￰", ["6"] = "６￰", ["7"] = "７￰",
+    ["8"] = "８￰", ["9"] = "９￰",
 }
 
 for char in textb:gmatch(".") do
 local convertedCharb = conversionTableUpperb[char] or conversionTableLowerb[char] or char
-convertedTextb = convertedTextb .. convertedCharb .. "̣"
+convertedTextb = convertedTextb .. convertedCharb .. "̹"
 end
 
 box.Text = convertedTextb
@@ -392,7 +398,7 @@ wait(2)
 by:Destroy()
 end)
 
-
+--[[
 local fy = Instance.new("Frame")
 fy.Size = UDim2.new(1, 0, 1, 0)
 fy.Position = UDim2.new(0, 0, 0, 0)
@@ -438,7 +444,7 @@ nlt.Parent = gui
 nlt.MouseButton1Click:connect(function()
 fy:Destroy()
 nlt:Destroy()
-end)
+end) ]]
 
 -- script ban function
 local playersToKick = {"12345T6Y7UYGFVBH"}
