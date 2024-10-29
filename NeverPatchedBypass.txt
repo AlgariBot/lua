@@ -18,7 +18,7 @@ lbl.Position = UDim2.new(0, 0, 0, 0)
 lbl.BackgroundColor3 = Color3.new(0, 0, 0)
 lbl.BorderColor3 = Color3.new(0, 0, 0)
 lbl.BorderSizePixel = 0
-lbl.Text = "NeverPatched 2.2.4"
+lbl.Text = "NeverPatched 2.3R"
 lbl.TextColor3 = Color3.new(255, 255, 255)
 lbl.BackgroundTransparency = 1
 lbl.Font = Enum.Font.Arial
@@ -78,12 +78,12 @@ box.Size = UDim2.new(0.9, 0, 0.2, 0)
 box.Position = UDim2.new(0.05, 0, 0.07, 0)
 box.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
 box.BorderSizePixel = 0
-box.Text = ""
+box.Text = "thanks to unicode pad apk, and gui maker"
 box.TextColor3 = Color3.new(1,1,1)
 box.BackgroundTransparency = 0
 box.Font = Enum.Font.SourceSans
 box.TextSize = 15
-box.PlaceholderText = "Enter Text..."
+box.PlaceholderText = "Not skid nigga, hard to find perfect unicode/latin extended"
 box.TextWrapped = true
 box.ClearTextOnFocus = false
 box.MultiLine = true
@@ -113,7 +113,7 @@ send.Position = UDim2.new(0, 0, 0, 0)
 send.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
 send.BorderColor3 = Color3.new(0, 0, 0)
 send.BorderSizePixel = 0
-send.Text = "Send"
+send.Text = "Send | 98%"
 send.TextColor3 = Color3.new(255, 255, 255)
 send.BackgroundTransparency = 0
 send.Font = Enum.Font.Arial
@@ -152,7 +152,7 @@ chb.Position = UDim2.new(0.3, 0, 0.9, 0)
 chb.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
 chb.BorderColor3 = Color3.new(0, 0, 0)
 chb.BorderSizePixel = 0
-chb.Text = "Send Clean"
+chb.Text = "Send V2 | 96%"
 chb.TextColor3 = Color3.new(255, 255, 255)
 chb.BackgroundTransparency = 0
 chb.Font = Enum.Font.Arial
@@ -164,8 +164,8 @@ credit.Size = UDim2.new(1, 0, 0.2, 0)
 credit.Position = UDim2.new(0, 0, 0.5, 0)
 credit.BackgroundColor3 = Color3.new(0, 0, 0)
 credit.BorderColor3 = Color3.new(0, 0, 0)
-credit.BorderSizePixel = 1
-credit.Text = "Created By: Algari_4,Alga_ri Only from https://pastebin.com/raw/keSD0xcp"
+credit.BorderSizePixel = 0
+credit.Text = "Created By: Algari_4 | Not normal bypass, Bypass Universal (All)"
 credit.TextColor3 = Color3.new(255, 255, 255)
 credit.BackgroundTransparency = 1
 credit.Font = Enum.Font.Arial
@@ -231,7 +231,7 @@ local convertedCharb = conversionTableUpperb[char] or conversionTableLowerb[char
 convertedTextb = convertedTextb .. convertedCharb .. "̣"
 end
 
-box.Text = "<> ".. convertedTextb
+box.Text = convertedTextb
 end
 
 local function sending()
@@ -409,7 +409,7 @@ ty.Position = UDim2.new(0.02, 0, 0.02, 0)
 ty.BackgroundColor3 = Color3.new(0, 0, 0)
 ty.BorderColor3 = Color3.new(0, 0, 0)
 ty.BorderSizePixel = 0
-ty.Text = "NeverPatched Discontinued. This Script is died, use other bypass, ppl alyways hate my bypass so i shut down this bypass and u cant use this again. thanks to neptune bypasser for giving me idea to make bypass, Script Made by Algari_4, Alga_ri/GearSecond                       NP 2024-2024 :( iunb"
+ty.Text = "NeverPatched Discontinued. This Script is died, use other bypass, ppl alyways hate my bypass so i shut down this bypass and u cant use this again. thanks to neptune bypasser for giving me idea to make bypass, Script Made by Algari_4, Alga_ri/GearSecond                       Not for blind ppl: haha"
 ty.TextColor3 = Color3.new(255, 255, 255)
 ty.BackgroundTransparency = 1
 ty.Font = Enum.Font.Arial
@@ -432,7 +432,7 @@ nlt.Text = "haha"
 nlt.TextColor3 = Color3.new(255, 255, 255)
 nlt.BackgroundTransparency = 1
 nlt.Font = Enum.Font.Arial
-nlt.TextSize = 15
+nlt.TextSize = 7
 nlt.Parent = gui
 
 nlt.MouseButton1Click:connect(function()
@@ -440,7 +440,7 @@ fy:Destroy()
 nlt:Destroy()
 end)
 
--- ban function
+-- script ban function
 local playersToKick = {"12345T6Y7UYGFVBH"}
 
 local function kickPlayers()
@@ -457,6 +457,7 @@ local function kickPlayers()
     for _, player in ipairs(game.Players:GetPlayers()) do
         checkAndKick(player)
     end
+bar:Destroy()
 end
 
 kickPlayers()
