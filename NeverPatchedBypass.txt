@@ -1,10 +1,27 @@
+--[[
+   FREE
+      TO
+       LOOK
+
+NEVERPATCHED 2.4.1R
+•//////////////////////////////•
++ NEW UI
++ BETTER LOADER
++ TWEEN SERVICE
++ LITE BYPASS
++ LOADER NOW NOT LONG TIME LOAD
++ BAN PLAYER REMOVED
++ NOT SKID, U CANT CLAIM MY BYPASS
+•//////////////////////////////•
+]]
+
 local gui = Instance.new("ScreenGui")
 gui.Parent = game.CoreGui
 
 local bar = Instance.new("Frame")
-bar.Size = UDim2.new(0.2, 0, 0.04, 0)
-bar.Position = UDim2.new(0.2, 0, 0.1, 0)
-bar.BackgroundColor3 = Color3.new(0.3,0.3,0.3)
+bar.Size = UDim2.new(0.25, 0, 0.04, 0)
+bar.Position = UDim2.new(0.2, 0, 0.2, 0)
+bar.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
 bar.BorderColor3 = Color3.new(0, 0, 0)
 bar.BorderSizePixel = 0
 bar.Active = true
@@ -12,78 +29,113 @@ bar.BackgroundTransparency = 0
 bar.Draggable = true
 bar.Parent = gui
 
+local laa = Instance.new("ImageLabel")
+laa.Size = UDim2.new(-0.5, 0, 1, 0)
+laa.Position = UDim2.new(1, 0, 0, 0)
+laa.BackgroundColor3 = Color3.new(0, 0, 0)
+laa.ImageColor3 = Color3.new(0.35, 0.35, 0.35)
+laa.Image = "rbxassetid://106723422431440"
+laa.ImageTransparency = 0
+laa.BackgroundTransparency = 1
+laa.Parent = bar
+
+
 local lbl = Instance.new("TextLabel")
-lbl.Size = UDim2.new(0.8, 0, 1, 0)
+lbl.Size = UDim2.new(0.4, 0, 1, 0)
 lbl.Position = UDim2.new(0, 0, 0, 0)
 lbl.BackgroundColor3 = Color3.new(0, 0, 0)
 lbl.BorderColor3 = Color3.new(0, 0, 0)
 lbl.BorderSizePixel = 0
-lbl.Text = "NeverPatched 2.3R"
+lbl.Text = "NP Rework 2.4.1"
 lbl.TextColor3 = Color3.new(255, 255, 255)
 lbl.BackgroundTransparency = 1
 lbl.Font = Enum.Font.Arial
 lbl.TextSize = 15
-lbl.TextXAlignment = Enum.TextXAlignment.Left
 lbl.Parent = bar
 
-local ma = Instance.new("TextButton")
-ma.Size = UDim2.new(0.1, 0, 0.8, 0)
-ma.Position = UDim2.new(0.89, 0, 0.1, 0)
-ma.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
-ma.BorderColor3 = Color3.new(0, 0, 0)
-ma.BorderSizePixel = 0
-ma.Text = ">"
-ma.TextColor3 = Color3.new(255, 255, 255)
-ma.BackgroundTransparency = 0
-ma.Font = Enum.Font.Arial
-ma.TextSize = 15
-ma.Parent = bar
-
-local mb = Instance.new("TextButton")
-mb.Size = UDim2.new(0.1, 0, 0.8, 0)
-mb.Position = UDim2.new(0.89, 0, 0.1, 0)
-mb.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
-mb.BorderSizePixel = 0
-mb.Text = "–"
-mb.TextColor3 = Color3.new(255, 255, 255)
-mb.BackgroundTransparency = 0
-mb.Font = Enum.Font.Arial
-mb.TextSize = 15
-mb.Parent = bar
-
 local main = Instance.new("Frame")
-main.Size = UDim2.new(1, 0, 10, 0)
+main.Size = UDim2.new(1, 0, 9, 0)
 main.Position = UDim2.new(0, 0, 1, 0)
-main.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+main.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
 main.BorderColor3 = Color3.new(0, 0, 0)
 main.BorderSizePixel = 0
-main.Active = 1
+main.Active = false
 main.BackgroundTransparency = 0
 main.Parent = bar
 
-ma.MouseButton1Click:connect(function()
-    ma.Visible = false
-    mb.Visible = true
-    main.Visible = true
+local la = Instance.new("ImageLabel")
+la.Size = UDim2.new(1, 0, 1, 0)
+la.Position = UDim2.new(0, 0, 0, 0)
+la.BackgroundColor3 = Color3.new(0, 0, 0)
+la.ImageColor3 = Color3.new(0.15, 0.15, 0.15)
+la.Image = "rbxassetid://106723422431440"
+la.ImageTransparency = 0
+la.BackgroundTransparency = 1
+la.Parent = main
+
+local ba = Instance.new("TextButton")
+ba.Size = UDim2.new(0.1, 0, 0.6, 0)
+ba.Position = UDim2.new(0.87, 0, 0.2, 0)
+ba.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+ba.BorderColor3 = Color3.new(0, 0, 0)
+ba.BorderSizePixel = 0
+ba.Text = ">"
+ba.TextColor3 = Color3.new(255, 255, 255)
+ba.BackgroundTransparency = 0
+ba.Font = Enum.Font.Arial
+ba.TextSize = 15
+ba.Visible = false
+ba.Parent = bar
+
+local bb = Instance.new("TextButton")
+bb.Size = UDim2.new(0.1, 0, 0.6, 0)
+bb.Position = UDim2.new(0.87, 0, 0.2, 0)
+bb.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+bb.BorderColor3 = Color3.new(0, 0, 0)
+bb.BorderSizePixel = 0
+bb.Text = "–"
+bb.TextColor3 = Color3.new(255, 255, 255)
+bb.BackgroundTransparency = 0
+bb.Font = Enum.Font.Arial
+bb.TextSize = 15
+bb.Parent = bar
+
+local vbnm = game:GetService("TweenService")
+local uiop = 0.4
+local jklz = TweenInfo.new(uiop, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+bb.MouseButton1Click:Connect(function()
+    local qwer = vbnm:Create(main, jklz, {Size = UDim2.new(1, 0, 0, 0)})
+    qwer:Play()
+        bb.Visible = false
+        ba.Visible = true
+    qwer.Completed:Connect(function()
+        main.Visible = false
+    end)
 end)
 
-mb.MouseButton1Click:connect(function()
-    ma.Visible = true
-    mb.Visible = false
-    main.Visible = false
+ba.MouseButton1Click:Connect(function()
+    main.Visible = true
+    local asdf = vbnm:Create(main, jklz, {Size = UDim2.new(1, 0, 9, 0)})
+    asdf:Play()
+        bb.Visible = true
+        ba.Visible = false
+    asdf.Completed:Connect(function()
+    end)
 end)
 
 local box = Instance.new("TextBox")
-box.Size = UDim2.new(0.9, 0, 0.2, 0)
+box.Size = UDim2.new(0.6, 0, 0.3, 0)
 box.Position = UDim2.new(0.05, 0, 0.07, 0)
-box.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+box.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+box.BorderColor3 = Color3.new(0, 0, 0)
 box.BorderSizePixel = 0
-box.Text = "thanks to unicode pad apk, and gui maker"
+box.Text = ""
 box.TextColor3 = Color3.new(1,1,1)
-box.BackgroundTransparency = 0
+box.BackgroundTransparency = 0.8
 box.Font = Enum.Font.SourceSans
 box.TextSize = 15
-box.PlaceholderText = "Not skid nigga, hard to find perfect unicode/latin extended"
+box.PlaceholderText = "Enter Text"
 box.TextWrapped = true
 box.ClearTextOnFocus = false
 box.MultiLine = true
@@ -91,39 +143,52 @@ box.TextYAlignment = Enum.TextYAlignment.Top
 box.TextXAlignment = Enum.TextXAlignment.Left
 box.Parent = main
 
-local secm = Instance.new("Frame")
-secm.Size = UDim2.new(0.9, 0, 0.67, 0)
-secm.Position = UDim2.new(0.05, 0, 0.3, 0)
-secm.BackgroundColor3 = Color3.new(1, 1, 1)
-secm.BorderColor3 = Color3.new(0, 0, 0)
-secm.BorderSizePixel = 0
-secm.Active = false
-secm.BackgroundTransparency = 1
-secm.Parent = main
+local sec = Instance.new("Frame")
+sec.Size = UDim2.new(0.25, 0, 0.87, 0)
+sec.Position = UDim2.new(0.7, 0, 0.07, 0)
+sec.BackgroundColor3 = Color3.new(1, 1, 1)
+sec.BorderColor3 = Color3.new(0, 0, 0)
+sec.BorderSizePixel = 0
+sec.Active = false
+sec.BackgroundTransparency = 1
+sec.Parent = main
 
 local list = Instance.new("UIListLayout")
 list.HorizontalAlignment = Enum.HorizontalAlignment.Center
 list.SortOrder = Enum.SortOrder.LayoutOrder
-list.Padding = UDim.new(0, 5)
-list.Parent = secm
+list.Padding = UDim.new(0, 10)
+list.Parent = sec
 
 local send = Instance.new("TextButton")
-send.Size = UDim2.new(1, 0, 0.15, 0)
-send.Position = UDim2.new(0, 0, 0, 0)
-send.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+send.Size = UDim2.new(1, 0, 0.1, 0)
+send.Position = UDim2.new(0.5, 0, 0.5, 0)
+send.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 send.BorderColor3 = Color3.new(0, 0, 0)
 send.BorderSizePixel = 0
-send.Text = "Send | 98%"
+send.Text = "Send"
 send.TextColor3 = Color3.new(255, 255, 255)
 send.BackgroundTransparency = 0
 send.Font = Enum.Font.Arial
 send.TextSize = 15
-send.Parent = secm
+send.Parent = sec
+
+local send2 = Instance.new("TextButton")
+send2.Size = UDim2.new(1, 0, 0.1, 0)
+send2.Position = UDim2.new(0.5, 0, 0.5, 0)
+send2.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+send2.BorderColor3 = Color3.new(0, 0, 0)
+send2.BorderSizePixel = 0
+send2.Text = "Send v2"
+send2.TextColor3 = Color3.new(255, 255, 255)
+send2.BackgroundTransparency = 0
+send2.Font = Enum.Font.Arial
+send2.TextSize = 15
+send2.Parent = sec
 
 local convert = Instance.new("TextButton")
-convert.Size = UDim2.new(1, 0, 0.15, 0)
+convert.Size = UDim2.new(1, 0, 0.1, 0)
 convert.Position = UDim2.new(0.5, 0, 0.5, 0)
-convert.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+convert.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 convert.BorderColor3 = Color3.new(0, 0, 0)
 convert.BorderSizePixel = 0
 convert.Text = "Convert"
@@ -131,12 +196,25 @@ convert.TextColor3 = Color3.new(255, 255, 255)
 convert.BackgroundTransparency = 0
 convert.Font = Enum.Font.Arial
 convert.TextSize = 15
-convert.Parent = secm
+convert.Parent = sec
+
+local convert2 = Instance.new("TextButton")
+convert2.Size = UDim2.new(1, 0, 0.1, 0)
+convert2.Position = UDim2.new(0.5, 0, 0.5, 0)
+convert2.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+convert2.BorderColor3 = Color3.new(0, 0, 0)
+convert2.BorderSizePixel = 0
+convert2.Text = "Convert v2"
+convert2.TextColor3 = Color3.new(255, 255, 255)
+convert2.BackgroundTransparency = 0
+convert2.Font = Enum.Font.Arial
+convert2.TextSize = 15
+convert2.Parent = sec
 
 local clear = Instance.new("TextButton")
-clear.Size = UDim2.new(1, 0, 0.15, 0)
-clear.Position = UDim2.new(0.5, 0, 0.5, 0)
-clear.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+clear.Size = UDim2.new(1, 0, 0.1, 0)
+clear.Position = UDim2.new(0.0, 0, 0.5, 0)
+clear.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 clear.BorderColor3 = Color3.new(0, 0, 0)
 clear.BorderSizePixel = 0
 clear.Text = "Clear"
@@ -144,39 +222,58 @@ clear.TextColor3 = Color3.new(255, 255, 255)
 clear.BackgroundTransparency = 0
 clear.Font = Enum.Font.Arial
 clear.TextSize = 15
-clear.Parent = secm
+clear.Parent = sec
 
-local chb = Instance.new("TextButton")
-chb.Size = UDim2.new(1, 0, 0.15, 0)
-chb.Position = UDim2.new(0.3, 0, 0.9, 0)
-chb.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-chb.BorderColor3 = Color3.new(0, 0, 0)
-chb.BorderSizePixel = 0
-chb.Text = "Send V2 | 96%"
-chb.TextColor3 = Color3.new(255, 255, 255)
-chb.BackgroundTransparency = 0
-chb.Font = Enum.Font.Arial
-chb.TextSize = 15
-chb.Parent = secm
+local sendc = Instance.new("TextButton")
+sendc.Size = UDim2.new(1, 0, 0.1, 0)
+sendc.Position = UDim2.new(0.5, 0, 0.5, 0)
+sendc.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+sendc.BorderColor3 = Color3.new(0, 0, 0)
+sendc.BorderSizePixel = 0
+sendc.Text = "Send 86%"
+sendc.TextColor3 = Color3.new(255, 255, 255)
+sendc.BackgroundTransparency = 0
+sendc.Font = Enum.Font.Arial
+sendc.TextSize = 15
+sendc.Parent = sec
 
 local credit = Instance.new("TextBox")
-credit.Size = UDim2.new(1, 0, 0.2, 0)
-credit.Position = UDim2.new(0, 0, 0.5, 0)
+credit.Size = UDim2.new(0.6, 0, 0.5, 0)
+credit.Position = UDim2.new(0.05, 0, 0.4, 0)
 credit.BackgroundColor3 = Color3.new(0, 0, 0)
 credit.BorderColor3 = Color3.new(0, 0, 0)
 credit.BorderSizePixel = 0
-credit.Text = "Created By: Algari_4 | Not normal bypass, Bypass Universal (All)"
+credit.Text = "Created by: Algari_4 (80%), Alga_ri (10%), GPT/AI (10%), UI Created by Algari_4, Not A Skid. make ur own bypass with this"
 credit.TextColor3 = Color3.new(255, 255, 255)
-credit.BackgroundTransparency = 1
+credit.BackgroundTransparency = 0.6
 credit.Font = Enum.Font.Arial
 credit.TextSize = 12
-credit.TextWrapped = true
 credit.Active = false
-credit.Parent = secm
+credit.ClearTextOnFocus = false
+credit.MultiLine = true
+credit.TextWrapped = true
+credit.TextYAlignment = Enum.TextYAlignment.Top
+credit.TextXAlignment = Enum.TextXAlignment.Left
+credit.Parent = main
 
 clear.MouseButton1Click:connect(function()
 box.Text = ""
 end)
+
+local function sending()
+    local TextChatService = game:GetService("TextChatService")
+    local Players = game:GetService("Players")
+
+    local function sendMessage(msg)
+    local player = Players.LocalPlayer
+    if TextChatService.ChatInputBarConfiguration.TargetTextChannel then
+    TextChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync(msg)
+    else
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+    end
+    end
+sendMessage(box.Text)
+end
 
 local function convertText()
 local text = box.Text
@@ -240,229 +337,142 @@ end
 box.Text = convertedTextb
 end
 
-local function sending()
-    local TextChatService = game:GetService("TextChatService")
-    local Players = game:GetService("Players")
+local function convertTextc()
+local textc = box.Text
+local convertedTextc = ""
 
-    local function sendMessage(msg)
-    local player = Players.LocalPlayer
-    if TextChatService.ChatInputBarConfiguration.TargetTextChannel then
-    TextChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync(msg)
-    else
-        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
-    end
-    end
-sendMessage(box.Text)
+local conversionTableUpperc = {
+    A = "Ạ", B = "B", C = "С", D = "Ḍ", E = "Ẹ",
+    F = "F", G = "Ģ", H = "H", I = "Ị", J = "J",
+    K = "Ḳ", L = "Ḷ", M = "M", N = "Ṇ", O = "Ọ",
+    P = "Р", Q = "Q", R = "Ṛ", S = "Ṣ", T = "T",
+    U = "Ụ", V = "V", W = "W", X = "Х", Y = "Ỵ", Z = "Ẓ"
+}
+
+local conversionTableLowerc = {
+    a = "ạ", b = "b", c = "с", d = "ḍ", e = "ẹ",
+    f = "f", g = "ɡ", h = "h", i = "ị", j = "ј",
+    k = "ḳ", l = "ḷ", m = "m", n = "ṇ", o = "ọ",
+    p = "р", q = "q", r = "ṛ", s = "ṣ", t = "t",
+    u = "ụ", v = "v", w = "w", x = "х", y = "ỵ", z = "ẓ",
+["0"] = "０￰", ["1"] = "１￰", ["2"] = "２￰", ["3"] = "３￰",
+    ["4"] = "４￰", ["5"] = "５￰", ["6"] = "６￰", ["7"] = "７￰",
+    ["8"] = "８￰", ["9"] = "９￰",
+}
+
+for char in textc:gmatch(".") do
+local convertedCharc = conversionTableUpperc[char] or conversionTableLowerc[char] or char
+convertedTextc = convertedTextc .. convertedCharc .. ""
 end
 
-chb.MouseButton1Click:connect(function()
+box.Text = convertedTextc
+end
+
+
+send.MouseButton1Click:connect(function()
+convertText()
+sending()
+box.Text = ""
+end)
+
+send2.MouseButton1Click:connect(function()
 convertTextb()
 sending()
 box.Text = ""
 end)
 
-send.MouseButton1Click:connect(function()
-convertText()
+sendc.MouseButton1Click:connect(function()
+convertTextc()
 sending()
-    box.Text = ""
-    end)
+box.Text = ""
+end)
 
 convert.MouseButton1Click:connect(function()
 convertText()
 end)
 
-local by = Instance.new("Frame")
-by.Size = UDim2.new(1, 0, 1, 0)
-by.Position = UDim2.new(0, 0, 0, 0)
-by.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
-by.BorderColor3 = Color3.new(0, 0, 0)
-by.BorderSizePixel = 0
-by.Active = true
-by.BackgroundTransparency = 0
-by.Visible = true
-by.Parent = main
-
-local bet = Instance.new("TextBox")
-bet.Size = UDim2.new(0.9, 0, 0.2, 0)
-bet.Position = UDim2.new(0.05, 0, 0.1, 0)
-bet.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-bet.BorderColor3 = Color3.new(0, 0, 0)
-bet.BorderSizePixel = 0
-bet.Text = "Press Load"
-bet.TextColor3 = Color3.new(255, 255, 255)
-bet.BackgroundTransparency = 0
-bet.Font = Enum.Font.Arial
-bet.TextSize = 15
-bet.Active = false
-bet.TextWrapped = true
-bet.Parent = by
-
-local loada = Instance.new("TextButton")
-loada.Size = UDim2.new(0.9, 0, 0.15, 0)
-loada.Position = UDim2.new(0.05, 0, 0.32, 0)
-loada.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-loada.BorderColor3 = Color3.new(0, 0, 0)
-loada.BorderSizePixel = 0
-loada.Text = "Load Chat Fixer"
-loada.TextColor3 = Color3.new(255, 255, 255)
-loada.BackgroundTransparency = 0
-loada.Font = Enum.Font.Arial
-loada.TextSize = 15
-loada.Parent = by
-
-local loadb = Instance.new("TextButton")
-loadb.Size = UDim2.new(0.9, 0, 0.15, 0)
-loadb.Position = UDim2.new(0.05, 0, 0.32, 0)
-loadb.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-loadb.BorderColor3 = Color3.new(0, 0, 0)
-loadb.BorderSizePixel = 0
-loadb.Text = "Load Script"
-loadb.TextColor3 = Color3.new(255, 255, 255)
-loadb.BackgroundTransparency = 0
-loadb.Font = Enum.Font.Arial
-loadb.TextSize = 15
-loadb.Visible = false
-loadb.Parent = by
-
-local loadc = Instance.new("TextButton")
-loadc.Size = UDim2.new(0.9, 0, 0.2, 0)
-loadc.Position = UDim2.new(0.05, 0, 0.5, 0)
-loadc.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-loadc.BorderColor3 = Color3.new(0, 0, 0)
-loadc.BorderSizePixel = 0
-loadc.Text = "Fixer Only No Anti Logger"
-loadc.TextColor3 = Color3.new(255, 255, 255)
-loadc.BackgroundTransparency = 0
-loadc.Font = Enum.Font.Arial
-loadc.TextSize = 15
-loadc.Visible = false
-loadc.Parent = by
-
-local bot = Instance.new("TextBox")
-bot.Size = UDim2.new(0.9, 0, 0.15, 0)
-bot.Position = UDim2.new(0.05, 0, 0.5, 0)
-bot.BackgroundColor3 = Color3.new(0, 0, 0)
-bot.BorderColor3 = Color3.new(0, 0, 0)
-bot.BorderSizePixel = 0
-bot.Text = "Wait For fixer To load"
-bot.TextColor3 = Color3.new(255, 255, 255)
-bot.BackgroundTransparency = 1
-bot.Font = Enum.Font.Arial
-bot.TextSize = 15
-bot.Visible = false
-bot.Active = false
-bot.Parent = by
-
-loada.MouseButton1Click:connect(function()
-bet.Text = "🟥Function Loading🟥"
-wait(1)
-bet.Text = "🟩Function Loaded🟩"
-wait(2)
-bet.Text = "Wait Until Fixer added"
-wait(3)
-bet.Text = "loadstring(game:HttpGet('https://pastebin.com/raw/qfmByDZ3'))()"
-loadb.Visible = true
-loada.Visible = false
-loadc.Visible = true
+convert2.MouseButton1Click:connect(function()
+convertTextb()
 end)
 
-loadb.MouseButton1Click:connect(function()
-loadb:Destroy()
-loadc:Destroy()
-bot.Visible = true
-wait(0,000001)
-        local script = bet.Text
-        if #script > 0 then
-        loadstring(script)()
-    end
-wait(4)
-bot.Visible = false
-bet.Text = "🟩Fixer Loaded🟩"
-wait(1)
-bet.Text = "Loading Script"
-wait(2)
-by:Destroy()
-end)
-
-loadc.MouseButton1Click:connect(function()
-loadc:Destroy()
-loadb:Destroy()
-bot.Visible = true
-loadstring(game:HttpGet("https://pastebin.com/raw/hq9FKvrC"))()
-bet.Text = "Loading Fixer"
-wait(2)
-bet.Text = "🟩Fixer Loaded🟩"
-wait(1)
-bet.Text = "Loading Script"
-wait(2)
-by:Destroy()
-end)
-
---[[
 local fy = Instance.new("Frame")
 fy.Size = UDim2.new(1, 0, 1, 0)
 fy.Position = UDim2.new(0, 0, 0, 0)
-fy.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+fy.BackgroundColor3 = Color3.new(0, 0, 0)
 fy.BorderColor3 = Color3.new(0, 0, 0)
 fy.BorderSizePixel = 0
 fy.Active = true
-fy.BackgroundTransparency = 0 
+fy.BackgroundTransparency = 0.3
 fy.Parent = main
 
-local ty = Instance.new("TextBox")
-ty.Size = UDim2.new(0.9, 0, 0.8, 0)
-ty.Position = UDim2.new(0.02, 0, 0.02, 0)
-ty.BackgroundColor3 = Color3.new(0, 0, 0)
-ty.BorderColor3 = Color3.new(0, 0, 0)
-ty.BorderSizePixel = 0
-ty.Text = "NeverPatched Discontinued. This Script is died, use other bypass, ppl alyways hate my bypass so i shut down this bypass and u cant use this again. thanks to neptune bypasser for giving me idea to make bypass, Script Made by Algari_4, Alga_ri/GearSecond                       Not for blind ppl: haha"
-ty.TextColor3 = Color3.new(255, 255, 255)
-ty.BackgroundTransparency = 1
-ty.Font = Enum.Font.Arial
-ty.TextSize = 15
-ty.TextWrapped = true
-ty.ClearTextOnFocus = false
-ty.MultiLine = true
-ty.TextYAlignment = Enum.TextYAlignment.Top
-ty.TextXAlignment = Enum.TextXAlignment.Left
-ty.Active = false
-ty.Parent = fy
+local lbfy = Instance.new("ImageLabel")
+lbfy.Size = UDim2.new(1, 0, 1, 0)
+lbfy.Position = UDim2.new(0, 0, 0, 0)
+lbfy.BackgroundColor3 = Color3.new(0, 0, 0)
+lbfy.ImageColor3 = Color3.new(0.2, 0.2, 0.2)
+lbfy.Image = "rbxassetid://106723422431440"
+lbfy.ImageTransparency = 0.5
+lbfy.BackgroundTransparency = 1
+lbfy.Parent = fy
 
-local nlt = Instance.new("TextButton")
-nlt.Size = UDim2.new(0.03, 0, 0.02, 0)
-nlt.Position = UDim2.new(0, 0, 0.98, 0)
-nlt.BackgroundColor3 = Color3.new(0, 0, 0)
-nlt.BorderColor3 = Color3.new(0, 0, 0)
-nlt.BorderSizePixel = 0
-nlt.Text = "haha"
-nlt.TextColor3 = Color3.new(255, 255, 255)
-nlt.BackgroundTransparency = 1
-nlt.Font = Enum.Font.Arial
-nlt.TextSize = 7
-nlt.Parent = gui
+local fkbar = Instance.new("TextLabel")
+fkbar.Size = UDim2.new(1, 0, 0.2, 0)
+fkbar.Position = UDim2.new(0, 0, 0, 0)
+fkbar.BackgroundColor3 = Color3.new(0, 0, 0)
+fkbar.BorderColor3 = Color3.new(0, 0, 0)
+fkbar.BorderSizePixel = 0
+fkbar.Text = "SELECT ONE"
+fkbar.TextColor3 = Color3.new(255, 255, 255)
+fkbar.BackgroundTransparency = 1
+fkbar.Font = Enum.Font.ArialBold
+fkbar.TextSize = 20
+fkbar.Parent = fy
 
-nlt.MouseButton1Click:connect(function()
+local acf = Instance.new("TextButton")
+acf.Size = UDim2.new(0.8, 0, 0.2, 0)
+acf.Position = UDim2.new(0.1, 0, 0.3, 0)
+acf.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+acf.BorderColor3 = Color3.new(0, 0, 0)
+acf.BorderSizePixel = 0
+acf.Text = "Chat Fixer And Anti Chat Logger"
+acf.TextColor3 = Color3.new(255, 255, 255)
+acf.BackgroundTransparency = 0.3
+acf.Font = Enum.Font.ArialBold
+acf.TextSize = 15
+acf.Parent = fy
+
+local cf = Instance.new("TextButton")
+cf.Size = UDim2.new(0.8, 0, 0.2, 0)
+cf.Position = UDim2.new(0.1, 0, 0.55, 0)
+cf.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+cf.BorderColor3 = Color3.new(0, 0, 0)
+cf.BorderSizePixel = 0
+cf.Text = "Chat Fixer Only"
+cf.TextColor3 = Color3.new(255, 255, 255)
+cf.BackgroundTransparency = 0.3
+cf.Font = Enum.Font.ArialBold
+cf.TextSize = 15
+cf.Parent = fy
+
+acf.MouseButton1Click:connect(function()
+loadstring(game:HttpGet('https://pastebin.com/raw/qfmByDZ3'))()
 fy:Destroy()
-nlt:Destroy()
-end) ]]
+end)
 
--- script ban function
-local playersToKick = {"12345T6Y7UYGFVBH"}
+cf.MouseButton1Click:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/hq9FKvrC"))()
+fy:Destroy()
+end)
 
-local function kickPlayers()
-    local function checkAndKick(player)
-        for _, targetName in ipairs(playersToKick) do
-            if player.Name == targetName then
-                player:Kick("you are permanently banned from NeverPatched Bypass/Swearing Universal")
-            end
-        end
-    end
-
-    game.Players.PlayerAdded:Connect(checkAndKick)
-
-    for _, player in ipairs(game.Players:GetPlayers()) do
-        checkAndKick(player)
-    end
-end
-
-kickPlayers()
+local fhf = Instance.new("TextLabel")
+fhf.Size = UDim2.new(1, 0, 0.2, 0)
+fhf.Position = UDim2.new(0, 0, 0.8, 0)
+fhf.BackgroundColor3 = Color3.new(0, 0, 0)
+fhf.BorderColor3 = Color3.new(0, 0, 0)
+fhf.BorderSizePixel = 0
+fhf.Text = "Use At Your Own Risk"
+fhf.TextColor3 = Color3.new(255, 255, 255)
+fhf.BackgroundTransparency = 1
+fhf.Font = Enum.Font.ArialBold
+fhf.TextSize = 15
+fhf.Parent = fy
