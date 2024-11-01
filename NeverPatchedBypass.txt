@@ -3,15 +3,9 @@
       TO
        LOOK
 
-NEVERPATCHED 2.4.1R
+NEVERPATCHED 2.4.2R
 •//////////////////////////////•
-+ NEW UI
-+ BETTER LOADER
-+ TWEEN SERVICE
-+ LITE BYPASS
-+ LOADER NOW NOT LONG TIME LOAD
-+ BAN PLAYER REMOVED
-+ NOT SKID, U CANT CLAIM MY BYPASS
++ lite clean fixed
 •//////////////////////////////•
 ]]
 
@@ -46,7 +40,7 @@ lbl.Position = UDim2.new(0, 0, 0, 0)
 lbl.BackgroundColor3 = Color3.new(0, 0, 0)
 lbl.BorderColor3 = Color3.new(0, 0, 0)
 lbl.BorderSizePixel = 0
-lbl.Text = "NP Rework 2.4.1"
+lbl.Text = "NP Rework 2.4.2"
 lbl.TextColor3 = Color3.new(255, 255, 255)
 lbl.BackgroundTransparency = 1
 lbl.Font = Enum.Font.Arial
@@ -64,8 +58,6 @@ main.BackgroundTransparency = 0
 main.Parent = bar
 
 local la = Instance.new("ImageLabel")
-la.Size = UDim2.new(1, 0, 1, 0)
-la.Position = UDim2.new(0, 0, 0, 0)
 la.BackgroundColor3 = Color3.new(0, 0, 0)
 la.ImageColor3 = Color3.new(0.15, 0.15, 0.15)
 la.Image = "rbxassetid://106723422431440"
@@ -313,7 +305,7 @@ local convertedTextb = ""
 local conversionTableUpperb = {
     A = "Ạ", B = "B", C = "С", D = "Ḍ", E = "Ẹ",
     F = "F", G = "Ģ", H = "H", I = "Ị", J = "J",
-    K = "Ḳ", L = "Ḷ", M = "M", N = "Ṇ", O = "Ọ",
+    K = "Ḳ", L = "Ḷ", M = "Ṃ", N = "Ṇ", O = "Ọ",
     P = "Р", Q = "Q", R = "Ṛ", S = "Ṣ", T = "T",
     U = "Ụ", V = "V", W = "W", X = "Х", Y = "Ỵ", Z = "Ẓ"
 }
@@ -321,7 +313,7 @@ local conversionTableUpperb = {
 local conversionTableLowerb = {
     a = "ạ", b = "b", c = "с", d = "ḍ", e = "ẹ",
     f = "f", g = "ɡ", h = "h", i = "ị", j = "ј",
-    k = "ḳ", l = "ḷ", m = "m", n = "ṇ", o = "ọ",
+    k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
     p = "р", q = "q", r = "ṛ", s = "ṣ", t = "t",
     u = "ụ", v = "v", w = "w", x = "х", y = "ỵ", z = "ẓ",
 ["0"] = "０￰", ["1"] = "１￰", ["2"] = "２￰", ["3"] = "３￰",
@@ -338,34 +330,45 @@ box.Text = convertedTextb
 end
 
 local function convertTextc()
-local textc = box.Text
-local convertedTextc = ""
+    local textc = box.Text
+    local convertedTextc = ""
 
-local conversionTableUpperc = {
-    A = "Ạ", B = "B", C = "С", D = "Ḍ", E = "Ẹ",
-    F = "F", G = "Ģ", H = "H", I = "Ị", J = "J",
-    K = "Ḳ", L = "Ḷ", M = "M", N = "Ṇ", O = "Ọ",
-    P = "Р", Q = "Q", R = "Ṛ", S = "Ṣ", T = "T",
-    U = "Ụ", V = "V", W = "W", X = "Х", Y = "Ỵ", Z = "Ẓ"
-}
+    local conversionTableUpperc = {
+        A = "Ạ", B = "B", C = "С", D = "Ḍ", E = "Ẹ",
+        F = "F", G = "Ģ", H = "H", I = "Ị", J = "J",
+        K = "Ḳ", L = "Ḷ", M = "Ṃ", N = "Ṇ", O = "Ọ",
+        P = "Р", Q = "Q", R = "Ṛ", S = "Ṣ", T = "T",
+        U = "Ụ", V = "V", W = "W", X = "Х", Y = "Ỵ", Z = "Ẓ"
+    }
 
-local conversionTableLowerc = {
-    a = "ạ", b = "b", c = "с", d = "ḍ", e = "ẹ",
-    f = "f", g = "ɡ", h = "h", i = "ị", j = "ј",
-    k = "ḳ", l = "ḷ", m = "m", n = "ṇ", o = "ọ",
-    p = "р", q = "q", r = "ṛ", s = "ṣ", t = "t",
-    u = "ụ", v = "v", w = "w", x = "х", y = "ỵ", z = "ẓ",
-["0"] = "０￰", ["1"] = "１￰", ["2"] = "２￰", ["3"] = "３￰",
-    ["4"] = "４￰", ["5"] = "５￰", ["6"] = "６￰", ["7"] = "７￰",
-    ["8"] = "８￰", ["9"] = "９￰",
-}
+    local conversionTableLowerc = {
+        a = "ạ", b = "b", c = "с", d = "ḍ", e = "ẹ",
+        f = "f", g = "ɡ", h = "h", i = "ị", j = "ј",
+        k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
+        p = "р", q = "q", r = "ṛ", s = "ṣ", t = "t",
+        u = "ụ", v = "v", w = "w", x = "х", y = "ỵ", z = "ẓ",
+        ["0"] = "０￰", ["1"] = "１￰", ["2"] = "２￰", ["3"] = "３￰",
+        ["4"] = "４￰", ["5"] = "５￰", ["6"] = "６￰", ["7"] = "７￰",
+        ["8"] = "８￰", ["9"] = "９￰",
+    }
 
-for char in textc:gmatch(".") do
-local convertedCharc = conversionTableUpperc[char] or conversionTableLowerc[char] or char
-convertedTextc = convertedTextc .. convertedCharc .. ""
-end
+    local charCount = 0
 
-box.Text = convertedTextc
+    for char in textc:gmatch(".") do
+        if char == " " then
+            convertedTextc = convertedTextc .. " "
+        else
+            local convertedCharc = conversionTableUpperc[char] or conversionTableLowerc[char] or char
+            convertedTextc = convertedTextc .. convertedCharc
+            charCount = charCount + 1
+            
+            if charCount % math.random(2, 3) == 0 then
+                convertedTextc = convertedTextc .. "̣"
+            end
+        end
+    end
+
+    box.Text = "< " .. convertedTextc.. " >"
 end
 
 
@@ -470,7 +473,7 @@ fhf.Position = UDim2.new(0, 0, 0.8, 0)
 fhf.BackgroundColor3 = Color3.new(0, 0, 0)
 fhf.BorderColor3 = Color3.new(0, 0, 0)
 fhf.BorderSizePixel = 0
-fhf.Text = "Use At Your Own Risk"
+fhf.Text = "Use At Your Own Risk, 0 BAN"
 fhf.TextColor3 = Color3.new(255, 255, 255)
 fhf.BackgroundTransparency = 1
 fhf.Font = Enum.Font.ArialBold
