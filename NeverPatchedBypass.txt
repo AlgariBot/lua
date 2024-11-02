@@ -5,7 +5,7 @@
 
 NEVERPATCHED 2.4.2R
 •//////////////////////////////•
-+ lite clean fixed
++ Antiban, If chat module not found = no clean feature <
 •//////////////////////////////•
 ]]
 
@@ -56,16 +56,6 @@ main.BorderSizePixel = 0
 main.Active = false
 main.BackgroundTransparency = 0
 main.Parent = bar
-
-local il = Instance.new("ImageLabel")
-il.Size = UDim2.new(1.14, 0, 1.2, 0)
-il.Position = UDim2.new(-0.07, 0, -0.1, 0)
-il.BackgroundColor3 = Color3.new(0, 0, 0)
-il.ImageColor3 = Color3.new(0, 0, 0)
-il.Image = "rbxassetid://117238331411346"
-il.ImageTransparency = 0.2
-il.BackgroundTransparency = 1
-il.Parent = main
 
 local la = Instance.new("ImageLabel")
 la.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -345,7 +335,7 @@ local function convertTextc()
 
     local conversionTableUpperc = {
         A = "Ạ", B = "B", C = "С", D = "Ḍ", E = "Ẹ",
-        F = "F", G = "Ģ", H = "H", I = "Ị", J = "J",
+        F = "F", G = "Ģ", H = "Ḥ", I = "Ị", J = "J",
         K = "Ḳ", L = "Ḷ", M = "Ṃ", N = "Ṇ", O = "Ọ",
         P = "Р", Q = "Q", R = "Ṛ", S = "Ṣ", T = "T",
         U = "Ụ", V = "V", W = "W", X = "Х", Y = "Ỵ", Z = "Ẓ"
@@ -353,7 +343,7 @@ local function convertTextc()
 
     local conversionTableLowerc = {
         a = "ạ", b = "b", c = "с", d = "ḍ", e = "ẹ",
-        f = "f", g = "ɡ", h = "h", i = "ị", j = "ј",
+        f = "f", g = "ɡ", h = "ḥ", i = "ị", j = "ј",
         k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
         p = "р", q = "q", r = "ṛ", s = "ṣ", t = "t",
         u = "ụ", v = "v", w = "w", x = "х", y = "ỵ", z = "ẓ",
@@ -373,14 +363,13 @@ local function convertTextc()
             charCount = charCount + 1
             
             if charCount % math.random(2, 3) == 0 then
-                convertedTextc = convertedTextc .. "̣"
+                convertedTextc = "￸".. convertedTextc .. "￸̜"
             end
         end
     end
 
     box.Text = "< " .. convertedTextc.. " >"
 end
-
 
 send.MouseButton1Click:connect(function()
 convertText()
@@ -483,9 +472,23 @@ fhf.Position = UDim2.new(0, 0, 0.8, 0)
 fhf.BackgroundColor3 = Color3.new(0, 0, 0)
 fhf.BorderColor3 = Color3.new(0, 0, 0)
 fhf.BorderSizePixel = 0
-fhf.Text = "Use At Your Own Risk, 0 BAN"
+fhf.Text = "Use At Your Own Risk, 0,0001%"
 fhf.TextColor3 = Color3.new(255, 255, 255)
 fhf.BackgroundTransparency = 1
 fhf.Font = Enum.Font.ArialBold
 fhf.TextSize = 15
 fhf.Parent = fy
+
+local function checkChatModule()
+    local chatModule = game:GetService("Chat"):FindFirstChild("ChatModule")
+
+    if chatModule then
+    print("0 ban)
+    else
+    print("Chat Module Not found 💀")
+    send2:Destroy()
+    sendc:Destroy()
+    end
+end
+
+checkChatModule()
