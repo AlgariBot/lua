@@ -363,7 +363,7 @@ local function convertTextc()
             charCount = charCount + 1
             
             if charCount % math.random(2, 3) == 0 then
-                convertedTextc = "￸".. convertedTextc .. "￸̜"
+                convertedTextc = convertedTextc .. "￸̜"
             end
         end
     end
@@ -478,17 +478,3 @@ fhf.BackgroundTransparency = 1
 fhf.Font = Enum.Font.ArialBold
 fhf.TextSize = 15
 fhf.Parent = fy
-
-local function checkChatModule()
-    local chatModule = game:GetService("Chat"):FindFirstChild("ChatModule")
-
-    if chatModule then
-    print("0 ban)
-    else
-    print("Chat Module Not found 💀")
-    send2:Destroy()
-    sendc:Destroy()
-    end
-end
-
-checkChatModule()
