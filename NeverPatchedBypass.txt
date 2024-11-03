@@ -1,12 +1,6 @@
---[[
-   FREE
-      TO
-       LOOK
-
-NEVERPATCHED 2.4.2R
-•//////////////////////////////•
-+ Antiban, If chat module not found = no clean feature <
-•//////////////////////////////•
+--[[ Discontinued, not obfuscated version
+open source and not patched
+im now making random script
 ]]
 
 local gui = Instance.new("ScreenGui")
@@ -33,14 +27,13 @@ laa.ImageTransparency = 0
 laa.BackgroundTransparency = 1
 laa.Parent = bar
 
-
 local lbl = Instance.new("TextLabel")
 lbl.Size = UDim2.new(0.4, 0, 1, 0)
 lbl.Position = UDim2.new(0, 0, 0, 0)
 lbl.BackgroundColor3 = Color3.new(0, 0, 0)
 lbl.BorderColor3 = Color3.new(0, 0, 0)
 lbl.BorderSizePixel = 0
-lbl.Text = "NP Rework 2.4.2"
+lbl.Text = "NP Discontinued"
 lbl.TextColor3 = Color3.new(255, 255, 255)
 lbl.BackgroundTransparency = 1
 lbl.Font = Enum.Font.Arial
@@ -122,7 +115,7 @@ box.Position = UDim2.new(0.05, 0, 0.07, 0)
 box.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 box.BorderColor3 = Color3.new(0, 0, 0)
 box.BorderSizePixel = 0
-box.Text = ""
+box.Text = "Discontinued shit"
 box.TextColor3 = Color3.new(1,1,1)
 box.BackgroundTransparency = 0.8
 box.Font = Enum.Font.SourceSans
@@ -235,7 +228,7 @@ credit.Position = UDim2.new(0.05, 0, 0.4, 0)
 credit.BackgroundColor3 = Color3.new(0, 0, 0)
 credit.BorderColor3 = Color3.new(0, 0, 0)
 credit.BorderSizePixel = 0
-credit.Text = "Created by: Algari_4 (80%), Alga_ri (10%), GPT/AI (10%), UI Created by Algari_4, Not A Skid. make ur own bypass with this"
+credit.Text = "Created by: Algari_4 | Discontinued. https://raw.githubusercontent.com/AlgariBot/lua/refs/heads/Lua-Script-Executor/NeverPatchedBypass.txt"
 credit.TextColor3 = Color3.new(255, 255, 255)
 credit.BackgroundTransparency = 0.6
 credit.Font = Enum.Font.Arial
