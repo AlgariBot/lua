@@ -1,3 +1,8 @@
+--[[
+hehe
+detected trick removed because my main banned 6 times :(😂😂😂😂😂
+]]
+
 local gui = Instance.new("ScreenGui")
 gui.Parent = game.CoreGui
 
@@ -158,7 +163,7 @@ send2.Position = UDim2.new(0.5, 0, 0.5, 0)
 send2.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 send2.BorderColor3 = Color3.new(0, 0, 0)
 send2.BorderSizePixel = 0
-send2.Text = "Bypass V2"
+send2.Text = "GL BYPASS"
 send2.TextColor3 = Color3.new(255, 255, 255)
 send2.BackgroundTransparency = 0
 send2.Font = Enum.Font.Arial
@@ -197,7 +202,7 @@ credit.Position = UDim2.new(0.05, 0, 0.4, 0)
 credit.BackgroundColor3 = Color3.new(0, 0, 0)
 credit.BorderColor3 = Color3.new(0, 0, 0)
 credit.BorderSizePixel = 0
-credit.Text = "Created by: Algari_4 | last update 2.5, credit gaze sucks"
+credit.Text = "Created by: Algari_4 and Alga_ri (GearSecond)\rGaze For Clean Bypass\rNeverpatched is undetected"
 credit.TextColor3 = Color3.new(255, 255, 255)
 credit.BackgroundTransparency = 0.6
 credit.Font = Enum.Font.Arial
@@ -349,7 +354,7 @@ fhf.Position = UDim2.new(0, 0, 0.8, 0)
 fhf.BackgroundColor3 = Color3.new(0, 0, 0)
 fhf.BorderColor3 = Color3.new(0, 0, 0)
 fhf.BorderSizePixel = 0
-fhf.Text = "Use At Your Own Risk, 0 BAN"
+fhf.Text = "UNDETECTED BYPASS"
 fhf.TextColor3 = Color3.new(255, 255, 255)
 fhf.BackgroundTransparency = 1
 fhf.Font = Enum.Font.ArialBold
