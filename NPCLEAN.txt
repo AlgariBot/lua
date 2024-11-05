@@ -1,5 +1,6 @@
 --[[ 
-bug fixed
++ bug fixed
+? idk
 ]]
 
 local gui = Instance.new("ScreenGui")
