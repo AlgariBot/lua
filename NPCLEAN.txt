@@ -1,5 +1,5 @@
 --[[ 
-NUMBER SUPPORT
+bug fixed
 ]]
 
 local gui = Instance.new("ScreenGui")
@@ -258,7 +258,7 @@ TITS="T￸I￸T￸S",
         end
     end
 
-    box.Text = "<<♦>>\r"> .. newText
+    box.Text = "<<♦>>\r>" .. newText
 end
 
 chat.MouseButton1Click:connect(function()
