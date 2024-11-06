@@ -1,6 +1,5 @@
 --[[ 
-+ bug fixed
-? idk
++ fe chat refresh
 ]]
 
 local gui = Instance.new("ScreenGui")
@@ -10,6 +9,7 @@ local chat = Instance.new("TextButton")
 local box = Instance.new("TextBox")
 local fix = Instance.new("TextButton")
 local dest = Instance.new("TextButton")
+local cler = Instance.new("TextButton")
 
 local shad = Instance.new("ImageLabel")
 local corner = Instance.new("UICorner")
@@ -259,7 +259,7 @@ TITS="T￸I￸T￸S",
         end
     end
 
-    box.Text = "<<♦>>\r>" .. newText
+    box.Text = "<<♦>>\r" .. newText
 end
 
 chat.MouseButton1Click:connect(function()
@@ -276,4 +276,22 @@ end)
 
 dest.MouseButton1Click:connect(function()
 bmain:Destroy()
+end)
+
+cler.Size = UDim2.new(0.9, 0, 0.1, 0)
+cler.Position = UDim2.new(0.05, 0, 1.04, 0)
+cler.BackgroundColor3 = Color3.new(0.5, 0, 0)
+cler.BorderColor3 = Color3.new(0, 0, 0)
+cler.BorderSizePixel = 0
+cler.Text = "FE Refresh Chat (Abuse)"
+cler.TextColor3 = Color3.new(255, 255, 255)
+cler.BackgroundTransparency = 0
+cler.Font = Enum.Font.ArialBold
+cler.TextSize = 15
+cler.Parent = bmain
+
+cler.MouseButton1Click:connect(function()
+box.Text = "￸\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r￸"
+sending()
+box.Text = ""
 end)
