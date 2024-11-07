@@ -1,130 +1,54 @@
---[[ 
-+ fe chat refresh
-]]
+local main = Instance.new("Frame")
+main.Size = UDim2.new(0.2, 0, 0.3, 0)
+main.Position = UDim2.new(0.2, 0, 0.2, 0)
+main.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+main.BorderColor3 = Color3.new(0, 0, 0)
+main.BorderSizePixel = 0
+main.Active = true
+main.BackgroundTransparency = 0 
+main.Draggable = true
+main.Parent = gui
 
-local gui = Instance.new("ScreenGui")
-local bmain = Instance.new("Frame")
-local label = Instance.new("TextLabel")
-local chat = Instance.new("TextButton")
+local lbell = Instance.new("TextLabel")
+lbell.Size = UDim2.new(1, 0, 0.2, 0)
+lbell.Position = UDim2.new(0, 0, 0, 0)
+lbell.BackgroundColor3 = Color3.new(0, 0, 0)
+lbell.BorderColor3 = Color3.new(0, 0, 0)
+lbell.BorderSizePixel = 0
+lbell.Text = "۞ NeverPatched: Gaze"
+lbell.TextColor3 = Color3.new(255, 255, 255)
+lbell.BackgroundTransparency = 1
+lbell.Font = Enum.Font.Garamond
+lbell.TextSize = 25
+lbell.Parent = main
+
 local box = Instance.new("TextBox")
-local fix = Instance.new("TextButton")
-local dest = Instance.new("TextButton")
-local cler = Instance.new("TextButton")
-
-local shad = Instance.new("ImageLabel")
-local corner = Instance.new("UICorner")
-local corner1 = Instance.new("UICorner")
-local corner2 = Instance.new("UICorner")
-local corner3 = Instance.new("UICorner")
-local stroke = Instance.new("UIStroke")
-local cornerx = Instance.new("UICorner")
-local fahx = Instance.new("UICorner")
-
-gui.Name = "Gaze Lite Bypass"
-gui.Parent = game.CoreGui
-
-bmain.Size = UDim2.new(0.2, 0, 0.3, 0)
-bmain.Position = UDim2.new(0.2, 0, 0.2, 0)
-bmain.BackgroundColor3 = Color3.new(0, 0, 0)
-bmain.BorderColor3 = Color3.new(0, 0, 0)
-bmain.BorderSizePixel = 0
-bmain.Active = true
-bmain.BackgroundTransparency = 0
-bmain.Draggable = true
-bmain.Parent = gui
-
-shad.Size = UDim2.new(1.2, 0, 1.2, 0)
-shad.Position = UDim2.new(-0.1, 0, -0.1, 0)
-shad.BackgroundColor3 = Color3.new(0, 0, 0)
-shad.ImageColor3 = Color3.new(0, 0, 0)
-shad.Image = "rbxassetid://117238331411346"
-shad.ImageTransparency = 0.6
-shad.BackgroundTransparency = 1
-shad.Parent = bmain
-
-corner.CornerRadius = UDim.new(0.1)
-corner.Parent = bmain
-
-label.Size = UDim2.new(1, 0, 0.2, 0)
-label.Position = UDim2.new(0, 0, 0, 0)
-label.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
-label.BorderColor3 = Color3.new(0, 0, 0)
-label.BorderSizePixel = 0
-label.Text = "GL Bypass"
-label.TextColor3 = Color3.new(255, 255, 255)
-label.BackgroundTransparency = 0
-label.Font = Enum.Font.ArialBold
-label.TextSize = 17
-label.Parent = bmain
-
-corner1.CornerRadius = UDim.new(1)
-corner1.Parent = label
-
-chat.Size = UDim2.new(0.8, 0, 0.2, 0)
-chat.Position = UDim2.new(0.1, 0, 0.7, 0)
-chat.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
-chat.BorderSizePixel = 0
-chat.Text = "Send / Chat"
-chat.TextColor3 = Color3.new(255, 255, 255)
-chat.BackgroundTransparency = 0
-chat.Font = Enum.Font.ArialBold
-chat.TextSize = 15
-chat.Parent = bmain
-
-corner2.CornerRadius = UDim.new(1)
-corner2.Parent = chat
-
-box.Size = UDim2.new(0.8, 0, 0.3, 0)
-box.Position = UDim2.new(0.1, 0, 0.3, 0)
+box.Size = UDim2.new(0.8, 0, 0.2, 0)
+box.Position = UDim2.new(0.1, 0, 0.2, 0)
 box.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
 box.BorderColor3 = Color3.new(0, 0, 0)
 box.BorderSizePixel = 0
 box.Text = ""
-box.PlaceholderText = "CLEAN TEXT"
 box.TextColor3 = Color3.new(1,1,1)
 box.BackgroundTransparency = 0
-box.Font = Enum.Font.Arial
-box.TextSize = 15
+box.Font = Enum.Font.Code
+box.TextSize = 17
+box.PlaceholderText = "Enter Text..."
 box.TextWrapped = true
-box.ClearTextOnFocus = false
-box.Parent = bmain
+box.Parent = main
 
-corner3.CornerRadius = UDim.new(0.2)
-corner3.Parent = box
-
-stroke.Color = Color3.new(1, 1, 1)
-stroke.Thickness = 3
-stroke.Parent = bmain
-
-fix.Size = UDim2.new(0.22, 0, 0.15, 0)
-fix.Position = UDim2.new(0.02, 0, 0.03, 0)
-fix.BackgroundColor3 = Color3.new(0, 0.5, 0)
-fix.BorderColor3 = Color3.new(0, 0, 0)
-fix.BorderSizePixel = 0
-fix.Text = "Fix Tag"
-fix.TextColor3 = Color3.new(255, 255, 255)
-fix.BackgroundTransparency = 0
-fix.Font = Enum.Font.Arial
-fix.TextSize = 15
-fix.Parent = bmain
-
-cornerx.CornerRadius = UDim.new(1)
-cornerx.Parent = fix
-
-dest.Size = UDim2.new(0.2, 0, 0.15, 0)
-dest.Position = UDim2.new(0.78, 0, 0.02, 0)
-dest.BackgroundColor3 = Color3.new(0.5, 0, 0)
-dest.BorderColor3 = Color3.new(0, 0, 0)
-dest.BorderSizePixel = 0
-dest.Text = "Close"
-dest.TextColor3 = Color3.new(255, 255, 255)
-dest.BackgroundTransparency = 0
-dest.Font = Enum.Font.Arial
-dest.TextSize = 15
-dest.Parent = bmain
-
-fahx.CornerRadius = UDim.new(1)
-fahx.Parent = dest
+local chat = Instance.new("TextButton")
+chat.Size = UDim2.new(0.8, 0, 0.2, 0)
+chat.Position = UDim2.new(0.1, 0, 0.45, 0)
+chat.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+chat.BorderColor3 = Color3.new(0, 0, 0)
+chat.BorderSizePixel = 0
+chat.Text = "Chat"
+chat.TextColor3 = Color3.new(255, 255, 255)
+chat.BackgroundTransparency = 0
+chat.Font = Enum.Font.Code
+chat.TextSize = 17
+chat.Parent = main
 
 local function sending()
     local TextChatService = game:GetService("TextChatService")
@@ -259,7 +183,7 @@ TITS="T￸I￸T￸S",
         end
     end
 
-    box.Text = "<<♦>>\r" .. newText
+    box.Text = "<۞>\r" .. newText
 end
 
 chat.MouseButton1Click:connect(function()
@@ -268,30 +192,136 @@ sending()
 box.Text = ""
 end)
 
-fix.MouseButton1Click:connect(function()
-box.Text = "GLite(ABCDE)()"
+local exa = Instance.new("TextButton")
+exa.Size = UDim2.new(0.8, 0, 0.2, 0)
+exa.Position = UDim2.new(0.1, 0, 0.7, 0)
+exa.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+exa.BorderColor3 = Color3.new(0, 0, 0)
+exa.BorderSizePixel = 0
+exa.Text = "Example >"
+exa.TextColor3 = Color3.new(255, 255, 255)
+exa.BackgroundTransparency = 0
+exa.Font = Enum.Font.Code
+exa.TextSize = 17
+exa.Parent = main
+
+local mainb = Instance.new("Frame")
+mainb.Size = UDim2.new(1, 0, 1, 0)
+mainb.Position = UDim2.new(1.01, 0, 0, 0)
+mainb.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+mainb.BorderColor3 = Color3.new(0, 0, 0)
+mainb.BorderSizePixel = 0
+mainb.Active = true
+mainb.BackgroundTransparency = 0
+mainb.Visible = false
+mainb.Parent = main
+
+local function yyy(mainb, exa)
+    if mainb.Visible then
+        mainb.Visible = false
+        exa.Text = "example >"
+    else
+        mainb.Visible = true
+        exa.Text = "example –"
+    end
+end
+
+exa.MouseButton1Click:Connect(function()
+    yyy(mainb, exa)
+end)
+
+local scroll = Instance.new("ScrollingFrame")
+scroll.Size = UDim2.new(0.8, 0, 0.8, 0)
+scroll.Position = UDim2.new(0.1, 0, 0.1, 0)
+scroll.BackgroundColor3 = Color3.new(1, 1, 1)
+scroll.BorderColor3 = Color3.new(0, 0, 0)
+scroll.BorderSizePixel = 0
+scroll.BackgroundTransparency = 1
+scroll.CanvasSize = UDim2.new(0, 0, 10, 0)
+scroll.ScrollBarThickness = 0
+scroll.Parent = mainb
+
+local list = Instance.new("UIListLayout")
+list.HorizontalAlignment = Enum.HorizontalAlignment.Center
+list.SortOrder = Enum.SortOrder.LayoutOrder
+list.Padding = UDim.new(0, 10)
+list.Parent = scroll
+
+local long = Instance.new("TextButton")
+long.Size = UDim2.new(1, 0, 0.02, 0)
+long.Position = UDim2.new(0.5, 0, 0.5, 0)
+long.BackgroundColor3 = Color3.new(0, 0, 0)
+long.BorderColor3 = Color3.new(0, 0, 0)
+long.BorderSizePixel = 0
+long.Text = "Refresh Chat"
+long.TextColor3 = Color3.new(255, 255, 255)
+long.BackgroundTransparency = 0
+long.Font = Enum.Font.Code
+long.TextSize = 15
+long.Parent = scroll
+
+long.MouseButton1Click:Connect(function()
+box.Text = "￸\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r￸"
 sending()
 box.Text = ""
 end)
 
-dest.MouseButton1Click:connect(function()
-bmain:Destroy()
+local httpa = Instance.new("TextButton")
+httpa.Size = UDim2.new(1, 0, 0.02, 0)
+httpa.Position = UDim2.new(0.5, 0, 0.5, 0)
+httpa.BackgroundColor3 = Color3.new(0, 0, 0)
+httpa.BorderColor3 = Color3.new(0, 0, 0)
+httpa.BorderSizePixel = 0
+httpa.Text = "free hentai https://animeh.to"
+httpa.TextColor3 = Color3.new(255, 255, 255)
+httpa.BackgroundTransparency = 0
+httpa.Font = Enum.Font.Code
+httpa.TextSize = 12
+httpa.Parent = scroll
+
+httpa.MouseButton1Click:Connect(function()
+box.Text = "free hentai https://animeh.to"
+replaceText(box)
+sending()
+box.Text = ""
 end)
 
-cler.Size = UDim2.new(0.9, 0, 0.1, 0)
-cler.Position = UDim2.new(0.05, 0, 1.04, 0)
-cler.BackgroundColor3 = Color3.new(0.5, 0, 0)
-cler.BorderColor3 = Color3.new(0, 0, 0)
-cler.BorderSizePixel = 0
-cler.Text = "FE Refresh Chat (Abuse)"
-cler.TextColor3 = Color3.new(255, 255, 255)
-cler.BackgroundTransparency = 0
-cler.Font = Enum.Font.ArialBold
-cler.TextSize = 15
-cler.Parent = bmain
+local httpb = Instance.new("TextButton")
+httpb.Size = UDim2.new(1, 0, 0.02, 0)
+httpb.Position = UDim2.new(0.5, 0, 0.5, 0)
+httpb.BackgroundColor3 = Color3.new(0, 0, 0)
+httpb.BorderColor3 = Color3.new(0, 0, 0)
+httpb.BorderSizePixel = 0
+httpb.Text = "free robux https://xhamster.com"
+httpb.TextColor3 = Color3.new(255, 255, 255)
+httpb.BackgroundTransparency = 0
+httpb.Font = Enum.Font.Code
+httpb.TextSize = 10
+httpb.Parent = scroll
 
-cler.MouseButton1Click:connect(function()
-box.Text = "￸\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r￸"
+httpb.MouseButton1Click:Connect(function()
+box.Text = "free robux https://xhamster.com"
+replaceText(box)
+sending()
+box.Text = ""
+end)
+
+local httpc = Instance.new("TextButton")
+httpc.Size = UDim2.new(1, 0, 0.02, 0)
+httpc.Position = UDim2.new(0.5, 0, 0.5, 0)
+httpc.BackgroundColor3 = Color3.new(0, 0, 0)
+httpc.BorderColor3 = Color3.new(0, 0, 0)
+httpc.BorderSizePixel = 0
+httpc.Text = "fe neko https://rawsex.com/neko"
+httpc.TextColor3 = Color3.new(255, 255, 255)
+httpc.BackgroundTransparency = 0
+httpc.Font = Enum.Font.Code
+httpc.TextSize = 10
+httpc.Parent = scroll
+
+httpc.MouseButton1Click:Connect(function()
+box.Text = "fe neko https://rawsex.com/neko"
+replaceText(box)
 sending()
 box.Text = ""
 end)
