@@ -22,8 +22,8 @@ lbell.BorderSizePixel = 0
 lbell.Text = "۞ NeverPatched: Gaze"
 lbell.TextColor3 = Color3.new(255, 255, 255)
 lbell.BackgroundTransparency = 1
-lbell.Font = Enum.Font.Garamond
-lbell.TextSize = 25
+lbell.Font = Enum.Font.Arial
+lbell.TextSize = 20
 lbell.Parent = main
 
 local box = Instance.new("TextBox")
@@ -35,11 +35,17 @@ box.BorderSizePixel = 0
 box.Text = ""
 box.TextColor3 = Color3.new(1,1,1)
 box.BackgroundTransparency = 0
-box.Font = Enum.Font.Code
+box.Font = Enum.Font.Arial
 box.TextSize = 17
 box.PlaceholderText = "Enter Text..."
 box.TextWrapped = true
+box.TextScaled = true
+box.ClearTextOnFocus = false
 box.Parent = main
+
+local cornerd = Instance.new("UICorner")
+cornerd.CornerRadius = UDim.new(1)
+cornerd.Parent = box
 
 local chat = Instance.new("TextButton")
 chat.Size = UDim2.new(0.8, 0, 0.2, 0)
@@ -50,150 +56,173 @@ chat.BorderSizePixel = 0
 chat.Text = "Chat"
 chat.TextColor3 = Color3.new(255, 255, 255)
 chat.BackgroundTransparency = 0
-chat.Font = Enum.Font.Code
+chat.Font = Enum.Font.Arial
 chat.TextSize = 17
 chat.Parent = main
 
-local function sending()
-    local TextChatService = game:GetService("TextChatService")
-    local Players = game:GetService("Players")
+local cornere = Instance.new("UICorner")
+cornere.CornerRadius = UDim.new(1)
+cornere.Parent = chat
 
-    local function sendMessage(msg)
-    local player = Players.LocalPlayer
-    if TextChatService.ChatInputBarConfiguration.TargetTextChannel then
-    TextChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync(msg)
-    else
-        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+local function isEmoji(c)
+    local code = utf8.codepoint(c)  
+
+    
+    if (code >= 0x1F600 and code <= 0x1F64F) or  
+       (code >= 0x1F300 and code <= 0x1F5FF) or  
+       (code >= 0x1F680 and code <= 0x1F6FF) or  
+       (code >= 0x1F700 and code <= 0x1F77F) or  
+       (code >= 0x1F900 and code <= 0x1F9FF) or  
+       (code >= 0x2600 and code <= 0x26FF) or    
+       (code >= 0x2700 and code <= 0x27BF) or    
+       (code >= 0x1F1E6 and code <= 0x1F1FF) then 
+        return true  
     end
-    end
-sendMessage(box.Text)
+    return false  
 end
 
-local function replaceText(box)
-    local text = box.Text
 
-    local replacements = {
-cock = "c￸o￸c￸k",
-Cock = "C￸o￸c￸k",
-COCK = "C￸O￸C￸K",
-fuck = "f￸￸￸￸￸￸u￸c￸k￸",
-Fuck = "F￸￸￸￸￸￸u￸c￸k￸",
-FUCK = "F￸￸￸￸￸￸U￸C￸K￸",
-shit = "￸s￸￸￸￸￸￸h￸i￸t￸",
-Shit = "S￸￸￸￸￸￸h￸i￸t￸",
-SHIT ="S￸￸￸￸￸￸H￸I￸T￸",
-dick="d￸i￸￸c￸k",
-Dick="D￸i￸￸c￸k￸",
-bitch="b￸i￸t￸￸￸c￸h￸",
-Bitch="B￸i￸t￸￸￸c￸h￸",
-BITCH="B￸I￸T￸￸￸C￸H￸",
-boobs="b￸o￸o￸b￸s",
-Boobs="B￸o￸o￸b￸s",
-BOOBS="B￸O￸O￸B￸S",
-ass="a￸￸￸￸￸￸s￸s￸",
-Ass="A￸￸￸￸￸￸s￸s￸",
-ASS="A￸￸￸￸￸￸S￸S￸",
-rape="r￸a￸p￸e",
-Rape="R￸a￸p￸e",
-RAPE="R￸A￸P￸E",
-cum="c￸u￸m",
-Cum="C￸u￸m",
-CUM="C￸U￸M",
-vagina="v￸a￸g￸i￸n￸a",
-Vagina="V￸a￸g￸i￸n￸a",
-VAGINA="V￸A￸G￸I￸N￸A",
-gay="g￸￸￸￸￸￸a￸y",
-Gay="Ģ￸￸￸￸￸￸a￸y",
-GAY="Ģ￸￸￸￸￸￸A￸Y",
-sex="s￸￸￸￸￸￸e￸￸￸￸x￸",
-Sex="S￸￸￸￸￸￸e￸￸￸￸x",
-SEX="S￸￸￸￸￸￸E￸￸￸￸X",
-porn="p￸￸￸￸￸￸o￸r￸n￸",
-Porn="P￸￸￸￸￸￸o￸r￸n￸",
-PORN="P￸￸￸￸￸￸O￸R￸N￸",
-niger="n￸i￸g￸e￸r",
-Niger="N￸i￸g￸e￸r",
-NIGER="N￸I￸G￸E￸R",
-nigger="ṇ￸ị￸g￸￸￸g￸e￸r￸￸",
-Nigger="Ṇ￸ị￸g￸￸￸g￸e￸r￸￸",
-NIGGER="Ṇ￸Ị￸Ģ￸￸￸Ģ￸E￸R￸￸",
-HENTAI="H￸E￸N￸T￸A￸I",
-Hentai="H￸e￸n￸t￸a￸i",
-hentai="h￸e￸n￸t￸a￸i",
-kkk="k￸k￸k",
-KKK="K￸K￸K",
-discord="d￸i￸s￸c￸o￸r￸d",
-Discord="D￸i￸s￸c￸o￸r￸d",
-DISCORD="D￸I￸S￸C￸O￸R￸D",
-nigga="ṇ￸ị￸g￸￸￸g￸a￸￸",
-Nigga="Ṇ￸ị￸g￸￸￸g￸a￸￸",
-NIGGA="Ṇ￸Ị￸Ģ￸￸￸Ģ￸A￸￸",
-niga="n￸i￸g￸a",
-Niga="N￸i￸g￸a",
-NIGA="N￸I￸G￸A",
-DRAKE="D￸R￸A￸K￸E",
-Drake="D￸r￸a￸k￸e",
-drake="d￸r￸a￸k￸e",
-xxx="x￸x￸x",
-XXX="X￸X￸X",
-[" "]="",
-["https://"]="h￸t￸t￸p￸s￸:￸/￸/",
-BLACK="B￸L￸A￸C￸K",
-Black="B￸l￸a￸c￸k",
-black="b￸l￸a￸c￸k",
-SLAVE="S￸L￸A￸V￸E",
-Slave="S￸l￸a￸v￸e",
-slave="s￸l￸a￸v￸e",
-nigg="ṇ￸ị￸g￸￸￸g￸￸",
-Nigg="Ṇ￸ị￸g￸￸￸g￸￸",
-NIGG="Ṇ￸Ị￸Ģ￸￸￸Ģ￸￸",
-["0"]="０",
-["1"]="１",
-["2"]="２",
-["3"]="３￸￸",
-["4"]="４",
-["5"]="５",
-["6"]="６",
-["7"]="７",
-["8"]="８",
-["9"]="９",
-tits="t￸i￸t￸s",
-Tits="T￸i￸t￸s",
-TITS="T￸I￸T￸S",
+local function isEmoji(c)
+    local code = utf8.codepoint(c)  
+
+    
+    if (code >= 0x1F600 and code <= 0x1F64F) or  
+       (code >= 0x1F300 and code <= 0x1F5FF) or  
+       (code >= 0x1F680 and code <= 0x1F6FF) or  
+       (code >= 0x1F700 and code <= 0x1F77F) or  
+       (code >= 0x1F900 and code <= 0x1F9FF) or  
+       (code >= 0x2600 and code <= 0x26FF) or    
+       (code >= 0x2700 and code <= 0x27BF) or    
+       (code >= 0x1F1E6 and code <= 0x1F1FF) then 
+        return true  
+    end
+    return false  
+end
+
+local function modifyText(input)
+local replacements = {
+        sex = "sâ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢xâ€¢",
+        Sex = "Sâ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢x",
+        SEX = "Sâ€¢â€¢â€¢â€¢â€¢â€¢Eâ€¢X",
+        ass = "â€¢aâ€¢â€¢â€¢â€¢â€¢â€¢sâ€¢sâ€¢",
+        Ass = "â€¢Aâ€¢â€¢â€¢â€¢â€¢â€¢sâ€¢sâ€¢",
+        ASS = "â€¢Aâ€¢â€¢â€¢â€¢â€¢â€¢Sâ€¢Sâ€¢",
+        fuck = "fâ€¢â€¢â€¢â€¢â€¢â€¢uâ€¢câ€¢kâ€¢",
+        Fuck = "Fâ€¢â€¢â€¢â€¢â€¢â€¢uâ€¢câ€¢kâ€¢",
+        FUCK = "Fâ€¢â€¢â€¢â€¢â€¢â€¢Uâ€¢Câ€¢Kâ€¢",
+        damn = "â€¢dâ€¢â€¢â€¢â€¢â€¢â€¢aâ€¢â€¢mâ€¢â€¢nâ€¢",
+        Damn = "â€¢Dâ€¢â€¢â€¢â€¢â€¢â€¢aâ€¢â€¢mâ€¢â€¢nâ€¢",
+        DAMN = "â€¢Dâ€¢â€¢â€¢â€¢â€¢â€¢Aâ€¢â€¢Mâ€¢â€¢Nâ€¢",
+        shit = "â€¢sâ€¢â€¢â€¢â€¢â€¢â€¢hâ€¢iâ€¢tâ€¢",
+        Shit = "â€¢Sâ€¢â€¢â€¢â€¢â€¢â€¢hâ€¢iâ€¢tâ€¢",
+        SHIT = "â€¢Sâ€¢â€¢â€¢â€¢â€¢â€¢Hâ€¢Iâ€¢Tâ€¢",
+        pornhub = "â€¢pâ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢râ€¢nâ€¢â€¢â€¢hâ€¢â€¢â€¢ubâ€¢",
+        Pornhub = "â€¢Pâ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢râ€¢nâ€¢â€¢â€¢hâ€¢â€¢â€¢ubâ€¢",
+        porn = "â€¢pâ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢râ€¢nâ€¢",
+        Porn = "â€¢Pâ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢râ€¢nâ€¢",
+        PORN = "â€¢Pâ€¢â€¢â€¢â€¢â€¢â€¢Oâ€¢Râ€¢Nâ€¢",
+        bitch = "â€¢bâ€¢iâ€¢tâ€¢â€¢â€¢câ€¢hâ€¢",
+        Bitch = "â€¢Bâ€¢iâ€¢tâ€¢â€¢â€¢câ€¢hâ€¢",
+        BITCH = "â€¢Bâ€¢Iâ€¢Tâ€¢â€¢â€¢Câ€¢Hâ€¢",
+        nigga = "ṇâ€¢ịâ€¢gâ€¢â€¢â€¢gâ€¢a",
+        nigger = "ṇâ€¢ịâ€¢gâ€¢â€¢â€¢gâ€¢eâ€¢r\bâ€¢nâ€¢",
+        Nigga = "Ṇâ€¢ịâ€¢gâ€¢â€¢â€¢gâ€¢a",
+        Nigger = "Ṇâ€¢ịâ€¢gâ€¢â€¢â€¢gâ€¢eâ€¢r\bâ€¢nâ€¢",
+        NIGGER = "Ṇâ€¢Ịâ€¢Ģâ€¢â€¢â€¢Ģâ€¢Eâ€¢R\bâ€¢Nâ€¢",
+        NIGGAS = "Ṇâ€¢Ịâ€¢Ģâ€¢â€¢â€¢Ģâ€¢Aâ€¢S\bâ€¢Nâ€¢",
+        NIGGA = "Ṇâ€¢Ịâ€¢Ģâ€¢â€¢â€¢Ģâ€¢A\bâ€¢Nâ€¢",
+        dick = "â€¢dâ€¢iâ€¢â€¢câ€¢kâ€¢",
+        gay = "gâ€¢â€¢â€¢â€¢â€¢â€¢aâ€¢y",
+        Gay = "Ģâ€¢â€¢â€¢â€¢â€¢â€¢aâ€¢y",
+        GAY = "Ģâ€¢â€¢â€¢â€¢â€¢â€¢Aâ€¢Y",
+        pussy = "â€¢pâ€¢uâ€¢sâ€¢sâ€¢â€¢â€¢â€¢â€¢â€¢yâ€¢",
+        Pussy = "â€¢Pâ€¢uâ€¢sâ€¢sâ€¢â€¢â€¢â€¢â€¢â€¢yâ€¢",
+        PUSSY = "â€¢Pâ€¢Uâ€¢Sâ€¢Sâ€¢â€¢â€¢â€¢â€¢â€¢Yâ€¢",
+        breast = "â€¢bâ€¢râ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢aâ€¢sâ€¢tâ€¢",
+        Breast = "â€¢Bâ€¢râ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢aâ€¢sâ€¢tâ€¢",
+        BREAST ="â€¢Bâ€¢Râ€¢â€¢â€¢â€¢â€¢â€¢Eâ€¢Aâ€¢Sâ€¢Tâ€¢",
+        ["0"] = "\xEF\xBC\x90â€¢",
+    ["1"] = "\xEF\xBC\x91â€¢",
+    ["2"] = "\xEF\xBC\x92â€¢",  
+    ["3"] = "\xEF\xBC\x93â€¢",  
+    ["4"] = "\xEF\xBC\x94â€¢",  
+    ["5"] = "\xEF\xBC\x95â€¢",  
+    ["6"] = "\xEF\xBC\x96â€¢", 
+    ["7"] = "\xEF\xBC\x97â€¢", 
+    ["8"] = "\xEF\xBC\x98â€¢",  
+    ["9"] = "\xEF\xBC\x99â€¢",  
     }
 
-    for originalWord, replacementWord in pairs(replacements) do
-        text = text:gsub(originalWord, replacementWord)
+    local lowerInput = input
+
+    
+    for word, replacement in pairs(replacements) do
+        lowerInput = lowerInput:gsub("(%s?)(" .. word .. ")(%s?)", function(before, matched, after)
+            local modifiedReplacement = replacement
+            if before ~= "" then
+                modifiedReplacement = modifiedReplacement
+            end
+            if after ~= "" then
+                modifiedReplacement = modifiedReplacement
+            end
+            return before .. "{" .. modifiedReplacement .. "}" .. after
+        end)
     end
 
-    local newText = ""
-    local i = 1
+    
+    local emojiPattern = "[%z\1-\127\194-\244][\128-\191]*"
+    local modifiedInput = lowerInput:gsub(emojiPattern, function(c)
+        if isEmoji(c) then
+            return "{" .. c .. "}"
+        end
+        return c
+    end)
 
-    while i <= #text do
-        local isReplaced = false
+    
+    local result = ""
+    local insideReplacedWord = false
 
-        for originalWord, replacementWord in pairs(replacements) do
-            if text:sub(i, i + #replacementWord - 1) == replacementWord then
-                newText = newText .. replacementWord
-                i = i + #replacementWord
-                isReplaced = true
-                break
+    for i = 1, #modifiedInput do
+        local char = modifiedInput:sub(i, i)
+
+        if char == "{" then
+            insideReplacedWord = true
+        elseif char == "}" then
+            insideReplacedWord = false
+        elseif insideReplacedWord then
+            result = result .. char
+        elseif char == " " then
+        result = result .. "\b"
+    
+        else
+            result = result .. char
+            
+            if i < #modifiedInput and modifiedInput:sub(i + 1, i + 1) ~= " " then
+                result = result .. "â€¢"
             end
         end
-
-        if not isReplaced then
-            newText = newText .. text:sub(i, i) .. "￸"
-            i = i + 1
-        end
     end
 
-    box.Text = "<۞>\r" .. newText
+    
+    result = result:gsub("{", ""):gsub("}", "")
+    result = result:gsub("â€¢", "\xEF\xBF\xB8")
+    result = result:gsub("|", "\r>")
+    
+    
+    local A_1 = result
+    local A_2 = "All"
+
+    if game:GetService("TextChatService"):FindFirstChild("TextChannels") then
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("<><۞><>\r>\b" .. A_1)
+    else
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("<<</>>>\b" .. A_1, A_2)
+    end
 end
 
-chat.MouseButton1Click:connect(function()
-replaceText(box)
-sending()
-box.Text = ""
+chat.MouseButton1Click:Connect(function()
+    local inputString = box.Text
+    modifyText(inputString)
+    box.Text = ""
 end)
 
 local exa = Instance.new("TextButton")
@@ -205,13 +234,17 @@ exa.BorderSizePixel = 0
 exa.Text = "Example >"
 exa.TextColor3 = Color3.new(255, 255, 255)
 exa.BackgroundTransparency = 0
-exa.Font = Enum.Font.Code
+exa.Font = Enum.Font.Arial
 exa.TextSize = 17
 exa.Parent = main
 
+local cornerf = Instance.new("UICorner")
+cornerf.CornerRadius = UDim.new(1)
+cornerf.Parent = exa
+
 local mainb = Instance.new("Frame")
 mainb.Size = UDim2.new(1, 0, 1, 0)
-mainb.Position = UDim2.new(1.01, 0, 0, 0)
+mainb.Position = UDim2.new(0, 0, 1.01, 0)
 mainb.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
 mainb.BorderColor3 = Color3.new(0, 0, 0)
 mainb.BorderSizePixel = 0
@@ -219,6 +252,27 @@ mainb.Active = true
 mainb.BackgroundTransparency = 0
 mainb.Visible = false
 mainb.Parent = main
+
+local cornerb = Instance.new("UICorner")
+cornerb.CornerRadius = UDim.new(0.1)
+cornerb.Parent = mainb
+
+local cornerc = Instance.new("UICorner")
+cornerc.CornerRadius = UDim.new(0.1)
+cornerc.Parent = main
+
+local labelb = Instance.new("TextLabel")
+labelb.Size = UDim2.new(1, 0, 0.2, 0)
+labelb.Position = UDim2.new(0, 0, 0, 0)
+labelb.BackgroundColor3 = Color3.new(0, 0, 0)
+labelb.BorderColor3 = Color3.new(0, 0, 0)
+labelb.BorderSizePixel = 0
+labelb.Text = "Example"
+labelb.TextColor3 = Color3.new(255, 255, 255)
+labelb.BackgroundTransparency = 1
+labelb.Font = Enum.Font.Arial
+labelb.TextSize = 20
+labelb.Parent = mainb
 
 local function yyy(mainb, exa)
     if mainb.Visible then
@@ -235,14 +289,14 @@ exa.MouseButton1Click:Connect(function()
 end)
 
 local scroll = Instance.new("ScrollingFrame")
-scroll.Size = UDim2.new(0.8, 0, 0.8, 0)
-scroll.Position = UDim2.new(0.1, 0, 0.1, 0)
+scroll.Size = UDim2.new(0.8, 0, 0.7, 0)
+scroll.Position = UDim2.new(0.1, 0, 0.2, 0)
 scroll.BackgroundColor3 = Color3.new(1, 1, 1)
 scroll.BorderColor3 = Color3.new(0, 0, 0)
 scroll.BorderSizePixel = 0
 scroll.BackgroundTransparency = 1
-scroll.CanvasSize = UDim2.new(0, 0, 10, 0)
 scroll.ScrollBarThickness = 0
+scroll.CanvasSize = UDim2.new(0, 0, 30, 0)
 scroll.Parent = mainb
 
 local list = Instance.new("UIListLayout")
@@ -251,81 +305,99 @@ list.SortOrder = Enum.SortOrder.LayoutOrder
 list.Padding = UDim.new(0, 10)
 list.Parent = scroll
 
-local long = Instance.new("TextButton")
-long.Size = UDim2.new(1, 0, 0.02, 0)
-long.Position = UDim2.new(0.5, 0, 0.5, 0)
-long.BackgroundColor3 = Color3.new(0, 0, 0)
-long.BorderColor3 = Color3.new(0, 0, 0)
-long.BorderSizePixel = 0
-long.Text = "Refresh Chat"
-long.TextColor3 = Color3.new(255, 255, 255)
-long.BackgroundTransparency = 0
-long.Font = Enum.Font.Code
-long.TextSize = 15
-long.Parent = scroll
+local buttonCount = 0
+local function example(text)
+task.wait()
+    buttonCount = buttonCount + 1
 
-long.MouseButton1Click:Connect(function()
-box.Text = "￸\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r￸"
-sending()
-box.Text = ""
-end)
+    local textButton = Instance.new("TextButton")
+    textButton.Size = UDim2.new(1, 0, 0.005, 0)
+    textButton.Position = UDim2.new(0, 0, 0, (buttonCount - 1) * 45)
+    textButton.BackgroundColor3 = Color3.fromRGB(60,60,60)
+    textButton.BorderSizePixel = 0
+    textButton.Text = text
+    textButton.TextScaled = true 
+    textButton.TextWrapped = true
+    textButton.TextSize = 10
+    textButton.TextColor3 = Color3.new(1, 1, 1)
+    textButton.Font = Enum.Font.Arial
+    textButton.Parent = scroll
 
-local httpa = Instance.new("TextButton")
-httpa.Size = UDim2.new(1, 0, 0.02, 0)
-httpa.Position = UDim2.new(0.5, 0, 0.5, 0)
-httpa.BackgroundColor3 = Color3.new(0, 0, 0)
-httpa.BorderColor3 = Color3.new(0, 0, 0)
-httpa.BorderSizePixel = 0
-httpa.Text = "free hentai https://animeh.to"
-httpa.TextColor3 = Color3.new(255, 255, 255)
-httpa.BackgroundTransparency = 0
-httpa.Font = Enum.Font.Code
-httpa.TextSize = 12
-httpa.Parent = scroll
-
-httpa.MouseButton1Click:Connect(function()
-box.Text = "free hentai https://animeh.to"
-replaceText(box)
-sending()
-box.Text = ""
-end)
-
-local httpb = Instance.new("TextButton")
-httpb.Size = UDim2.new(1, 0, 0.02, 0)
-httpb.Position = UDim2.new(0.5, 0, 0.5, 0)
-httpb.BackgroundColor3 = Color3.new(0, 0, 0)
-httpb.BorderColor3 = Color3.new(0, 0, 0)
-httpb.BorderSizePixel = 0
-httpb.Text = "free robux https://xhamster.com"
-httpb.TextColor3 = Color3.new(255, 255, 255)
-httpb.BackgroundTransparency = 0
-httpb.Font = Enum.Font.Code
-httpb.TextSize = 10
-httpb.Parent = scroll
-
-httpb.MouseButton1Click:Connect(function()
-box.Text = "free robux https://xhamster.com"
-replaceText(box)
-sending()
-box.Text = ""
-end)
-
-local httpc = Instance.new("TextButton")
-httpc.Size = UDim2.new(1, 0, 0.02, 0)
-httpc.Position = UDim2.new(0.5, 0, 0.5, 0)
-httpc.BackgroundColor3 = Color3.new(0, 0, 0)
-httpc.BorderColor3 = Color3.new(0, 0, 0)
-httpc.BorderSizePixel = 0
-httpc.Text = "fe neko https://rawsex.com/neko"
-httpc.TextColor3 = Color3.new(255, 255, 255)
-httpc.BackgroundTransparency = 0
-httpc.Font = Enum.Font.Code
-httpc.TextSize = 10
-httpc.Parent = scroll
-
-httpc.MouseButton1Click:Connect(function()
-box.Text = "fe neko https://rawsex.com/neko"
-replaceText(box)
-sending()
-box.Text = ""
-end)
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0.3)
+corner.Parent = textButton
+    
+    textButton.MouseButton1Click:Connect(function()
+        box.Text = textButton.Text
+    end)
+end
+example("https://animeh.to")
+example("nigga executor\r>\bhttps://nigga.gg")
+example("say KILL DAFUCKBOOM\rfor free robux")
+example("shitbidick toilet sucks")
+example("stupid fatherless iPad kid using niggamod")
+example("niggamod detected ⚠️")
+example("Shitbidick not skibidi")
+example("big black cock")
+example("Fuck around and find out for yourself")
+example("Want some free Robux?\r>\bGo to Xvideos.com for free Robux")
+example("I'm tired of all this shit")
+example("That was cuntacular 💯")
+example("Stop being a cunt")
+example("Fuck this shit")
+example("Go fuck yourself")
+example("I want to kill myself")
+example("There's no cure for being a cunt")
+example("Fuck you")
+example("Fuck you\rwith love {♡}")
+example("1 nigga\r>\b2 nigga\r>\boh damn")
+example("https://xvideos.com")
+example("https://pornhub.com is awesome")
+example("I have a cute XHamster")
+example("https://nhentai.net")
+example("https://nekopoi.care")
+example("E621? Eugh, what the fuck?")
+example("This shit is absolutely insane!")
+    example("What the hell were you thinking?")
+    example("You're such a dumbass")
+    example("i can't believe this bullshit")
+    example("This is a load of crap")
+    example("Get your head out of your ass")
+    example("You're driving me fucking crazy")
+    example("Quit acting like a little bitch")
+    example("This is some serious bullshit right here")
+    example("i don't give a flying fuck")
+    example("You think you're hot shit, huh?")
+    example("What the fuck is going on?")
+    example("This party is lit as fuck")
+    example("i'm so done with this crap")
+    example("Don't be a little shit")
+    example("You absolute legend, you crazy bastard")
+    example("Shut the fuck up already")
+    example("i'm not in the mood for your bullshit")
+    example("You're being a real pain in the ass")
+    example("This is fucking ridiculous")
+    example("Get your shit together")
+    example("You gotta be shitting me")
+    example("What the fuck is this nonsense?")
+    example("You're a total piece of shit")
+    example("i'm so fucking tired of this drama")
+    example("Get your shit together, damn it")
+    example("Why the hell would you do that?")
+    example("This is driving me absolutely nuts")
+    example("i can't deal with this crap anymore")
+    example("Seriously, what the hell were you thinking?")
+    example("You are being a complete jackass")
+    example("This place is a fucking mess")
+    example("Don't test me, you moron")
+    example("i swear to god, this is fucking ridiculous")
+    example("You're such a fucking idiot")
+    example("Stop being such a whiny brat")
+    example("This is beyond fucking stupid")
+    example("You're asking for trouble, you know that?")
+    example("Get the fuck out of my way")
+    example("What kind of bullshit is this?")
+    example("i’m done with your bullshit excuses")
+    example("You're really pushing my buttons here")
+    example("This is a complete fucking disaster")
+    example("Shit happens, but this is too much")
