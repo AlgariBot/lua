@@ -244,16 +244,16 @@ local replacements = {
     
     result = result:gsub("{", ""):gsub("}", "")
     result = result:gsub("â€¢", "\xEF\xBF\xB8")
-    result = result:gsub("|", "\r>\b")
+    result = result:gsub("|", "\r> ")
     
     
     local A_1 = result
     local A_2 = "All"
 
     if game:GetService("TextChatService"):FindFirstChild("TextChannels") then
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("<><۞><>\r>\b" .. A_1)
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("<<۞>>\r>\b" .. A_1)
     else
-        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("<<</>>>\b" .. A_1, A_2)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("<<۞>>\b" .. A_1, A_2)
     end
 end
 
@@ -369,6 +369,11 @@ corner.Parent = textButton
         box.Text = textButton.Text
     end)
 end
+example("*cums alot*")
+example("let me suck your dick")
+example("i rape children")
+example("Im a pedophile")
+example("i watch child porn")
 example("shitty chat bypass with key")
 example("nigga executor|https://nigga.gg")
 example("say KILL DAFUCKBOOM|for free robux")
@@ -378,7 +383,7 @@ example("niggamod detected⚠")
 example("Shitbidick not skibidi")
 example("big black cock")
 example("Fuck around and find out for yourself")
-example("Want some free Robux?|Go to Xvideos.com for free Robux")
+example("Want some free Robux|Go to Xvideos.com for free Robux")
 example("I'm tired of all this shit")
 example("That was cuntacular 💯")
 example("Stop being a cunt")
