@@ -37,7 +37,7 @@ box.TextColor3 = Color3.new(1,1,1)
 box.BackgroundTransparency = 0
 box.Font = Enum.Font.Arial
 box.TextSize = 17
-box.PlaceholderText = "Enter Text..."
+box.PlaceholderText = "| = NewLine"
 box.TextWrapped = true
 box.TextScaled = true
 box.ClearTextOnFocus = false
@@ -63,6 +63,44 @@ chat.Parent = main
 local cornere = Instance.new("UICorner")
 cornere.CornerRadius = UDim.new(1)
 cornere.Parent = chat
+
+local abs = Instance.new("TextButton")
+abs.Size = UDim2.new(1, 0, 0.1, 0)
+abs.Position = UDim2.new(0, 0, -0.11, 0)
+abs.BackgroundColor3 = Color3.new(0.5, 0, 0)
+abs.BorderColor3 = Color3.new(0, 0, 0)
+abs.BorderSizePixel = 0
+abs.Text = "FE Chat Refresh"
+abs.TextColor3 = Color3.new(255, 255, 255)
+abs.BackgroundTransparency = 0
+abs.Font = Enum.Font.Arial
+abs.TextSize = 15
+abs.Parent = main
+
+local corgerg = Instance.new("UICorner")
+corgerg.CornerRadius = UDim.new(1)
+corgerg.Parent = abs
+
+local function sending()
+    local TextChatService = game:GetService("TextChatService")
+    local Players = game:GetService("Players")
+
+    local function sendMessage(msg)
+    local player = Players.LocalPlayer
+    if TextChatService.ChatInputBarConfiguration.TargetTextChannel then
+    TextChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync(msg)
+    else
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+    end
+    end
+sendMessage(box.Text)
+end
+
+abs.MouseButton1Click:connect(function()
+    box.Text = "￸\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r￸"
+sending()
+box.Text = ""
+end)
 
 local function isEmoji(c)
     local code = utf8.codepoint(c)  
@@ -206,7 +244,7 @@ local replacements = {
     
     result = result:gsub("{", ""):gsub("}", "")
     result = result:gsub("â€¢", "\xEF\xBF\xB8")
-    result = result:gsub("|", "\r>")
+    result = result:gsub("|", "\r>\b")
     
     
     local A_1 = result
@@ -331,16 +369,16 @@ corner.Parent = textButton
         box.Text = textButton.Text
     end)
 end
-example("https://animeh.to")
-example("nigga executor\r>\bhttps://nigga.gg")
-example("say KILL DAFUCKBOOM\rfor free robux")
+example("shitty chat bypass with key")
+example("nigga executor|https://nigga.gg")
+example("say KILL DAFUCKBOOM|for free robux")
 example("shitbidick toilet sucks")
 example("stupid fatherless iPad kid using niggamod")
-example("niggamod detected ⚠️")
+example("niggamod detected⚠")
 example("Shitbidick not skibidi")
 example("big black cock")
 example("Fuck around and find out for yourself")
-example("Want some free Robux?\r>\bGo to Xvideos.com for free Robux")
+example("Want some free Robux?|Go to Xvideos.com for free Robux")
 example("I'm tired of all this shit")
 example("That was cuntacular 💯")
 example("Stop being a cunt")
@@ -349,8 +387,8 @@ example("Go fuck yourself")
 example("I want to kill myself")
 example("There's no cure for being a cunt")
 example("Fuck you")
-example("Fuck you\rwith love {♡}")
-example("1 nigga\r>\b2 nigga\r>\boh damn")
+example("Fuck you|with love {♡}")
+example("1 nigga|2 nigga|oh damn")
 example("https://xvideos.com")
 example("https://pornhub.com is awesome")
 example("I have a cute XHamster")
