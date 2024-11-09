@@ -1,9 +1,5 @@
---[[
-hehe
-detected trick removed because my main banned 6 times :(😂😂😂😂😂
-]]
-
 local gui = Instance.new("ScreenGui")
+gui.Name = "ABCDE"
 gui.Parent = game.CoreGui
 
 local bar = Instance.new("Frame")
@@ -115,12 +111,12 @@ box.Position = UDim2.new(0.05, 0, 0.07, 0)
 box.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 box.BorderColor3 = Color3.new(0, 0, 0)
 box.BorderSizePixel = 0
-box.Text = "back shit"
+box.Text = ""
 box.TextColor3 = Color3.new(1,1,1)
 box.BackgroundTransparency = 0.8
 box.Font = Enum.Font.SourceSans
 box.TextSize = 15
-box.PlaceholderText = "Enter Text"
+box.PlaceholderText = "Enter Text..."
 box.TextWrapped = true
 box.ClearTextOnFocus = false
 box.MultiLine = true
@@ -202,7 +198,7 @@ credit.Position = UDim2.new(0.05, 0, 0.4, 0)
 credit.BackgroundColor3 = Color3.new(0, 0, 0)
 credit.BorderColor3 = Color3.new(0, 0, 0)
 credit.BorderSizePixel = 0
-credit.Text = "Created by: Algari_4 and Alga_ri (GearSecond)\rGaze For Clean Bypass\rNeverpatched is undetected"
+credit.Text = "Created by: Alga_ri (GearSecond)\nGaze For Clean Bypass\rNeverpatched is undetected"
 credit.TextColor3 = Color3.new(255, 255, 255)
 credit.BackgroundTransparency = 0.6
 credit.Font = Enum.Font.Arial
