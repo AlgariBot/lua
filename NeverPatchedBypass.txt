@@ -116,6 +116,7 @@ box.TextColor3 = Color3.new(1,1,1)
 box.BackgroundTransparency = 0.8
 box.Font = Enum.Font.SourceSans
 box.TextScaled = true
+box.TextSize = 13
 box.PlaceholderText = "Enter Text..."
 box.TextWrapped = true
 box.ClearTextOnFocus = false
