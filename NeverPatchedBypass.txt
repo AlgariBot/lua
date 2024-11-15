@@ -29,7 +29,7 @@ lbl.Position = UDim2.new(0, 0, 0, 0)
 lbl.BackgroundColor3 = Color3.new(0, 0, 0)
 lbl.BorderColor3 = Color3.new(0, 0, 0)
 lbl.BorderSizePixel = 0
-lbl.Text = "NeverPatched 3.2B"
+lbl.Text = "NeverPatched 3.2"
 lbl.TextColor3 = Color3.new(255, 255, 255)
 lbl.BackgroundTransparency = 1
 lbl.Font = Enum.Font.Arial
@@ -115,7 +115,7 @@ box.Text = ""
 box.TextColor3 = Color3.new(1,1,1)
 box.BackgroundTransparency = 0.8
 box.Font = Enum.Font.SourceSans
-box.TextSize = 15
+box.TextScaled = true
 box.PlaceholderText = "Enter Text..."
 box.TextWrapped = true
 box.ClearTextOnFocus = false
@@ -167,7 +167,7 @@ send2.TextSize = 15
 send2.Parent = sec
 
 local convert = Instance.new("TextButton")
-convert.Size = UDim2.new(1, 0, 0.2, 0)
+convert.Size = UDim2.new(1, 0, 0.1, 0)
 convert.Position = UDim2.new(0.5, 0, 0.5, 0)
 convert.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 convert.BorderColor3 = Color3.new(0, 0, 0)
@@ -180,7 +180,7 @@ convert.TextSize = 15
 convert.Parent = sec
 
 local clear = Instance.new("TextButton")
-clear.Size = UDim2.new(1, 0, 0.2, 0)
+clear.Size = UDim2.new(1, 0, 0.1, 0)
 clear.Position = UDim2.new(0.0, 0, 0.5, 0)
 clear.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 clear.BorderColor3 = Color3.new(0, 0, 0)
@@ -193,7 +193,7 @@ clear.TextSize = 15
 clear.Parent = sec
 
 local exa = Instance.new("TextButton")
-exa.Size = UDim2.new(1, 0, 0.2, 0)
+exa.Size = UDim2.new(1, 0, 0.1, 0)
 exa.Position = UDim2.new(0.0, 0, 0.5, 0)
 exa.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 exa.BorderColor3 = Color3.new(0, 0, 0)
@@ -211,7 +211,7 @@ credit.Position = UDim2.new(0.05, 0, 0.4, 0)
 credit.BackgroundColor3 = Color3.new(0, 0, 0)
 credit.BorderColor3 = Color3.new(0, 0, 0)
 credit.BorderSizePixel = 0
-credit.Text = "Created By PlayStationIN".."\n".."Algari_4 and Alga_ri banned permanently :(".."\n".."Keybind: Z = send, X = send2 C = Clear".."\n".."wait for new update
+credit.Text = "Created By PlayStationIN".."\n".."Algari_4 and Alga_ri banned permanently :("
 credit.TextColor3 = Color3.new(255, 255, 255)
 credit.BackgroundTransparency = 0.6
 credit.Font = Enum.Font.Arial
@@ -546,24 +546,63 @@ send2.MouseButton1Click:Connect(function()
     box.Text = ""
 end)
 
-local UserInputService = game:GetService("UserInputService")
+local scroll = Instance.new("ScrollingFrame")
+scroll.Size = UDim2.new(0.8, 0, 0.7, 0)
+scroll.Position = UDim2.new(0.1, 0, 0.2, 0)
+scroll.BackgroundColor3 = Color3.new(1, 1, 1)
+scroll.BorderColor3 = Color3.new(0, 0, 0)
+scroll.BorderSizePixel = 0
+scroll.BackgroundTransparency = 1
+scroll.ScrollBarThickness = 0
+scroll.CanvasSize = UDim2.new(0, 0, 30, 0)
+scroll.Parent = mainb
 
-local send = script.Parent:WaitForChild("Send")
-local send2 = script.Parent:WaitForChild("Send2")
-local clear = script.Parent:WaitForChild("Clear")
+local list = Instance.new("UIListLayout")
+list.HorizontalAlignment = Enum.HorizontalAlignment.Center
+list.SortOrder = Enum.SortOrder.LayoutOrder
+list.Padding = UDim.new(0, 10)
+list.Parent = scroll
 
-local function onKeyPress(input, gameProcessedEvent)
-    if gameProcessedEvent then return end  
+local buttonCount = 0
+local function example(text)
+task.wait()
+    buttonCount = buttonCount + 1
 
-    if input.UserInputType == Enum.UserInputType.Keyboard then
-        if input.KeyCode == Enum.KeyCode.Z then
-            send.MouseButton1Click:Fire()
-        elseif input.KeyCode == Enum.KeyCode.X then
-            send2.MouseButton1Click:Fire()
-        elseif input.KeyCode == Enum.KeyCode.C then
-            clear.MouseButton1Click:Fire()
-        end
-    end
+    local textButton = Instance.new("TextButton")
+    textButton.Size = UDim2.new(1, 0, 0.003, 0)
+    textButton.Position = UDim2.new(0, 0, 0, (buttonCount - 1) * 45)
+    textButton.BackgroundColor3 = Color3.fromRGB(60,60,60)
+    textButton.BorderSizePixel = 0
+    textButton.Text = text
+    textButton.TextScaled = true 
+    textButton.TextWrapped = true
+    textButton.TextSize = 10
+    textButton.TextColor3 = Color3.new(1, 1, 1)
+    textButton.Font = Enum.Font.Arial
+    textButton.Parent = scroll
+
+    textButton.MouseButton1Click:Connect(function()
+        box.Text = textButton.Text
+    end)
 end
 
-UserInputService.InputBegan:Connect(onKeyPress)
+example("I Rape Children")
+example("i am pedophile")
+example("Big Boobs")
+example("print(\"kill nigga\")")
+example("ANAL SEX")
+example("https://discord.gg/FreePussy")
+example("Fuck This Shit")
+example("Big Black Cock")
+example("nigga executor|https://nigga.gg")
+example("Go fuck yourself")
+example("Fuck You")
+example("Stop Being Cunt")
+example("Shut the fuck up")
+example("Dafuckboom is a nigger monkey")
+example("Shitbidick toilet sucks")
+example("Free Robux at https://animeh.to")
+example("this bitch has a big boobs")
+example("recommended pussy color 204.129.128")
+example("this nigga from africa")
+example("Niggamod Detected")
