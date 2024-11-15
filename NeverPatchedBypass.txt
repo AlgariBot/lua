@@ -141,7 +141,7 @@ list.Padding = UDim.new(0, 10)
 list.Parent = sec
 
 local send = Instance.new("TextButton")
-send.Size = UDim2.new(1, 0, 0.1, 0)
+send.Size = UDim2.new(1, 0, 0.2, 0)
 send.Position = UDim2.new(0.5, 0, 0.5, 0)
 send.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 send.BorderColor3 = Color3.new(0, 0, 0)
@@ -154,12 +154,12 @@ send.TextSize = 15
 send.Parent = sec
 
 local send2 = Instance.new("TextButton")
-send2.Size = UDim2.new(1, 0, 0.1, 0)
+send2.Size = UDim2.new(1, 0, 0.2, 0)
 send2.Position = UDim2.new(0.5, 0, 0.5, 0)
 send2.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 send2.BorderColor3 = Color3.new(0, 0, 0)
 send2.BorderSizePixel = 0
-send2.Text = "GL BYPASS"
+send2.Text = "Legit Send"
 send2.TextColor3 = Color3.new(255, 255, 255)
 send2.BackgroundTransparency = 0
 send2.Font = Enum.Font.Arial
@@ -167,7 +167,7 @@ send2.TextSize = 15
 send2.Parent = sec
 
 local convert = Instance.new("TextButton")
-convert.Size = UDim2.new(1, 0, 0.1, 0)
+convert.Size = UDim2.new(1, 0, 0.2, 0)
 convert.Position = UDim2.new(0.5, 0, 0.5, 0)
 convert.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 convert.BorderColor3 = Color3.new(0, 0, 0)
@@ -180,7 +180,7 @@ convert.TextSize = 15
 convert.Parent = sec
 
 local clear = Instance.new("TextButton")
-clear.Size = UDim2.new(1, 0, 0.1, 0)
+clear.Size = UDim2.new(1, 0, 0.2, 0)
 clear.Position = UDim2.new(0.0, 0, 0.5, 0)
 clear.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 clear.BorderColor3 = Color3.new(0, 0, 0)
@@ -198,7 +198,7 @@ credit.Position = UDim2.new(0.05, 0, 0.4, 0)
 credit.BackgroundColor3 = Color3.new(0, 0, 0)
 credit.BorderColor3 = Color3.new(0, 0, 0)
 credit.BorderSizePixel = 0
-credit.Text = "Created by: Alga_ri (GearSecond)\nGaze For Clean Bypass\rNeverpatched is undetected"
+credit.Text = "Created By PlayStationIN".."\n".."Algari_4 and Alga_ri banned permanently :(".."\n".."Keybind: Z = send, X = send2 C = Clear".."\n".."wait for new update
 credit.TextColor3 = Color3.new(255, 255, 255)
 credit.BackgroundTransparency = 0.6
 credit.Font = Enum.Font.Arial
@@ -265,10 +265,6 @@ send.MouseButton1Click:connect(function()
 convertText()
 sending()
 box.Text = ""
-end)
-
-send2.MouseButton1Click:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AlgariBot/lua/refs/heads/Lua-Script-Executor/NPCLEAN.txt"))()
 end)
 
 convert.MouseButton1Click:connect(function()
