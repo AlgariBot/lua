@@ -1,0 +1,735 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "neverpatched ultimate"
+gui.Parent = game.CoreGui
+
+local minmax = Instance.new("TextButton")
+local chatFrame = Instance.new("Frame")
+local chatBar = Instance.new("Frame")
+local cornerC = Instance.new("UICorner")
+local chatBox = Instance.new("TextBox")
+local logBox = Instance.new("TextBox")
+local border = Instance.new("UIStroke")
+local chat = Instance.new("TextButton")
+
+minmax.Name = "Icon"
+minmax.Size = UDim2.new(0.04, 0, 0.095, 0)
+minmax.Position = UDim2.new(0.95, 0, -0.1, 0)
+minmax.BackgroundColor3 = Color3.new(0, 0, 0)
+minmax.BorderColor3 = Color3.new(0, 0, 0)
+minmax.BorderSizePixel = 0
+minmax.Text = ""
+minmax.TextColor3 = Color3.new(255, 255, 255)
+minmax.BackgroundTransparency = 1
+minmax.Draggable = true
+minmax.Font = Enum.Font.SourceSansBold
+minmax.TextScaled = true
+minmax.Parent = gui
+
+chatFrame.Name = "ChatBFrame"
+chatFrame.Size = UDim2.new(0.4, 0, 0.39, 0)
+chatFrame.Position = UDim2.new(0.007, 0, 0.007, 0)
+chatFrame.BackgroundColor3 = Color3.new(0,0,0)
+chatFrame.BorderColor3 = Color3.new(0, 0, 0)
+chatFrame.BorderSizePixel = 0
+chatFrame.Active = true
+chatFrame.BackgroundTransparency = 0.5
+chatFrame.Draggable = false
+chatFrame.Active = false
+chatFrame.Parent = gui
+
+local cornerB = Instance.new("UICorner")
+cornerB.CornerRadius = UDim.new(0,8)
+cornerB.Parent = chatFrame
+
+chatBar.Name = "ChatBar"
+chatBar.Size = UDim2.new(0.98, 0, 0.2, 0)
+chatBar.Position = UDim2.new(0.01, 0, 0.77, 0)
+chatBar.BackgroundColor3 = Color3.new(1, 1, 1)
+chatBar.BorderColor3 = Color3.new(0, 0, 0)
+chatBar.BorderSizePixel = 0
+chatBar.Active = true
+chatBar.BackgroundTransparency = 0.7
+chatBar.Draggable = true
+chatBar.Parent = chatFrame
+
+cornerC.CornerRadius = UDim.new(0, 5)
+cornerC.Parent = chatBar
+
+chatBox.Name = "ChatBox"
+chatBox.Size = UDim2.new(0.75, 0, 0.8, 0)
+chatBox.Position = UDim2.new(0.02, 0, 0.1, 0)
+chatBox.BackgroundColor3 = Color3.new(0, 0, 0)
+chatBox.BorderColor3 = Color3.new(0, 0, 0)
+chatBox.BorderSizePixel = 0
+chatBox.Text = ""
+chatBox.PlaceholderText = "Tap here to chat, Set your language to Қазақ ТіЛі"
+chatBox.TextColor3 = Color3.new(1,1,1)
+chatBox.BackgroundTransparency = 1
+chatBox.Font = Enum.Font.ArialBold
+chatBox.TextSize = 14
+chatBox.TextXAlignment = Enum.TextXAlignment.Left
+chatBox.TextWrapped = true
+chatBox.ClearTextOnFocus = false
+chatBox.Parent = chatBar
+
+local scroll = Instance.new("ScrollingFrame")
+scroll.Size = UDim2.new(0.96, 0, 0.71, 0)
+scroll.Position = UDim2.new(0.02, 0, 0.04, 0)
+scroll.BackgroundColor3 = Color3.new(1, 1, 1)
+scroll.BorderColor3 = Color3.new(0, 0, 0)
+scroll.BorderSizePixel = 0
+scroll.BackgroundTransparency = 1
+scroll.ScrollBarThickness = 0
+scroll.Parent = chatFrame
+
+logBox.Name = "log"
+logBox.Size = UDim2.new(1, 0, 1, 0)
+logBox.Position = UDim2.new(0, 0, 0, 0)
+logBox.BackgroundColor3 = Color3.new(0, 0, 0)
+logBox.BorderColor3 = Color3.new(0, 0, 0)
+logBox.BorderSizePixel = 0
+logBox.Text = ""
+logBox.TextColor3 = Color3.new(1,1,1)
+logBox.BackgroundTransparency = 1
+logBox.Font = Enum.Font.ArialBold
+logBox.TextSize = 14
+logBox.TextXAlignment = Enum.TextXAlignment.Left
+logBox.TextYAlignment = Enum.TextYAlignment.Top
+logBox.TextWrapped = true
+logBox.Active = false
+logBox.Parent = scroll
+
+border.Color = Color3.new(0, 0, 0)
+border.Thickness = 1.5
+border.Parent = logBox
+
+chat.Name = "chat"
+chat.Size = UDim2.new(0.1, 0, 0.8, 0)
+chat.Position = UDim2.new(0.89, 0, 0.1, 0)
+chat.BackgroundColor3 = Color3.new(0, 0, 0)
+chat.BorderColor3 = Color3.new(0, 0, 0)
+chat.BorderSizePixel = 0
+chat.Text = ">"
+chat.TextColor3 = Color3.new(255, 255, 255)
+chat.BackgroundTransparency = 0.5
+chat.Font = Enum.Font.GothamBold
+chat.TextSize = 20
+chat.Parent = chatBar
+
+local chat2 = Instance.new("TextButton")
+chat2.Size = UDim2.new(0.1, 0, 0.8, 0)
+chat2.Position = UDim2.new(0.89, 0, 0.1, 0)
+chat2.BackgroundColor3 = Color3.new(0, 0, 0)
+chat2.BorderColor3 = Color3.new(0, 0, 0)
+chat2.BorderSizePixel = 1
+chat2.Text = ">"
+chat2.TextColor3 = Color3.new(255, 255, 255)
+chat2.BackgroundTransparency = 0.5
+chat2.Font = Enum.Font.GothamBold
+chat2.TextSize = 20
+chat2.Visible = false
+chat2.Parent = chatBar
+
+local cornerD = Instance.new("UICorner")
+cornerD.CornerRadius = UDim.new(0, 5)
+cornerD.Parent = chat
+
+local cornerD = Instance.new("UICorner")
+cornerD.CornerRadius = UDim.new(0, 5)
+cornerD.Parent = chat2
+
+local sss = Instance.new("Frame")
+local set = Instance.new("TextButton")
+local setUI = Instance.new("Frame")
+local setcorner = Instance.new("UICorner")
+local gla = Instance.new("Frame")
+local list = Instance.new("UIListLayout")
+
+sss.Name = "Helper"
+sss.Size = UDim2.new(0.5, 0, 0.5, 0)
+sss.Position = UDim2.new(9000000, 0, 90000000, 0)
+sss.BackgroundColor3 = Color3.new(1, 1, 1)
+sss.Active = false
+sss.Parent = gui
+
+set.Name = "settings_button"
+set.Size = UDim2.new(0.05, 0, 0.1, 0)
+set.Position = UDim2.new(0.95, 0, 0, 0)
+set.BackgroundColor3 = Color3.new(0, 0, 0)
+set.BorderColor3 = Color3.new(0, 0, 0)
+set.BorderSizePixel = 0
+set.Text = "۞"
+set.TextColor3 = Color3.new(255, 255, 255)
+set.BackgroundTransparency = 1
+set.Font = Enum.Font.SourceSansBold
+set.TextScaled = true
+set.Parent = chatFrame
+
+setUI.Name = "Settings_ui"
+setUI.Size = UDim2.new(0.3, 0, 1, 0)
+setUI.Position = UDim2.new(1.01, 0, 0, 0)
+setUI.BackgroundColor3 = Color3.new(0,0,0)
+setUI.BorderColor3 = Color3.new(0, 0, 0)
+setUI.BorderSizePixel = 0
+setUI.Active = false
+setUI.Visible = false
+setUI.BackgroundTransparency = 0.5
+setUI.Parent = chatFrame
+
+setcorner.CornerRadius = UDim.new(0,8)
+setcorner.Parent = setUI
+
+gla.Name = "Button_list"
+gla.Size = UDim2.new(0.8, 0, 0.84, 0)
+gla.Position = UDim2.new(0.1, 0, 0.07, 0)
+gla.BackgroundColor3 = Color3.new(1, 1, 1)
+gla.BorderColor3 = Color3.new(0, 0, 0)
+gla.BorderSizePixel = 0
+gla.Active = true
+gla.BackgroundTransparency = 1
+gla.Parent = setUI
+
+list.HorizontalAlignment = Enum.HorizontalAlignment.Center
+list.SortOrder = Enum.SortOrder.LayoutOrder
+list.Padding = UDim.new(0, 10)
+list.Parent = gla
+
+local fonnt = Instance.new("TextButton")
+fonnt.Size = UDim2.new(1, 0, 0.2, 0)
+fonnt.Position = UDim2.new(0, 0, 0.5, 0)
+fonnt.BackgroundColor3 = Color3.new(0,0,0)
+fonnt.BorderColor3 = Color3.new(0, 0, 0)
+fonnt.BorderSizePixel = 0
+fonnt.Text = "Bold"
+fonnt.TextColor3 = Color3.new(1,1,1)
+fonnt.BackgroundTransparency = 0.6
+fonnt.Font = Enum.Font.ArialBold
+fonnt.TextSize = 20
+fonnt.Parent = gla
+
+local fcorner = Instance.new("UICorner")
+fcorner.CornerRadius = UDim.new(0,8)
+fcorner.Parent = fonnt
+
+local iconpos = Instance.new("TextButton")
+iconpos.Size = UDim2.new(1, 0, 0.2, 0)
+iconpos.Position = UDim2.new(0.5, 0, 0.5, 0)
+iconpos.BackgroundColor3 = Color3.new(0, 0, 0)
+iconpos.BorderColor3 = Color3.new(0, 0, 0)
+iconpos.BorderSizePixel = 0
+iconpos.Text = "Reset Icon"
+iconpos.TextColor3 = Color3.new(255, 255, 255)
+iconpos.BackgroundTransparency = 0.6
+iconpos.Font = Enum.Font.ArialBold
+iconpos.TextSize = 18
+iconpos.Parent = gla
+
+local fcorner = Instance.new("UICorner")
+fcorner.CornerRadius = UDim.new(0,8)
+fcorner.Parent = iconpos
+
+
+fonnt.MouseButton1Click:Connect(function()
+    if sss.Visible then
+        sss.Visible = false
+        fonnt.Text = "Classic"
+        logBox.Font = Enum.Font.Arial
+        chatBox.Font = Enum.Font.Arial
+        logBox.TextSize = 14
+        chatBox.TextSize = 14
+        border.Thickness = 0.85
+    else
+        sss.Visible = true
+        fonnt.Text = "Bold"
+        logBox.Font = Enum.Font.ArialBold
+        chatBox.Font = Enum.Font.ArialBold
+        logBox.TextSize = 14
+        chatBox.TextSize = 14
+        border.Thickness = 1
+    end
+end)
+
+local chatLogs = {}
+
+local function updateChatLogs(message)
+    table.insert(chatLogs, message)
+
+    if #chatLogs > 27 then
+        table.remove(chatLogs, 2)
+    end
+
+    logBox.Text = table.concat(chatLogs, "\n")
+end
+
+local TextChatService = game:GetService("TextChatService")
+
+TextChatService.OnIncomingMessage = function(textChatMessage)
+    local playerName = textChatMessage.TextSource.Name
+    local messageContent = textChatMessage.Text
+
+    messageContent = messageContent:gsub("&lt;", "<"):gsub("&gt;", ">")
+    playerName = playerName:gsub("PlayStationIN","PlayStationIN")
+
+
+
+    updateChatLogs(playerName .. ": " .. messageContent)
+end
+
+
+set.MouseButton1Click:Connect(function()
+    if setUI.Visible then
+        setUI.Visible = false
+    else
+        setUI.Visible = true
+    end
+end)
+
+iconpos.MouseButton1Click:Connect(function()
+    minmax.Position = UDim2.new(0.95, 0, -0.1, 0)
+end)
+
+
+minmax.MouseButton1Click:Connect(function()
+    if chatFrame.Visible then
+        chatFrame.Visible = false
+    else
+        chatFrame.Visible = true
+    end
+end)
+
+local mainstroke = Instance.new("UIStroke")
+mainstroke.Color = Color3.new(0, 0, 0)
+mainstroke.Thickness = 1.5
+mainstroke.Parent = chatFrame
+
+local mainstroke = Instance.new("UIStroke")
+mainstroke.Color = Color3.new(0, 0, 0)
+mainstroke.Thickness = 1.5
+mainstroke.Parent = setUI
+
+local mainstroke = Instance.new("UIStroke")
+mainstroke.Color = Color3.new(0, 0, 0)
+mainstroke.Thickness = 1.5
+mainstroke.Parent = minmax
+
+local mainstroke = Instance.new("UIStroke")
+mainstroke.Color = Color3.new(0, 0, 0)
+mainstroke.Thickness = 1.5
+mainstroke.Parent = set
+
+local mainstroke = Instance.new("UIStroke")
+mainstroke.Color = Color3.new(0, 0, 0)
+mainstroke.Thickness = 1.5
+mainstroke.Parent = chatBox
+
+local mainstroke = Instance.new("UIStroke")
+mainstroke.Color = Color3.new(0, 0, 0)
+mainstroke.Thickness = 1.5
+mainstroke.Parent = chatBar
+
+local function sending()
+    local TextChatService = game:GetService("TextChatService")
+    local Players = game:GetService("Players")
+
+    local function sendMessage(msg)
+    local player = Players.LocalPlayer
+    if TextChatService.ChatInputBarConfiguration.TargetTextChannel then
+    TextChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync(msg)
+    else
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+    end
+    end
+sendMessage(chatBox.Text)
+end
+
+local function convertText()
+local text = chatBox.Text
+local convertedText = ""
+
+local conversionTableUpper = {
+    A = "Ạ", B = "Ḅ", C = "С", D = "Ḍ", E = "Ẹ",
+    F = "F", G = "Ģ", H = "Ḥ", I = "Ị", J = "J",
+    K = "Ḳ", L = "Ḷ", M = "Ṃ", N = "Ṇ", O = "Ọ",
+    P = "Р", Q = "Q", R = "Ṛ", S = "Ṣ", T = "Ṭ",
+    U = "Ụ", V = "Ṿ", W = "Ẉ", X = "Х", Y = "Ỵ", Z = "Ẓ"
+}
+
+local conversionTableLower = {
+    a = "ạ", b = "ḅ", c = "с", d = "ḍ", e = "ẹ",
+    f = "f", g = "ɡ", h = "ḥ", i = "ị", j = "ј",
+    k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
+    p = "р", q = "q", r = "ṛ", s = "ṣ", t = "ṭ",
+    u = "ụ", v = "ṿ", w = "ẉ", x = "х", y = "ỵ", z = "ẓ", ["|"] = "\r",
+}
+
+for char in text:gmatch(".") do
+local convertedChar = conversionTableUpper[char] or conversionTableLower[char] or char
+    convertedText = convertedText .. convertedChar .. "͎"
+end
+
+    chatBox.Text = convertedText
+end
+
+chat.MouseButton1Click:connect(function()
+    convertText()
+    sending()
+    chatBox.Text = ""
+end)
+
+local function isEmoji(c)
+    local code = utf8.codepoint(c)  
+
+    
+    if (code >= 0x1F600 and code <= 0x1F64F) or  
+       (code >= 0x1F300 and code <= 0x1F5FF) or  
+       (code >= 0x1F680 and code <= 0x1F6FF) or  
+       (code >= 0x1F700 and code <= 0x1F77F) or  
+       (code >= 0x1F900 and code <= 0x1F9FF) or  
+       (code >= 0x2600 and code <= 0x26FF) or    
+       (code >= 0x2700 and code <= 0x27BF) or    
+       (code >= 0x1F1E6 and code <= 0x1F1FF) then 
+        return true  
+    end
+    return false  
+end
+
+
+
+
+local function Bypass(input)
+
+if not string.find(input, " ") then
+        input = ">\b" .. input
+    end
+    
+local replacements = {
+        sex = "sâ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢xâ€¢",
+        Sex = "Sâ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢x",
+        SEX = "Sâ€¢â€¢â€¢â€¢â€¢â€¢Eâ€¢X",
+        ass = "â€¢aâ€¢â€¢â€¢â€¢â€¢â€¢sâ€¢sâ€¢",
+        Ass = "â€¢Aâ€¢â€¢â€¢â€¢â€¢â€¢sâ€¢sâ€¢",
+        ASS = "â€¢Aâ€¢â€¢â€¢â€¢â€¢â€¢Sâ€¢Sâ€¢",
+        fuck = "fâ€¢â€¢â€¢â€¢â€¢â€¢uâ€¢câ€¢kâ€¢",
+        Fuck = "Fâ€¢â€¢â€¢â€¢â€¢â€¢uâ€¢câ€¢kâ€¢",
+        FUCK = "Fâ€¢â€¢â€¢â€¢â€¢â€¢Uâ€¢Câ€¢Kâ€¢",
+        damn = "â€¢dâ€¢â€¢â€¢â€¢â€¢â€¢aâ€¢â€¢mâ€¢â€¢nâ€¢",
+        Damn = "â€¢Dâ€¢â€¢â€¢â€¢â€¢â€¢aâ€¢â€¢mâ€¢â€¢nâ€¢",
+        DAMN = "â€¢Dâ€¢â€¢â€¢â€¢â€¢â€¢Aâ€¢â€¢Mâ€¢â€¢Nâ€¢",
+        shit = "â€¢sâ€¢â€¢â€¢â€¢â€¢â€¢hâ€¢iâ€¢tâ€¢",
+        Shit = "â€¢Sâ€¢â€¢â€¢â€¢â€¢â€¢hâ€¢iâ€¢tâ€¢",
+        SHIT = "â€¢Sâ€¢â€¢â€¢â€¢â€¢â€¢Hâ€¢Iâ€¢Tâ€¢",
+        pornhub = "â€¢pâ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢râ€¢nâ€¢â€¢â€¢hâ€¢â€¢â€¢ubâ€¢",
+        Pornhub = "â€¢Pâ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢râ€¢nâ€¢â€¢â€¢hâ€¢â€¢â€¢ubâ€¢",
+        porn = "â€¢pâ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢râ€¢nâ€¢",
+        Porn = "â€¢Pâ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢râ€¢nâ€¢",
+        PORN = "â€¢Pâ€¢â€¢â€¢â€¢â€¢â€¢Oâ€¢Râ€¢Nâ€¢",
+        bitch = "â€¢bâ€¢iâ€¢tâ€¢â€¢â€¢câ€¢hâ€¢",
+        Bitch = "â€¢Bâ€¢iâ€¢tâ€¢â€¢â€¢câ€¢hâ€¢",
+        BITCH = "â€¢Bâ€¢Iâ€¢Tâ€¢â€¢â€¢Câ€¢Hâ€¢",
+        nigga = "nâ€¢iâ€¢gâ€¢â€¢â€¢gâ€¢a",
+        nigger = "nâ€¢iâ€¢gâ€¢â€¢â€¢gâ€¢eâ€¢râ€¢â€¢",
+        Nigga = "Nâ€¢iâ€¢gâ€¢â€¢â€¢gâ€¢a",
+        Nigger = "Nâ€¢iâ€¢gâ€¢â€¢â€¢gâ€¢eâ€¢râ€¢â€¢",
+        NIGGER = "Nâ€¢Iâ€¢Gâ€¢â€¢â€¢Gâ€¢Eâ€¢Râ€¢â€¢",
+        NIGGAS = "Nâ€¢Iâ€¢Gâ€¢â€¢â€¢Gâ€¢Aâ€¢Sâ€¢â€¢",
+        NIGGA = "Nâ€¢Iâ€¢Gâ€¢â€¢â€¢Gâ€¢Aâ€¢â€¢",
+        dick = "dâ€¢â€¢â€¢â€¢â€¢â€¢iâ€¢â€¢â€¢â€¢câ€¢kâ€¢â€¢",
+        Dick = "Dâ€¢â€¢â€¢â€¢â€¢â€¢iâ€¢â€¢â€¢â€¢câ€¢kâ€¢â€¢",
+        DICK = "Dâ€¢â€¢â€¢â€¢â€¢â€¢Iâ€¢â€¢â€¢â€¢Câ€¢Kâ€¢â€¢",
+        cock = "câ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢câ€¢kâ€¢",
+        Cock = "Câ€¢â€¢â€¢â€¢â€¢â€¢oâ€¢câ€¢kâ€¢",
+        COCK = "Câ€¢â€¢â€¢â€¢â€¢â€¢Oâ€¢Câ€¢Kâ€¢",
+        gay = "gâ€¢â€¢â€¢â€¢â€¢â€¢aâ€¢y",
+        Gay = "Ä¢â€¢â€¢â€¢â€¢â€¢â€¢aâ€¢y",
+        GAY = "Ä¢â€¢â€¢â€¢â€¢â€¢â€¢Aâ€¢Y",
+        pussy = "pâ€¢â€¢â€¢â€¢uâ€¢sâ€¢sâ€¢â€¢â€¢â€¢â€¢â€¢yâ€¢â€¢",
+        Pussy = "Pâ€¢â€¢â€¢â€¢uâ€¢sâ€¢sâ€¢â€¢â€¢â€¢â€¢â€¢yâ€¢â€¢",
+        PUSSY = "Pâ€¢â€¢â€¢â€¢Uâ€¢Sâ€¢Sâ€¢â€¢â€¢â€¢â€¢â€¢Yâ€¢â€¢",
+        breast = "â€¢bâ€¢râ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢aâ€¢sâ€¢tâ€¢",
+        Breast = "â€¢Bâ€¢râ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢aâ€¢sâ€¢tâ€¢",
+        BREAST ="â€¢Bâ€¢Râ€¢â€¢â€¢â€¢â€¢â€¢Eâ€¢Aâ€¢Sâ€¢Tâ€¢",
+        ["0"] = "\xEF\xBC\x90",
+["1"] = "\xEF\xBC\x91",
+["2"] = "\xEF\xBC\x92",  
+["3"] = "\xEF\xBC\x93",  
+["4"] = "\xEF\xBC\x94",  
+["5"] = "\xEF\xBC\x95",  
+["6"] = "\xEF\xBC\x96", 
+["7"] = "\xEF\xBC\x97", 
+["8"] = "\xEF\xBC\x98",  
+["9"] = "\xEF\xBC\x99",  
+}
+
+    local lowerInput = input
+
+    
+    for word, replacement in pairs(replacements) do
+        lowerInput = lowerInput:gsub("(%s?)(" .. word .. ")(%s?)", function(before, matched, after)
+            local modifiedReplacement = replacement
+            if before ~= "" then
+                modifiedReplacement = modifiedReplacement
+            end
+            if after ~= "" then
+                modifiedReplacement = modifiedReplacement
+            end
+            return before .. "{" .. modifiedReplacement .. "}" .. after
+        end)
+    end
+
+    
+    local emojiPattern = "[%z\1-\127\194-\244][\128-\191]*"
+    local modifiedInput = lowerInput:gsub(emojiPattern, function(c)
+        if isEmoji(c) then
+            return "{" .. c .. "}"
+        end
+        return c
+    end)
+
+    
+    local result = ""
+    local insideReplacedWord = false
+
+    for i = 1, #modifiedInput do
+        local char = modifiedInput:sub(i, i)
+
+        if char == "{" then
+            insideReplacedWord = true
+        elseif char == "}" then
+            insideReplacedWord = false
+        elseif insideReplacedWord then
+            result = result .. char
+        elseif char == " " then
+        result = result .. "\b"
+    
+        else
+            result = result .. char
+            
+            if i < #modifiedInput and modifiedInput:sub(i + 1, i + 1) ~= " " then
+                result = result .. "â€¢"
+            end
+        end
+    end
+
+    
+    result = result:gsub("{", ""):gsub("}", "")
+    result = result:gsub("â€¢", "\xF3\xA0\x80\x80")
+    result = result:gsub("|", "\r")
+    
+    
+    
+    
+    
+
+    
+    local A_1 = result
+    local A_2 = "All"
+
+    if game:GetService("TextChatService"):FindFirstChild("TextChannels") then
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(A_1)
+    else
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer( A_1, A_2)
+    end
+end
+
+chat2.MouseButton1Click:Connect(function()
+    local inputString = chatBox.Text
+    Bypass(inputString)
+    chatBox.Text = ""
+end)
+
+local exa = Instance.new("TextButton")
+exa.Size = UDim2.new(1, 0, 0.2, 0)
+exa.Position = UDim2.new(0.5, 0, 0.5, 0)
+exa.BackgroundColor3 = Color3.new(0, 0, 0)
+exa.BorderColor3 = Color3.new(0, 0, 0)
+exa.BorderSizePixel = 0
+exa.Text = "Example"
+exa.TextColor3 = Color3.new(255, 255, 255)
+exa.BackgroundTransparency = 0.6
+exa.Font = Enum.Font.ArialBold
+exa.TextSize = 15
+exa.Parent = gla
+
+local fcorner = Instance.new("UICorner")
+fcorner.CornerRadius = UDim.new(0,8)
+fcorner.Parent = exa
+
+local example = Instance.new("Frame")
+example.Size = UDim2.new(0.5, 0, 1, 0)
+example.Position = UDim2.new(1.32, 0, 0, 0)
+example.BackgroundColor3 = Color3.new(0,0,0)
+example.BorderColor3 = Color3.new(0, 0, 0)
+example.BorderSizePixel = 0
+example.Active = true
+example.BackgroundTransparency = 0.5
+example.Visible = false
+example.Draggable = true
+example.Parent = chatFrame
+
+exa.MouseButton1Click:Connect(function()
+if example.Visible then
+    example.Visible = false
+else
+    example.Visible = true
+    end
+end)
+
+local mainstroke = Instance.new("UIStroke")
+mainstroke.Color = Color3.new(0, 0, 0)
+mainstroke.Thickness = 1.5
+mainstroke.Parent = example
+
+local cornerB = Instance.new("UICorner")
+cornerB.CornerRadius = UDim.new(0,8)
+cornerB.Parent = example
+
+local scroll = Instance.new("ScrollingFrame")
+scroll.Size = UDim2.new(0.9, 0, 0.9, 0)
+scroll.Position = UDim2.new(0.05, 0, 0.05, 0)
+scroll.BackgroundColor3 = Color3.new(1, 1, 1)
+scroll.BorderColor3 = Color3.new(0, 0, 0)
+scroll.BorderSizePixel = 0
+scroll.BackgroundTransparency = 1
+scroll.ScrollBarThickness = 0
+scroll.CanvasSize = UDim2.new(0, 0, 30, 0)
+scroll.Parent = example
+
+local list = Instance.new("UIListLayout")
+list.HorizontalAlignment = Enum.HorizontalAlignment.Center
+list.SortOrder = Enum.SortOrder.LayoutOrder
+list.Padding = UDim.new(0, 10)
+list.Parent = scroll
+
+local buttonCount = 0
+local function ultimate(text)
+task.wait()
+    buttonCount = buttonCount + 1
+
+    local textButton = Instance.new("TextButton")
+    textButton.Size = UDim2.new(1, 0, 0.003, 0)
+    textButton.Position = UDim2.new(0, 0, 0, (buttonCount - 1) * 45)
+    textButton.BackgroundColor3 = Color3.fromRGB(0,0,0)
+    textButton.BorderSizePixel = 0
+    textButton.BackgroundTransparency = 0.5
+    textButton.Text = text
+    textButton.TextScaled = true 
+    textButton.TextWrapped = true
+    textButton.TextColor3 = Color3.new(1, 1, 1)
+    textButton.Font = Enum.Font.Arial
+    textButton.Parent = scroll
+
+local cornerB = Instance.new("UICorner")
+cornerB.CornerRadius = UDim.new(0,6)
+cornerB.Parent = textButton
+
+    textButton.MouseButton1Click:Connect(function()
+        chatBox.Text = textButton.Text
+    end)
+end
+
+local type = Instance.new("TextButton")
+type.Size = UDim2.new(1, 0, 0.2, 0)
+type.Position = UDim2.new(0.5, 0, 0.5, 0)
+type.BackgroundColor3 = Color3.new(0, 0, 0)
+type.BorderColor3 = Color3.new(0, 0, 0)
+type.BorderSizePixel = 0
+type.Text = "NPatch"
+type.TextColor3 = Color3.new(255, 255, 255)
+type.BackgroundTransparency = 0.6
+type.Font = Enum.Font.ArialBold
+type.TextSize = 15
+type.Parent = gla
+
+local fcorner = Instance.new("UICorner")
+fcorner.CornerRadius = UDim.new(0,8)
+fcorner.Parent = type
+
+type.MouseButton1Click:Connect(function()
+    if chat.Visible then
+        chat2.Visible = true
+        chat.Visible = false
+        type.Text = "Gaze"
+    else
+        chat2.Visible = false
+        chat.Visible = true
+        type.Text = "NPatch"
+    end
+end)
+
+ultimate("I Rape Children")
+ultimate("i am pedophile")
+ultimate("Big Boobs")
+ultimate("i love huge cock")
+ultimate("niggakid sucks") 
+ultimate("print(\"kill all nigga\")")
+ultimate("ANAL SEX")
+ultimate("https://discord.gg/FreePussy")
+ultimate("Big Black Cock")
+ultimate("nigga executor|https://nigga.gg")
+ultimate("Shut the fuck up")
+ultimate("Dafuckboom is a nigger monkey")
+ultimate("Shitbidick toilet sucks")
+ultimate("Free Robux at https://animeh.to")
+ultimate("this bitch has a big boobs")
+ultimate("recommended pussy color 204.129.128")
+ultimate("this nigga from africa")
+ultimate("Niggamod Detected")
+ultimate("Fuck around and find out for yourself")
+ultimate("Want some free Robux?| Go to Xvideos.com for free Robux")
+ultimate("I'm tired of all this shit")
+ultimate("That was cuntacular")
+ultimate("Stop being a cunt")
+ultimate("Fuck this shit")
+ultimate("Go fuck yourself")
+ultimate("I want to kill myself")
+ultimate("There's no cure for being a cunt")
+ultimate("Fuck you")
+ultimate("Fuck you | with love")
+ultimate("1 nigga |2nigga |oh damn")
+ultimate("https://xvideos.com")
+ultimate("https://pornhub.com is awesome")
+ultimate("I have a cute XHamster")
+ultimate("https://nhentai.net")
+ultimate("https://nekopoi.care")
+ultimate("E621? Eugh, what the fuck?")
+ultimate("This shit is absolutely insane!")
+    ultimate("What the hell were you thinking?")
+    ultimate("You're such a dumbass")
+    ultimate("i can't believe this bullshit")
+    ultimate("This is a load of crap")
+    ultimate("Get your head out of your ass")
+    ultimate("You're driving me fucking crazy")
+    ultimate("Quit acting like a little bitch")
+    ultimate("This is some serious bullshit right here")
+    ultimate("i don't give a flying fuck")
+    ultimate("You think you're hot shit, huh?")
+    ultimate("What the fuck is going on?")
+    ultimate("This party is lit as fuck")
+    ultimate("i'm so done with this crap")
+    ultimate("Don't be a little shit")
+    ultimate("You absolute legend, you crazy bastard")
+    ultimate("Shut the fuck up already")
+    ultimate("i'm not in the mood for your bullshit")
+    ultimate("You're being a real pain in the ass")
+    ultimate("This is fucking ridiculous")
+    ultimate("Get your shit together")
+    ultimate("You gotta be shitting me")
+    ultimate("What the fuck is this nonsense?")
+    ultimate("You're a total piece of shit")
+    ultimate("i'm so fucking tired of this drama")
+    ultimate("Get your shit together, damn it")
+    ultimate("Why the hell would you do that?")
+    ultimate("This is driving me absolutely nuts")
+    ultimate("i can't deal with this crap anymore")
+    ultimate("Seriously, what the hell were you thinking?")
+    ultimate("You are being a complete jackass")
+    ultimate("This place is a fucking mess")
+    ultimate("Don't test me, you moron")
+    ultimate("i swear to god, this is fucking ridiculous")
+    ultimate("You're such a fucking idiot")
+    ultimate("Stop being such a whiny brat")
+    ultimate("This is beyond fucking stupid")
+    ultimate("You're asking for trouble, you know that?")
+    ultimate("Get the fuck out of my way")
+    ultimate("What kind of bullshit is this?")
+    ultimate("i’m done with your bullshit")
