@@ -448,16 +448,6 @@ local replacements = {
         breast = "â€¢bâ€¢râ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢aâ€¢sâ€¢tâ€¢",
         Breast = "â€¢Bâ€¢râ€¢â€¢â€¢â€¢â€¢â€¢eâ€¢aâ€¢sâ€¢tâ€¢",
         BREAST ="â€¢Bâ€¢Râ€¢â€¢â€¢â€¢â€¢â€¢Eâ€¢Aâ€¢Sâ€¢Tâ€¢",
-        ["0"] = "\xEF\xBC\x90",
-["1"] = "\xEF\xBC\x91",
-["2"] = "\xEF\xBC\x92",  
-["3"] = "\xEF\xBC\x93",  
-["4"] = "\xEF\xBC\x94",  
-["5"] = "\xEF\xBC\x95",  
-["6"] = "\xEF\xBC\x96", 
-["7"] = "\xEF\xBC\x97", 
-["8"] = "\xEF\xBC\x98",  
-["9"] = "\xEF\xBC\x99",  
 }
 
     local lowerInput = input
