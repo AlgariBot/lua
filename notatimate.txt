@@ -1,3 +1,14 @@
+--[[ ∆Sierpinski Triangle∆
+credits
+• simplified by PlayStationIN
+• @Gazer_HA / @GazerHA idk
+• Chat log by chatGPT
+• Unicode Pad
+• P | UI
+• @VAGINA冫
+• change your roblox language to Қазақ ТіЛі
+]]
+
 local gui = Instance.new("ScreenGui")
 gui.Name = "neverpatched ultimate"
 gui.Parent = game.CoreGui
@@ -399,7 +410,7 @@ end
 local function Bypass(input)
 
 if not string.find(input, " ") then
-        input = ">\b" .. input
+        input = "" .. input
     end
     
 local replacements = {
