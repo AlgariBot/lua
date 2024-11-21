@@ -44,9 +44,10 @@ chatFrame.BorderColor3 = Color3.new(0, 0, 0)
 chatFrame.BorderSizePixel = 0
 chatFrame.Active = true
 chatFrame.BackgroundTransparency = 0.5
-chatFrame.Draggable = false
+chatFrame.Draggable = true
 chatFrame.Active = false
 chatFrame.Parent = gui
+-- i need draggable ui
 
 local cornerB = Instance.new("UICorner")
 cornerB.CornerRadius = UDim.new(0,8)
@@ -410,7 +411,7 @@ end
 local function Bypass(input)
 
 if not string.find(input, " ") then
-        input = "" .. input
+        input = "<\b" .. input
     end
     
 local replacements = {
