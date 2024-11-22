@@ -45,7 +45,6 @@ chatFrame.BorderSizePixel = 0
 chatFrame.Active = true
 chatFrame.BackgroundTransparency = 0.5
 chatFrame.Draggable = true
-chatFrame.Active = false
 chatFrame.Parent = gui
 -- i need draggable ui
 
@@ -54,7 +53,7 @@ cornerB.CornerRadius = UDim.new(0,8)
 cornerB.Parent = chatFrame
 
 chatBar.Name = "ChatBar"
-chatBar.Size = UDim2.new(0.98, 0, 0.2, 0)
+chatBar.Size = UDim2.new(0.8, 0, 0.2, 0)
 chatBar.Position = UDim2.new(0.01, 0, 0.77, 0)
 chatBar.BackgroundColor3 = Color3.new(1, 1, 1)
 chatBar.BorderColor3 = Color3.new(0, 0, 0)
@@ -735,3 +734,22 @@ ultimate("This shit is absolutely insane!")
     ultimate("Get the fuck out of my way")
     ultimate("What kind of bullshit is this?")
     ultimate("i’m done with your bullshit")
+
+local drag = Instance.new("Frame")
+drag.Size = UDim2.new(0.2, 0, 1, 0)
+drag.Position = UDim2.new(1.02, 0, 0, 0)
+drag.BackgroundColor3 = Color3.new(0, 0.6, 0)
+drag.BorderColor3 = Color3.new(0, 0, 0)
+drag.BorderSizePixel = 0
+drag.Active = false
+drag.BackgroundTransparency = 0
+drag.Parent = chatBar
+
+local cornerD = Instance.new("UICorner")
+cornerD.CornerRadius = UDim.new(0, 5)
+cornerD.Parent = drag
+
+local mainstroke = Instance.new("UIStroke")
+mainstroke.Color = Color3.new(0, 0, 0)
+mainstroke.Thickness = 1.5
+mainstroke.Parent = drag
