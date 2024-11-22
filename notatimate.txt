@@ -260,33 +260,6 @@ fonnt.MouseButton1Click:Connect(function()
     end
 end)
 
-local chatLogs = {}
-
-local function updateChatLogs(message)
-    table.insert(chatLogs, message)
-
-    if #chatLogs > 27 then
-        table.remove(chatLogs, 2)
-    end
-
-    logBox.Text = table.concat(chatLogs, "\n")
-end
-
-local TextChatService = game:GetService("TextChatService")
-
-TextChatService.OnIncomingMessage = function(textChatMessage)
-    local playerName = textChatMessage.TextSource.Name
-    local messageContent = textChatMessage.Text
-
-    messageContent = messageContent:gsub("&lt;", "<"):gsub("&gt;", ">")
-    playerName = playerName:gsub("PlayStationIN","PlayStationIN")
-
-
-
-    updateChatLogs(playerName .. ": " .. messageContent)
-end
-
-
 set.MouseButton1Click:Connect(function()
     if setUI.Visible then
         setUI.Visible = false
@@ -386,6 +359,39 @@ chat.MouseButton1Click:connect(function()
     sending()
     chatBox.Text = ""
 end)
+
+local chatLogs = {}
+local loggedMessages = {}
+
+local function updateChatLogs(message)
+    table.insert(chatLogs, 1, message)
+    if #chatLogs > 27 then
+        table.remove(chatLogs, #chatLogs)
+    end
+    logBox.Text = table.concat(chatLogs, "\n")
+end
+
+local TextChatService = game:GetService("TextChatService")
+local Players = game:GetService("Players")
+
+TextChatService.OnIncomingMessage = function(textChatMessage)
+    local textSource = textChatMessage.TextSource
+    if not textSource then return end
+
+    local player = Players:FindFirstChild(textSource.Name)
+    if not player then return end
+
+    local playerName = player.DisplayName or player.Name
+    local messageContent = textChatMessage.Text
+    messageContent = messageContent:gsub("&lt;", "<"):gsub("&gt;", ">")
+    playerName = playerName:gsub("PlayStationIN", "PlayStationIN")
+    local fullMessage = playerName .. ": " .. messageContent
+
+    if not loggedMessages[fullMessage] then
+        loggedMessages[fullMessage] = true
+        updateChatLogs(fullMessage)
+    end
+end
 
 local function isEmoji(c)
     local code = utf8.codepoint(c)  
