@@ -1,26 +1,52 @@
---[[ ∆Sierpinski Triangle∆
-credits
-• simplified by PlayStationIN
-• @Gazer_HA / @GazerHA idk
-• Chat log by chatGPT
-• Unicode Pad
-• P | UI
-• @VAGINA冫
-• change your roblox language to Қазақ ТіЛі
-]]
+local function gra(gui)
+    local gradient = Instance.new("UIGradient")
+    gradient.Parent = gui
+    gradient.Color = ColorSequence.new{
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(100, 100, 100)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(50, 50, 50))
+    }
+    gradient.Rotation = 90
+end
+
+local function str(gui)
+    local UIStroke = Instance.new("UIStroke")
+    UIStroke.Color = Color3.new(0, 0, 0)
+    UIStroke.Thickness = 1.5
+    UIStroke.Parent = gui
+end
+
+local function cor(gui)
+    local UICorner = Instance.new("UICorner")
+    UICorner.CornerRadius = UDim.new(0, 8)
+    UICorner.Parent = gui
+end
 
 local gui = Instance.new("ScreenGui")
-gui.Name = "neverpatched ultimate"
-gui.Parent = game.CoreGui
 
 local minmax = Instance.new("TextButton")
 local chatFrame = Instance.new("Frame")
 local chatBar = Instance.new("Frame")
-local cornerC = Instance.new("UICorner")
 local chatBox = Instance.new("TextBox")
+local scroll = Instance.new("ScrollingFrame")
 local logBox = Instance.new("TextBox")
-local border = Instance.new("UIStroke")
 local chat = Instance.new("TextButton")
+local chat2 = Instance.new("TextButton")
+local sss = Instance.new("Frame")
+local set = Instance.new("TextButton")
+local setUI = Instance.new("Frame")
+local setcorner = Instance.new("UICorner")
+local gla = Instance.new("Frame")
+local list = Instance.new("UIListLayout")
+local fonnt = Instance.new("TextButton")
+local iconpos = Instance.new("TextButton")
+local exa = Instance.new("TextButton")
+local example = Instance.new("Frame")
+local scroll = Instance.new("ScrollingFrame")
+local type = Instance.new("TextButton")
+local drag = Instance.new("Frame")
+
+gui.Name = "neverpatched ultimate"
+gui.Parent = game.CoreGui
 
 minmax.Name = "Icon"
 minmax.Size = UDim2.new(0.04, 0, 0.095, 0)
@@ -36,6 +62,9 @@ minmax.Font = Enum.Font.SourceSansBold
 minmax.TextScaled = true
 minmax.Parent = gui
 
+gra(minmax)
+str(minmax)
+
 chatFrame.Name = "ChatBFrame"
 chatFrame.Size = UDim2.new(0.4, 0, 0.39, 0)
 chatFrame.Position = UDim2.new(0.007, 0, 0.007, 0)
@@ -48,9 +77,8 @@ chatFrame.Draggable = true
 chatFrame.Parent = gui
 -- i need draggable ui
 
-local cornerB = Instance.new("UICorner")
-cornerB.CornerRadius = UDim.new(0,8)
-cornerB.Parent = chatFrame
+cor(chatFrame)
+str(chatFrame)
 
 chatBar.Name = "ChatBar"
 chatBar.Size = UDim2.new(0.8, 0, 0.2, 0)
@@ -63,8 +91,8 @@ chatBar.BackgroundTransparency = 0.7
 chatBar.Draggable = true
 chatBar.Parent = chatFrame
 
-cornerC.CornerRadius = UDim.new(0, 5)
-cornerC.Parent = chatBar
+cor(chatBar)
+str(chatBar
 
 chatBox.Name = "ChatBox"
 chatBox.Size = UDim2.new(0.75, 0, 0.8, 0)
@@ -83,7 +111,9 @@ chatBox.TextWrapped = true
 chatBox.ClearTextOnFocus = false
 chatBox.Parent = chatBar
 
-local scroll = Instance.new("ScrollingFrame")
+str(chatBox)
+
+scroll.Name = "Scroll"
 scroll.Size = UDim2.new(0.96, 0, 0.71, 0)
 scroll.Position = UDim2.new(0.02, 0, 0.04, 0)
 scroll.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -110,9 +140,7 @@ logBox.TextWrapped = true
 logBox.Active = false
 logBox.Parent = scroll
 
-border.Color = Color3.new(0, 0, 0)
-border.Thickness = 1.5
-border.Parent = logBox
+str(logBox)
 
 chat.Name = "chat"
 chat.Size = UDim2.new(0.1, 0, 0.8, 0)
@@ -127,7 +155,9 @@ chat.Font = Enum.Font.GothamBold
 chat.TextSize = 20
 chat.Parent = chatBar
 
-local chat2 = Instance.new("TextButton")
+cor(chat)
+
+chat2.Name = "gazer"
 chat2.Size = UDim2.new(0.1, 0, 0.8, 0)
 chat2.Position = UDim2.new(0.89, 0, 0.1, 0)
 chat2.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -141,20 +171,7 @@ chat2.TextSize = 20
 chat2.Visible = false
 chat2.Parent = chatBar
 
-local cornerD = Instance.new("UICorner")
-cornerD.CornerRadius = UDim.new(0, 5)
-cornerD.Parent = chat
-
-local cornerD = Instance.new("UICorner")
-cornerD.CornerRadius = UDim.new(0, 5)
-cornerD.Parent = chat2
-
-local sss = Instance.new("Frame")
-local set = Instance.new("TextButton")
-local setUI = Instance.new("Frame")
-local setcorner = Instance.new("UICorner")
-local gla = Instance.new("Frame")
-local list = Instance.new("UIListLayout")
+cor(chat2)
 
 sss.Name = "Helper"
 sss.Size = UDim2.new(0.5, 0, 0.5, 0)
@@ -187,8 +204,8 @@ setUI.Visible = false
 setUI.BackgroundTransparency = 0.5
 setUI.Parent = chatFrame
 
-setcorner.CornerRadius = UDim.new(0,8)
-setcorner.Parent = setUI
+cor(setUI)
+str(setUI)
 
 gla.Name = "Button_list"
 gla.Size = UDim2.new(0.8, 0, 0.84, 0)
@@ -205,7 +222,7 @@ list.SortOrder = Enum.SortOrder.LayoutOrder
 list.Padding = UDim.new(0, 10)
 list.Parent = gla
 
-local fonnt = Instance.new("TextButton")
+fonnt.Name = "font"
 fonnt.Size = UDim2.new(1, 0, 0.2, 0)
 fonnt.Position = UDim2.new(0, 0, 0.5, 0)
 fonnt.BackgroundColor3 = Color3.new(0,0,0)
@@ -214,15 +231,12 @@ fonnt.BorderSizePixel = 0
 fonnt.Text = "Bold"
 fonnt.TextColor3 = Color3.new(1,1,1)
 fonnt.BackgroundTransparency = 0.6
-fonnt.Font = Enum.Font.ArialBold
+fonnt.Font = Enum.Font.Arial
 fonnt.TextSize = 20
 fonnt.Parent = gla
 
-local fcorner = Instance.new("UICorner")
-fcorner.CornerRadius = UDim.new(0,8)
-fcorner.Parent = fonnt
+cor(fonnt)
 
-local iconpos = Instance.new("TextButton")
 iconpos.Size = UDim2.new(1, 0, 0.2, 0)
 iconpos.Position = UDim2.new(0.5, 0, 0.5, 0)
 iconpos.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -231,14 +245,83 @@ iconpos.BorderSizePixel = 0
 iconpos.Text = "Reset Icon"
 iconpos.TextColor3 = Color3.new(255, 255, 255)
 iconpos.BackgroundTransparency = 0.6
-iconpos.Font = Enum.Font.ArialBold
+iconpos.Font = Enum.Font.Arial
 iconpos.TextSize = 18
 iconpos.Parent = gla
 
-local fcorner = Instance.new("UICorner")
-fcorner.CornerRadius = UDim.new(0,8)
-fcorner.Parent = iconpos
+cor(iconpos)
 
+exa.Size = UDim2.new(1, 0, 0.2, 0)
+exa.Position = UDim2.new(0.5, 0, 0.5, 0)
+exa.BackgroundColor3 = Color3.new(0, 0, 0)
+exa.BorderColor3 = Color3.new(0, 0, 0)
+exa.BorderSizePixel = 0
+exa.Text = "Example"
+exa.TextColor3 = Color3.new(255, 255, 255)
+exa.BackgroundTransparency = 0.6
+exa.Font = Enum.Font.ArialBold
+exa.TextSize = 15
+exa.Parent = gla
+
+cor(exa)
+
+example.Size = UDim2.new(0.5, 0, 1, 0)
+example.Position = UDim2.new(1.32, 0, 0, 0)
+example.BackgroundColor3 = Color3.new(0.3,0.3,0.3)
+example.BorderColor3 = Color3.new(0, 0, 0)
+example.BorderSizePixel = 0
+example.Active = true
+example.BackgroundTransparency = 0.5
+example.Visible = false
+example.Draggable = true
+example.Parent = chatFrame
+
+cor(example)
+str(example)
+gra(example)
+
+scroll.Size = UDim2.new(0.9, 0, 0.9, 0)
+scroll.Position = UDim2.new(0.05, 0, 0.05, 0)
+scroll.BackgroundColor3 = Color3.new(1, 1, 1)
+scroll.BorderColor3 = Color3.new(0, 0, 0)
+scroll.BorderSizePixel = 0
+scroll.BackgroundTransparency = 1
+scroll.ScrollBarThickness = 0
+scroll.CanvasSize = UDim2.new(0, 0, 30, 0)
+scroll.Parent = example
+
+local list = Instance.new("UIListLayout")
+list.HorizontalAlignment = Enum.HorizontalAlignment.Center
+list.SortOrder = Enum.SortOrder.LayoutOrder
+list.Padding = UDim.new(0, 10)
+list.Parent = scroll
+
+type.Size = UDim2.new(1, 0, 0.2, 0)
+type.Position = UDim2.new(0.5, 0, 0.5, 0)
+type.BackgroundColor3 = Color3.new(0, 0, 0)
+type.BorderColor3 = Color3.new(0, 0, 0)
+type.BorderSizePixel = 0
+type.Text = "NPatch"
+type.TextColor3 = Color3.new(255, 255, 255)
+type.BackgroundTransparency = 0.6
+type.Font = Enum.Font.ArialBold
+type.TextSize = 15
+type.Parent = gla
+
+cor(type)
+
+drag.Size = UDim2.new(0.2, 0, 1, 0)
+drag.Position = UDim2.new(1.02, 0, 0, 0)
+drag.BackgroundColor3 = Color3.new(0, 0.6, 0)
+drag.BorderColor3 = Color3.new(0, 0, 0)
+drag.BorderSizePixel = 0
+drag.Active = false
+drag.BackgroundTransparency = 0
+drag.Parent = chatBar
+
+cor(drag)
+str(drag)
+gra(drag)
 
 fonnt.MouseButton1Click:Connect(function()
     if sss.Visible then
@@ -280,36 +363,6 @@ minmax.MouseButton1Click:Connect(function()
         chatFrame.Visible = true
     end
 end)
-
-local mainstroke = Instance.new("UIStroke")
-mainstroke.Color = Color3.new(0, 0, 0)
-mainstroke.Thickness = 1.5
-mainstroke.Parent = chatFrame
-
-local mainstroke = Instance.new("UIStroke")
-mainstroke.Color = Color3.new(0, 0, 0)
-mainstroke.Thickness = 1.5
-mainstroke.Parent = setUI
-
-local mainstroke = Instance.new("UIStroke")
-mainstroke.Color = Color3.new(0, 0, 0)
-mainstroke.Thickness = 1.5
-mainstroke.Parent = minmax
-
-local mainstroke = Instance.new("UIStroke")
-mainstroke.Color = Color3.new(0, 0, 0)
-mainstroke.Thickness = 1.5
-mainstroke.Parent = set
-
-local mainstroke = Instance.new("UIStroke")
-mainstroke.Color = Color3.new(0, 0, 0)
-mainstroke.Thickness = 1.5
-mainstroke.Parent = chatBox
-
-local mainstroke = Instance.new("UIStroke")
-mainstroke.Color = Color3.new(0, 0, 0)
-mainstroke.Thickness = 1.5
-mainstroke.Parent = chatBar
 
 local function sending()
     local TextChatService = game:GetService("TextChatService")
@@ -416,7 +469,7 @@ end
 local function Bypass(input)
 
 if not string.find(input, " ") then
-        input = "<\b" .. input
+        input = "" .. input
     end
     
 local replacements = {
@@ -544,34 +597,6 @@ chat2.MouseButton1Click:Connect(function()
     chatBox.Text = ""
 end)
 
-local exa = Instance.new("TextButton")
-exa.Size = UDim2.new(1, 0, 0.2, 0)
-exa.Position = UDim2.new(0.5, 0, 0.5, 0)
-exa.BackgroundColor3 = Color3.new(0, 0, 0)
-exa.BorderColor3 = Color3.new(0, 0, 0)
-exa.BorderSizePixel = 0
-exa.Text = "Example"
-exa.TextColor3 = Color3.new(255, 255, 255)
-exa.BackgroundTransparency = 0.6
-exa.Font = Enum.Font.ArialBold
-exa.TextSize = 15
-exa.Parent = gla
-
-local fcorner = Instance.new("UICorner")
-fcorner.CornerRadius = UDim.new(0,8)
-fcorner.Parent = exa
-
-local example = Instance.new("Frame")
-example.Size = UDim2.new(0.5, 0, 1, 0)
-example.Position = UDim2.new(1.32, 0, 0, 0)
-example.BackgroundColor3 = Color3.new(0,0,0)
-example.BorderColor3 = Color3.new(0, 0, 0)
-example.BorderSizePixel = 0
-example.Active = true
-example.BackgroundTransparency = 0.5
-example.Visible = false
-example.Draggable = true
-example.Parent = chatFrame
 
 exa.MouseButton1Click:Connect(function()
 if example.Visible then
@@ -581,31 +606,6 @@ else
     end
 end)
 
-local mainstroke = Instance.new("UIStroke")
-mainstroke.Color = Color3.new(0, 0, 0)
-mainstroke.Thickness = 1.5
-mainstroke.Parent = example
-
-local cornerB = Instance.new("UICorner")
-cornerB.CornerRadius = UDim.new(0,8)
-cornerB.Parent = example
-
-local scroll = Instance.new("ScrollingFrame")
-scroll.Size = UDim2.new(0.9, 0, 0.9, 0)
-scroll.Position = UDim2.new(0.05, 0, 0.05, 0)
-scroll.BackgroundColor3 = Color3.new(1, 1, 1)
-scroll.BorderColor3 = Color3.new(0, 0, 0)
-scroll.BorderSizePixel = 0
-scroll.BackgroundTransparency = 1
-scroll.ScrollBarThickness = 0
-scroll.CanvasSize = UDim2.new(0, 0, 30, 0)
-scroll.Parent = example
-
-local list = Instance.new("UIListLayout")
-list.HorizontalAlignment = Enum.HorizontalAlignment.Center
-list.SortOrder = Enum.SortOrder.LayoutOrder
-list.Padding = UDim.new(0, 10)
-list.Parent = scroll
 
 local buttonCount = 0
 local function ultimate(text)
@@ -625,31 +625,13 @@ task.wait()
     textButton.Font = Enum.Font.Arial
     textButton.Parent = scroll
 
-local cornerB = Instance.new("UICorner")
-cornerB.CornerRadius = UDim.new(0,6)
-cornerB.Parent = textButton
+cor(textButton)
 
     textButton.MouseButton1Click:Connect(function()
         chatBox.Text = textButton.Text
     end)
 end
 
-local type = Instance.new("TextButton")
-type.Size = UDim2.new(1, 0, 0.2, 0)
-type.Position = UDim2.new(0.5, 0, 0.5, 0)
-type.BackgroundColor3 = Color3.new(0, 0, 0)
-type.BorderColor3 = Color3.new(0, 0, 0)
-type.BorderSizePixel = 0
-type.Text = "NPatch"
-type.TextColor3 = Color3.new(255, 255, 255)
-type.BackgroundTransparency = 0.6
-type.Font = Enum.Font.ArialBold
-type.TextSize = 15
-type.Parent = gla
-
-local fcorner = Instance.new("UICorner")
-fcorner.CornerRadius = UDim.new(0,8)
-fcorner.Parent = type
 
 type.MouseButton1Click:Connect(function()
     if chat.Visible then
@@ -700,62 +682,43 @@ ultimate("https://nhentai.net")
 ultimate("https://nekopoi.care")
 ultimate("E621? Eugh, what the fuck?")
 ultimate("This shit is absolutely insane!")
-    ultimate("What the hell were you thinking?")
-    ultimate("You're such a dumbass")
-    ultimate("i can't believe this bullshit")
-    ultimate("This is a load of crap")
-    ultimate("Get your head out of your ass")
-    ultimate("You're driving me fucking crazy")
-    ultimate("Quit acting like a little bitch")
-    ultimate("This is some serious bullshit right here")
-    ultimate("i don't give a flying fuck")
-    ultimate("You think you're hot shit, huh?")
-    ultimate("What the fuck is going on?")
-    ultimate("This party is lit as fuck")
-    ultimate("i'm so done with this crap")
-    ultimate("Don't be a little shit")
-    ultimate("You absolute legend, you crazy bastard")
-    ultimate("Shut the fuck up already")
-    ultimate("i'm not in the mood for your bullshit")
-    ultimate("You're being a real pain in the ass")
-    ultimate("This is fucking ridiculous")
-    ultimate("Get your shit together")
-    ultimate("You gotta be shitting me")
-    ultimate("What the fuck is this nonsense?")
-    ultimate("You're a total piece of shit")
-    ultimate("i'm so fucking tired of this drama")
-    ultimate("Get your shit together, damn it")
-    ultimate("Why the hell would you do that?")
-    ultimate("This is driving me absolutely nuts")
-    ultimate("i can't deal with this crap anymore")
-    ultimate("Seriously, what the hell were you thinking?")
-    ultimate("You are being a complete jackass")
-    ultimate("This place is a fucking mess")
-    ultimate("Don't test me, you moron")
-    ultimate("i swear to god, this is fucking ridiculous")
-    ultimate("You're such a fucking idiot")
-    ultimate("Stop being such a whiny brat")
-    ultimate("This is beyond fucking stupid")
-    ultimate("You're asking for trouble, you know that?")
-    ultimate("Get the fuck out of my way")
-    ultimate("What kind of bullshit is this?")
-    ultimate("i’m done with your bullshit")
-
-local drag = Instance.new("Frame")
-drag.Size = UDim2.new(0.2, 0, 1, 0)
-drag.Position = UDim2.new(1.02, 0, 0, 0)
-drag.BackgroundColor3 = Color3.new(0, 0.6, 0)
-drag.BorderColor3 = Color3.new(0, 0, 0)
-drag.BorderSizePixel = 0
-drag.Active = false
-drag.BackgroundTransparency = 0
-drag.Parent = chatBar
-
-local cornerD = Instance.new("UICorner")
-cornerD.CornerRadius = UDim.new(0, 5)
-cornerD.Parent = drag
-
-local mainstroke = Instance.new("UIStroke")
-mainstroke.Color = Color3.new(0, 0, 0)
-mainstroke.Thickness = 1.5
-mainstroke.Parent = drag
+ultimate("What the hell were you thinking?")
+ultimate("You're such a dumbass")
+ultimate("i can't believe this bullshit")
+ultimate("This is a load of crap")
+ultimate("Get your head out of your ass")
+ultimate("You're driving me fucking crazy")
+ultimate("Quit acting like a little bitch")
+ultimate("This is some serious bullshit right here")
+ultimate("i don't give a flying fuck")
+ultimate("You think you're hot shit, huh?")
+ultimate("What the fuck is going on?")
+ultimate("This party is lit as fuck")
+ultimate("i'm so done with this crap")
+ultimate("Don't be a little shit")
+ultimate("You absolute legend, you crazy bastard")
+ultimate("Shut the fuck up already")
+ultimate("i'm not in the mood for your bullshit")
+ultimate("You're being a real pain in the ass")
+ultimate("This is fucking ridiculous")
+ultimate("Get your shit together")
+ultimate("You gotta be shitting me")
+ultimate("What the fuck is this nonsense?")
+ultimate("You're a total piece of shit")
+ultimate("i'm so fucking tired of this drama")
+ultimate("Get your shit together, damn it")
+ultimate("Why the hell would you do that?")
+ultimate("This is driving me absolutely nuts")
+ultimate("i can't deal with this crap anymore")
+ultimate("Seriously, what the hell were you thinking?")
+ultimate("You are being a complete jackass")
+ultimate("This place is a fucking mess")
+ultimate("Don't test me, you moron")
+ultimate("i swear to god, this is fucking ridiculous")
+ultimate("You're such a fucking idiot")
+ultimate("Stop being such a whiny brat")
+ultimate("This is beyond fucking stupid")
+ultimate("You're asking for trouble, you know that?")
+ultimate("Get the fuck out of my way")
+ultimate("What kind of bullshit is this?")
+ultimate("i’m done with your bullshit")
