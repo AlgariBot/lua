@@ -1,3 +1,7 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "neverpatched ultimate"
+gui.Parent = game.CoreGui
+
 local function gra(gui)
     local gradient = Instance.new("UIGradient")
     gradient.Parent = gui
@@ -21,8 +25,6 @@ local function cor(gui)
     UICorner.Parent = gui
 end
 
-local gui = Instance.new("ScreenGui")
-
 local minmax = Instance.new("TextButton")
 local chatFrame = Instance.new("Frame")
 local chatBar = Instance.new("Frame")
@@ -44,9 +46,6 @@ local example = Instance.new("Frame")
 local scroll = Instance.new("ScrollingFrame")
 local type = Instance.new("TextButton")
 local drag = Instance.new("Frame")
-
-gui.Name = "neverpatched ultimate"
-gui.Parent = game.CoreGui
 
 minmax.Name = "Icon"
 minmax.Size = UDim2.new(0.04, 0, 0.095, 0)
