@@ -43,7 +43,7 @@ local fonnt = Instance.new("TextButton")
 local iconpos = Instance.new("TextButton")
 local exa = Instance.new("TextButton")
 local example = Instance.new("Frame")
-local scroll = Instance.new("ScrollingFrame")
+local scroll2 = Instance.new("ScrollingFrame")
 local type = Instance.new("TextButton")
 local drag = Instance.new("Frame")
 
@@ -278,15 +278,15 @@ cor(example)
 str(example)
 gra(example)
 
-scroll.Size = UDim2.new(0.9, 0, 0.9, 0)
-scroll.Position = UDim2.new(0.05, 0, 0.05, 0)
-scroll.BackgroundColor3 = Color3.new(1, 1, 1)
-scroll.BorderColor3 = Color3.new(0, 0, 0)
-scroll.BorderSizePixel = 0
-scroll.BackgroundTransparency = 1
-scroll.ScrollBarThickness = 0
-scroll.CanvasSize = UDim2.new(0, 0, 30, 0)
-scroll.Parent = example
+scroll2.Size = UDim2.new(0.9, 0, 0.9, 0)
+scroll2.Position = UDim2.new(0.05, 0, 0.05, 0)
+scroll2.BackgroundColor3 = Color3.new(1, 1, 1)
+scroll2.BorderColor3 = Color3.new(0, 0, 0)
+scroll2.BorderSizePixel = 0
+scroll2.BackgroundTransparency = 1
+scroll2.ScrollBarThickness = 0
+scroll2.CanvasSize = UDim2.new(0, 0, 30, 0)
+scroll2.Parent = example
 
 local list = Instance.new("UIListLayout")
 list.HorizontalAlignment = Enum.HorizontalAlignment.Center
