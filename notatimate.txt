@@ -87,11 +87,10 @@ chatBar.BorderColor3 = Color3.new(0, 0, 0)
 chatBar.BorderSizePixel = 0
 chatBar.Active = true
 chatBar.BackgroundTransparency = 0.7
-chatBar.Draggable = true
 chatBar.Parent = chatFrame
 
 cor(chatBar)
-str(chatBar
+str(chatBar)
 
 chatBox.Name = "ChatBox"
 chatBox.Size = UDim2.new(0.75, 0, 0.8, 0)
@@ -446,7 +445,7 @@ TextChatService.OnIncomingMessage = function(textChatMessage)
 end
 
 local function isEmoji(c)
-    local code = utf8.codepoint(c)  
+    local code = utf8.codepoint(c) 
 
     
     if (code >= 0x1F600 and code <= 0x1F64F) or  
