@@ -1,3 +1,15 @@
+--[[
+
+example:
+local function name(gui)
+gradient/corner/stroke/size/position/text/other
+end
+
+gaze edited without >
+
+]]
+
+
 local gui = Instance.new("ScreenGui")
 gui.Name = "neverpatched ultimate"
 gui.Parent = game.CoreGui
@@ -621,7 +633,7 @@ task.wait()
     textButton.TextWrapped = true
     textButton.TextColor3 = Color3.new(1, 1, 1)
     textButton.Font = Enum.Font.Arial
-    textButton.Parent = scroll
+    textButton.Parent = scroll2
 
 cor(textButton)
 
