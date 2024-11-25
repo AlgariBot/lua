@@ -479,7 +479,7 @@ end
 local function Bypass(input)
 
 if not string.find(input, " ") then
-        input = "" .. input
+        input = "󠀀" .. input
     end
     
 local replacements = {
