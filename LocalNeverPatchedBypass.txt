@@ -275,7 +275,7 @@ local conversionTableLower = {
     f = "f", g = "ɡ", h = "ḥ", i = "ị", j = "ј",
     k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
     p = "р", q = "q", r = "ṛ", s = "ṣ", t = "ṭ",
-    u = "ụ", v = "ṿ", w = "ẉ", x = "х", y = "ỵ", z = "ẓ",
+    u = "ụ", v = "ṿ", w = "ẉ", x = "х", y = "ỵ", z = "ẓ", ["|"] = "\r",
 }
 
 for char in text:gmatch(".") do
@@ -438,14 +438,14 @@ example("Niggamod Detected")
 example("Fuck around and find out for yourself")
 example("Want some free Robux?| Go to Xvideos.com for free Robux")
 example("I'm tired of all this shit")
-example("That was cuntacular 💯")
+example("That was cuntacular")
 example("Stop being a cunt")
 example("Fuck this shit")
 example("Go fuck yourself")
 example("I want to kill myself")
 example("There's no cure for being a cunt")
 example("Fuck you")
-example("Fuck you | with love {♡}")
+example("Fuck you | with love")
 example("1 nigga | 2 nigga | oh damn")
 example("https://xvideos.com")
 example("https://pornhub.com is awesome")
