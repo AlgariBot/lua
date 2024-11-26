@@ -276,14 +276,11 @@ local conversionTableLower = {
     k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
     p = "р", q = "q", r = "ṛ", s = "ṣ", t = "ṭ",
     u = "ụ", v = "ṿ", w = "ẉ", x = "х", y = "ỵ", z = "ẓ",
-["0"] = "０￰", ["1"] = "１￰", ["2"] = "２￰", ["3"] = "３￰",
-    ["4"] = "４￰", ["5"] = "５￰", ["6"] = "６￰", ["7"] = "７￰",
-    ["8"] = "８￰", ["9"] = "９￰"
 }
 
 for char in text:gmatch(".") do
 local convertedChar = conversionTableUpper[char] or conversionTableLower[char] or char
-convertedText = convertedText .. convertedChar .. "̲"
+convertedText = convertedText .. convertedChar .. "̗"
 end
 
 box.Text = convertedText
