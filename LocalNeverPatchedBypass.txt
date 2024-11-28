@@ -272,7 +272,7 @@ local conversionTableUpper = {
 
 local conversionTableLower = {
     a = "ạ", b = "ḅ", c = "ċ", d = "ḍ", e = "ẹ",
-    f = "f", g = "ġ", h = "ḥ", i = "ị", j = "ј",
+    f = "f", g = "ɡ", h = "ḥ", i = "ị", j = "ј",
     k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
     p = "р", q = "q", r = "ṛ", s = "ṣ", t = "ṭ",
     u = "ụ", v = "ṿ", w = "ẉ", x = "ẋ", y = "ỵ", z = "ẓ", ["|"] = "\r",
