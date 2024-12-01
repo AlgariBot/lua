@@ -47,6 +47,8 @@ main.BackgroundTransparency = 0
 main.Parent = bar
 
 local la = Instance.new("ImageLabel")
+la.Size = UDim2.new(1,0,1,0)
+la.Position = UDim2.new(0,0,0,0)
 la.BackgroundColor3 = Color3.new(0, 0, 0)
 la.ImageColor3 = Color3.new(0.15, 0.15, 0.15)
 la.Image = "rbxassetid://106723422431440"
