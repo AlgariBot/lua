@@ -1,4 +1,7 @@
---[[ Scripting Kid (not for ui) 👍🏿🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻🫄🏻👍🏿👍🏿👍🏿👍🏿👍🏿👍🏿👍🏿👍🏿👍🏿
+--[[
+owned by PlayStationIN
+open source
+using this with key + obfuscation = skid fatherless noob
 ]] 
 
 local gui = Instance.new("ScreenGui")
@@ -50,11 +53,14 @@ main.BackgroundTransparency = 0
 main.Parent = bar
 
 local la = Instance.new("ImageLabel")
+la.Size = UDim2.new(1,0,1,0)
+la.Postion = UDim2.new(0,0,0,0)
 la.BackgroundColor3 = Color3.new(0, 0, 0)
 la.ImageColor3 = Color3.new(0.15, 0.15, 0.15)
 la.Image = "rbxassetid://106723422431440"
 la.ImageTransparency = 0
 la.BackgroundTransparency = 1
+la.Active = false
 la.Parent = main
 
 local ba = Instance.new("TextButton")
@@ -263,7 +269,7 @@ local text = box.Text
 local convertedText = ""
 
 local conversionTableUpper = {
-    A = "Ạ", B = "Ḅ", C = "Ċ", D = "Ḍ", E = "Ẹ",
+    A = "Ạ", B = "Ḅ", C = "C", D = "Ḍ", E = "Ẹ",
     F = "F", G = "Ģ", H = "Ḥ", I = "Ị", J = "J",
     K = "Ḳ", L = "Ḷ", M = "Ṃ", N = "Ṇ", O = "Ọ",
     P = "Р", Q = "Q", R = "Ṛ", S = "Ṣ", T = "Ṭ",
@@ -271,7 +277,7 @@ local conversionTableUpper = {
 }
 
 local conversionTableLower = {
-    a = "ạ", b = "ḅ", c = "ċ", d = "ḍ", e = "ẹ",
+    a = "ạ", b = "ḅ", c = "c", d = "ḍ", e = "ẹ",
     f = "f", g = "ɡ", h = "ḥ", i = "ị", j = "ј",
     k = "ḳ", l = "ḷ", m = "ṃ", n = "ṇ", o = "ọ",
     p = "р", q = "q", r = "ṛ", s = "ṣ", t = "ṭ",
@@ -280,20 +286,20 @@ local conversionTableLower = {
 
 for char in text:gmatch(".") do
 local convertedChar = conversionTableUpper[char] or conversionTableLower[char] or char
-convertedText = convertedText .. convertedChar .. "̗"
+convertedText = convertedText .. convertedChar .. "͎"
 end
 
 box.Text = convertedText
 end
 
 send.MouseButton1Click:connect(function()
-convertText()
-sending()
-box.Text = ""
+    convertText()
+    sending()
+    box.Text = ""
 end)
 
 convert.MouseButton1Click:connect(function()
-convertText()
+    convertText()
 end)
 
 local fy = Instance.new("Frame")
