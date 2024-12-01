@@ -1,9 +1,3 @@
---[[
-owned by PlayStationIN
-open source
-using this with key + obfuscation = skid fatherless noob
-]] 
-
 local gui = Instance.new("ScreenGui")
 gui.Name = "ABCDE"
 gui.Parent = game.CoreGui
@@ -290,13 +284,13 @@ box.Text = convertedText
 end
 
 send.MouseButton1Click:connect(function()
-    convertText()
-    sending()
-    box.Text = ""
+convertText()
+sending()
+box.Text = ""
 end)
 
 convert.MouseButton1Click:connect(function()
-    convertText()
+convertText()
 end)
 
 local fy = Instance.new("Frame")
