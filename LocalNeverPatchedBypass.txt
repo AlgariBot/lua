@@ -370,11 +370,11 @@ fhf.Position = UDim2.new(0, 0, 0.8, 0)
 fhf.BackgroundColor3 = Color3.new(0, 0, 0)
 fhf.BorderColor3 = Color3.new(0, 0, 0)
 fhf.BorderSizePixel = 0
-fhf.Text = "UNDETECTED BYPASS"
+fhf.Text = "DETECTED BYPASS, USE ANTI CHAT LOG"
 fhf.TextColor3 = Color3.new(255, 255, 255)
 fhf.BackgroundTransparency = 1
 fhf.Font = Enum.Font.ArialBold
-fhf.TextSize = 15
+fhf.TextScaled = true
 fhf.Parent = fy
 
 local scroll = Instance.new("ScrollingFrame")
