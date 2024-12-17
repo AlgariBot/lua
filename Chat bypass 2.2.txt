@@ -1,0 +1,44 @@
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.CoreGui
+
+local bbb = Instance.new("Frame")
+bbb.Size = UDim2.new(0.2, 0, 0.3, 0)
+bbb.Position = UDim2.new(0.2, 0, 0.2, 0)
+bbb.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+bbb.BorderColor3 = Color3.new(0, 0, 0)
+bbb.BorderSizePixel = 0
+bbb.Active = true
+bbb.BackgroundTransparency = 0 
+bbb.Draggable = true
+bbb.Parent = gui
+
+local ccc = Instance.new("TextLabel")
+ccc.Size = UDim2.new(1, 0, 0.2, 0)
+ccc.Position = UDim2.new(0, 0, 0, 0)
+ccc.BackgroundColor3 = Color3.new(0, 0, 0)
+ccc.BorderColor3 = Color3.new(0, 0, 0)
+ccc.BorderSizePixel = 0
+ccc.Text = "Outdated version"
+ccc.TextColor3 = Color3.new(255, 255, 255)
+ccc.BackgroundTransparency = 1
+ccc.Font = Enum.Font.Arial
+ccc.TextSize = 26
+ccc.Parent = bbb
+
+local lod = Instance.new("TextButton")
+lod.Size = UDim2.new(1, 0, 0.4, 0)
+lod.Position = UDim2.new(0, 0, 0.2, 0)
+lod.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+lod.BorderColor3 = Color3.new(0, 0, 0)
+lod.BorderSizePixel = 0
+lod.Text = "Load New Version"
+lod.TextColor3 = Color3.new(255, 255, 255)
+lod.BackgroundTransparency = 0
+lod.Font = Enum.Font.Arial
+lod.TextSize = 25
+lod.Parent = bbb
+
+lod.MouseButton1Click:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/keSD0xcp"))()
+bbb:Destroy()
+end)
