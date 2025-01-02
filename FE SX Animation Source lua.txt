@@ -18,7 +18,15 @@ Open Source
 /_/   /_____/   /____/_____//_/|_|   \____/\____/___/   
                                                         
 
+updatelog:
+ ├bang v2
+ ├front v3
+ ├front v4
+ └blowjob v1
+  └=4>04
+
 ]]
+
 
 local function corner(ui,val)
         local UICorner = Instance.new("UICorner")
@@ -53,7 +61,7 @@ label_lol.Position = UDim2.new(0, 0, 0.1, 0)
 label_lol.BackgroundColor3 = Color3.new(0, 0, 0)
 label_lol.BorderColor3 = Color3.new(0, 0, 0)
 label_lol.BorderSizePixel = 0
-label_lol.Text = "[FE] SEX GUI V1"
+label_lol.Text = "[FE] SEX GUI V1.04"
 label_lol.TextColor3 = Color3.new(255, 255, 255)
 label_lol.BackgroundTransparency = 1
 label_lol.Font = Enum.Font.FredokaOne
@@ -330,6 +338,88 @@ front2.MouseButton1Click:Connect(function()
     end
 end)
 
+local front3 = Instance.new("TextButton")
+front3.Size = UDim2.new(0.1, 0, 0.1, 0)
+front3.Position = UDim2.new(0, 0, 0.1, 0)
+front3.BackgroundColor3 = Color3.new(0.8, 0.4, 0)
+front3.BorderColor3 = Color3.new(0, 0, 0)
+front3.BorderSizePixel = 1
+front3.Text = "Front v3"
+front3.TextColor3 = Color3.new(255, 255, 255)
+front3.BackgroundTransparency = 0
+front3.Font = Enum.Font.FredokaOne
+front3.TextScaled = true
+front3.Parent = frame2
+corner(front3, 0.3)
+
+local player = game.Players.LocalPlayer
+local teleportSpeed = 10
+local isTeleporting = false
+local targetPlayer = nil
+local offset = CFrame.new(0, 1.1, -2)
+local toggleInterval = 0.3
+
+local function getTargetPlayerByName(name)
+    for _, p in ipairs(game.Players:GetPlayers()) do
+        if p.Name:sub(1, #name) == name or p.DisplayName:sub(1, #name) == name then
+            return p
+        end
+    end
+    return nil
+end
+
+local function startTeleport()
+    if targetPlayer and targetPlayer.Character then
+        local targetCharacter = targetPlayer.Character
+        local targetRootPart = targetCharacter:FindFirstChild("HumanoidRootPart")
+        
+        if targetRootPart then
+            local teleportLoop
+            teleportLoop = game:GetService("RunService").Stepped:Connect(function()
+                if isTeleporting then
+                    -- Teleport player while rotating them to face backward
+                    local targetCFrame = targetRootPart.CFrame * offset
+                    player.Character:SetPrimaryPartCFrame(targetCFrame * CFrame.Angles(0, math.rad(180), 0))
+                else
+                    teleportLoop:Disconnect()
+                end
+            end)
+
+            -- Toggle offset every 'toggleInterval' seconds
+            local lastToggleTime = tick()
+            local toggleOffset
+            toggleOffset = game:GetService("RunService").Heartbeat:Connect(function()
+                if isTeleporting then
+                    if tick() - lastToggleTime >= toggleInterval then
+                        if offset == CFrame.new(0, 1.1, -2) then
+                            offset = CFrame.new(0, 1.1, -3)
+                        else
+                            offset = CFrame.new(0, 1.1, -2)
+                        end
+                        lastToggleTime = tick()
+                    end
+                else
+                    toggleOffset:Disconnect()
+                end
+            end)
+        end
+    end
+end
+
+front3.MouseButton1Click:Connect(function()
+    local targetName = namebox.Text
+    targetPlayer = getTargetPlayerByName(targetName)
+
+    if isTeleporting then
+        isTeleporting = false
+        front3.Text = "Front v3"
+    else
+        isTeleporting = true
+        front3.Text = "Stop"
+        startTeleport()
+    end
+end)
+
 textbutton.MouseButton1Click:Connect(function()
         frame2.Visible = not frame2.Visible
         if frame2.Visible then
@@ -416,6 +506,90 @@ se("sex 3(fr)","182789003","182749109","0","0","1.9","0")
 se("sex 4(fr)","","179224234","182789003","182749109","0.1","0")
 se("bang 1(be)", "148840371", "", "0", "0", 0,3)
 se("bang 2(be)", "148840371", "95383980", "0", "0", 0,3)
+se("bang 3(be)","182789003","158821881","106772613","148840371","0","5")
 se("Lay down bang(be)", "148840371", "182749109", "0", "0", 0,2)
 se("Lay Down sex(fr)", "182724289", "106772613", "181526230", "0", 0,1)
 se("Lay Down sex 2(fr)", "182724289", "179224234", "181526230", "0", 0,1)
+se("BlowJob V1(fr)","182749109","182789003","0","0","0","5")
+
+local front4 = Instance.new("TextButton")
+front4.Size = UDim2.new(0.1, 0, 0.1, 0)
+front4.Position = UDim2.new(0, 0, 0.2, 0)
+front4.BackgroundColor3 = Color3.new(0.8, 0.4, 0)
+front4.BorderColor3 = Color3.new(0, 0, 0)
+front4.BorderSizePixel = 1
+front4.Text = "Front v4"
+front4.TextColor3 = Color3.new(255, 255, 255)
+front4.BackgroundTransparency = 0
+front4.Font = Enum.Font.FredokaOne
+front4.TextScaled = true
+front4.Parent = frame2
+corner(front4, 0.3)
+
+local player = game.Players.LocalPlayer
+local teleportSpeed = 10
+local isTeleporting = false
+local targetPlayer = nil
+local offset = CFrame.new(0, 1.2, -1)
+local toggleInterval = 0.3
+
+local function getTargetPlayerByName(name)
+    for _, p in ipairs(game.Players:GetPlayers()) do
+        if p.Name:sub(1, #name) == name or p.DisplayName:sub(1, #name) == name then
+            return p
+        end
+    end
+    return nil
+end
+
+local function startTeleport()
+    if targetPlayer and targetPlayer.Character then
+        local targetCharacter = targetPlayer.Character
+        local targetRootPart = targetCharacter:FindFirstChild("HumanoidRootPart")
+        
+        if targetRootPart then
+            local teleportLoop
+            teleportLoop = game:GetService("RunService").Stepped:Connect(function()
+                if isTeleporting then
+                    -- Teleport player while rotating them to face backward
+                    local targetCFrame = targetRootPart.CFrame * offset
+                    player.Character:SetPrimaryPartCFrame(targetCFrame * CFrame.Angles(0, math.rad(180), 0))
+                else
+                    teleportLoop:Disconnect()
+                end
+            end)
+
+            -- Toggle offset every 'toggleInterval' seconds
+            local lastToggleTime = tick()
+            local toggleOffset
+            toggleOffset = game:GetService("RunService").Heartbeat:Connect(function()
+                if isTeleporting then
+                    if tick() - lastToggleTime >= toggleInterval then
+                        if offset == CFrame.new(0, 1.2, -1) then
+                            offset = CFrame.new(0, 1.2, -1)
+                        else
+                            offset = CFrame.new(0, 1.2, -1)
+                        end
+                        lastToggleTime = tick()
+                    end
+                else
+                    toggleOffset:Disconnect()
+                end
+            end)
+        end
+    end
+end
+
+front4.MouseButton1Click:Connect(function()
+    local targetName = namebox.Text
+    targetPlayer = getTargetPlayerByName(targetName)
+
+    if isTeleporting then
+        isTeleporting = false
+        front4.Text = "Front v4"
+    else
+        isTeleporting = true
+        front4.Text = "Stop"
+        startTeleport()
+    end
+end)
