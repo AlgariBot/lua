@@ -243,6 +243,7 @@ end
 chatbutton.MouseButton1Click:Connect(function()
     local inputText = chatbox.Text
     __a(inputText)
+    chatbox.Text = ""
 end)
 
 -- fix
