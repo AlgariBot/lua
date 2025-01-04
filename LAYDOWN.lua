@@ -184,7 +184,7 @@ local function se(nam, Ida, Idb, Idc, Idd, duration,sp)
 
         local animationButton = Instance.new("TextButton")
         animationButton.Size = UDim2.new(0.8, 0, 0.15, 0)
-        animationButton.Position = UDim2.new(0.05, 0, 0.4, 0)
+        animationButton.Position = UDim2.new(0.1, 0, 0.4, 0)
         animationButton.BackgroundColor3 = Color3.new(0, 0.3, 0.7)
         animationButton.BorderColor3 = Color3.new(0, 0, 0)
         animationButton.BorderSizePixel = 0
