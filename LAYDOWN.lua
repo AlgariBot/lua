@@ -246,6 +246,7 @@ animationButton.MouseButton1Click:Connect(function()
                 end
                 isPlaying = false
                 animationButton.Text = nam
+                isTeleporting = false
         end)
 end
 
