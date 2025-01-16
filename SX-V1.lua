@@ -108,7 +108,7 @@ namebox.TextColor3 = Color3.new(1, 1, 1)
 namebox.BackgroundTransparency = 0
 namebox.Font = Enum.Font.RobotoMono
 namebox.TextSize = 15
-namebox.PlaceholderText = "Enter Name"
+namebox.PlaceholderText = "R15 Support"
 namebox.Parent = uiframe
 
 textbutton.MouseButton1Click:Connect(function()
@@ -175,7 +175,7 @@ local function se(nam, Ida, Idb, Idc, Idd, duration, sp)
     }
 
     local animationButton = Instance.new("TextButton")
-    animationButton.Size = UDim2.new(0.8, 0, 0.15, 0)
+    animationButton.Size = UDim2.new(0.8, 0, 0.3, 0)
     animationButton.Position = UDim2.new(0.1, 0, 0.4, 0)
     animationButton.BackgroundColor3 = Color3.new(0, 0.3, 0.7)
     animationButton.BorderColor3 = Color3.new(0, 0, 0)
@@ -242,5 +242,5 @@ local function se(nam, Ida, Idb, Idc, Idd, duration, sp)
     end)
 end
 
-se("Animation", "182789003", "0", "0", "0", 1.8, 0)
+se("Animation", "182789003", "10714360343", "0", "0", 1.8, 0)
 dashb("Sex V1")
