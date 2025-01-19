@@ -251,5 +251,5 @@ local function se(nam, Ida, Idb, Idc, Idd,Idf,Idg,duration, sp)
     end)
 end
 
-se("Animation", "87684948", "182749109", "10714360343", "106772613", "182789003", "0", 1.8, 0)
+se("Animation", "87684948", "182749109", "10714360343", "106772613", "182789003", "0", 1.7, 0)
 dashb("Blowjob v2")
