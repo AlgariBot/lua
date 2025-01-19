@@ -242,5 +242,5 @@ local function se(nam, Ida, Idb, Idc, Idd, duration, sp)
     end)
 end
 
-se("Animation", "182789003", "106772613", "10714360343", "0", 1.8, 0)
+se("Animation", "182789003", "106772613", "10714360343", "0", 1.7, 0)
 dashb("Sex V2")
