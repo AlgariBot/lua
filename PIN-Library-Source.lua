@@ -1,4 +1,4 @@
---
+--[[
 3 features,
 • TextLabel
 • TextButton
@@ -12,14 +12,14 @@ example:
 httpget(parent,name,"script")
 • bigger textbox
 • warn label
-• minimizd/maxmize icon
+• minimize/maxmize icon
 • OrderLayout Editor
 • Disable ClipSafe, Enable ClipSafe
 • Custom Image Button
 • Custom Text/Button Color
 
 PIN Library (Test) v1.0.0 Simple Library
-
+]]
 
 
 --#ScreenGui
