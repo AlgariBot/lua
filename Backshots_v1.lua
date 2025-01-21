@@ -194,7 +194,7 @@ local function se(nam, Ida, Idb, Idc, Idd, duration, sp)
                 anim.Track:Play()
             end
             isPlaying = true
-            animationButton.Text = "Stop" .. nam
+            animationButton.Text = "Stop"
 
             task.delay(duration, function()
                 if isPlaying then
