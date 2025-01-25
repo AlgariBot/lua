@@ -10,7 +10,7 @@ ppl who not using obfuscator: 😎🔥🔥🔥🍆💦🥛🍑🥵
 local screen = Instance.new("ScreenGui")
 screen.Name = "SexMachine"
 screen.ScreenInsets = "DeviceSafeInsets"
-screen.ClipToDeviceSafeArea = true
+screen.ClipToDeviceSafeArea = false
 screen.Parent = game.CoreGui
 
 local function corner(parent,value)
