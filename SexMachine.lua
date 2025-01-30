@@ -107,7 +107,7 @@ textlabel.Position = UDim2.new(0, 0, 0, 0)
 textlabel.BackgroundColor3 = Color3.new(0, 0, 0)
 textlabel.BorderColor3 = Color3.new(0, 0, 0)
 textlabel.BorderSizePixel = 0
-textlabel.Text = "AlySex"
+textlabel.Text = "Li-Code 1.3"
 textlabel.TextColor3 = Color3.new(255, 255, 255)
 textlabel.BackgroundTransparency = 1
 textlabel.Font = "SourceSansBold"
@@ -229,7 +229,7 @@ fix.Position = UDim2.new(0.1, 0, 0.2, 0)
 fix.BackgroundColor3 = Color3.new(0, 0.3, 0.7)
 fix.BorderColor3 = Color3.new(0, 0, 0)
 fix.BorderSizePixel = 0
-fix.Text = "Reset Icon Position"
+fix.Text = "Kill Gui"
 fix.TextColor3 = Color3.new(255, 255, 255)
 fix.BackgroundTransparency = 0
 fix.Font = Enum.Font.SourceSans
@@ -237,7 +237,7 @@ fix.TextScaled = true
 fix.Parent = frame2
 
 fix.MouseButton1Click:Connect(function()
-        imagebutton1.Position = UDim2.new(0.01, 0, 0.4, 0)
+        screen:Destroy()
 end)
 
 drag.MouseButton1Click:Connect(function()
@@ -590,23 +590,23 @@ end
 
 text("Backshot V1")
 
-se("Slow backshot V1","182789003", "106772613", "10714360343", "182789003","0","0",1.7, 0, CFrame.new(0, 0, -1), CFrame.new(0, 0, -2), 10, 1)
+se("Slow backshot V1","182789003", "106772613", "10714360343", "182789003","0","0",1, 0, CFrame.new(0, 0, -1), CFrame.new(0, 0, -2), 10, 1)
 
-se("Default backshot V1","182789003", "106772613", "10714360343", "182789003","0","0",1.7, 0, CFrame.new(0, 0, -1), CFrame.new(0, 0, -2), 10, 0.5)
+se("Default backshot V1","182789003", "106772613", "10714360343", "182789003","0","0",1, 0, CFrame.new(0, 0, -1), CFrame.new(0, 0, -2), 10, 0.5)
 
-se("Fast backshot V1","182789003", "106772613", "10714360343", "182789003","0","0",1.7, 0, CFrame.new(0, 0, -1), CFrame.new(0, 0, -2), 10, 0.2)
+se("Fast backshot V1","182789003", "106772613", "10714360343", "182789003","0","0",1, 0, CFrame.new(0, 0, -1), CFrame.new(0, 0, -2), 10, 0.2)
 
-se("Very Fast backshot V1","182789003", "106772613", "10714360343", "182789003","0","0",1.7, 0, CFrame.new(0, 0, -1), CFrame.new(0, 0, -2), 10, 0.05)
+se("Very Fast backshot V1","182789003", "106772613", "10714360343", "182789003","0","0",1, 0, CFrame.new(0, 0, -1), CFrame.new(0, 0, -2), 10, 0.05)
 
 text("Backshot V2")
 
-se("Slow backshot V2","182789003", "106772613", "10714360343", "182789003","182749109","179224234",1.7, 0, CFrame.new(0, 0, -1.3), CFrame.new(0, 0, -2), 10, 1)
+se("Slow backshot V2","182789003", "106772613", "10714360343", "182789003","182749109","179224234",1, 0, CFrame.new(0, 0, -1.3), CFrame.new(0, 0, -2), 10, 1)
 
-se("Default backshot V2","182789003", "106772613", "10714360343", "182789003","182749109","179224234",1.7, 0, CFrame.new(0, 0, -1.3), CFrame.new(0, 0, -2), 10, 0.5)
+se("Default backshot V2","182789003", "106772613", "10714360343", "182789003","182749109","179224234",1, 0, CFrame.new(0, 0, -1.3), CFrame.new(0, 0, -2), 10, 0.5)
 
-se("Fast backshot V2","182789003", "106772613", "10714360343", "182789003","182749109","179224234",1.7, 0, CFrame.new(0, 0, -1.3), CFrame.new(0, 0, -2), 10, 0.2)
+se("Fast backshot V2","182789003", "106772613", "10714360343", "182789003","182749109","179224234",1, 0, CFrame.new(0, 0, -1.3), CFrame.new(0, 0, -2), 10, 0.2)
 
-se("Very Fast backshot V2","182789003", "106772613", "10714360343", "182789003","182749109","179224234",1.7, 0, CFrame.new(0, 0, -1.3), CFrame.new(0, 0, -2), 10, 0.05)
+se("Very Fast backshot V2","182789003", "106772613", "10714360343", "182789003","182749109","179224234",1, 0, CFrame.new(0, 0, -1.3), CFrame.new(0, 0, -2), 10, 0.05)
 
 text("Bang Players")
 
@@ -614,6 +614,30 @@ se("Better Bang 1","148840371", "158821881", "0", "0","0","0",0, 5, CFrame.new(0
 
 text("BlowJob (need name)")
 
-se2("BlowJob 1","106772613", "182749109", "87684948", "182789003","182749109","0",1.7, 0, CFrame.new(0, 0, -3), CFrame.new(0, 0, -2), 4, 0.7)
+se2("BlowJob 1","106772613", "182749109", "87684948", "182789003","182749109","180612465",1, 0, CFrame.new(0, 0, -3), CFrame.new(0, 0, -2), 4, 0.7)
 
-se2("BlowJob 2","106772613", "182749109", "87684948", "182789003","182749109","181526230",1.7, 0, CFrame.new(0, 0, -2.5), CFrame.new(0, 0, -1.5), 4, 0.7)
+se2("BlowJob 2","106772613", "182749109", "87684948", "182789003","182749109","181526230",1, 0, CFrame.new(0, 0, -2.5), CFrame.new(0, 0, -1.5), 4, 0.7)
+
+se2("Fast BlowJob 2","106772613", "182749109", "87684948", "182789003","182749109","181526230",1.7, 0, CFrame.new(0, 0, -2.5), CFrame.new(0, 0, -1.5), 4, 0.3)
+
+se2("Super Fast BlowJob 2","106772613", "182749109", "87684948", "182789003","182749109","181526230",1, 0, CFrame.new(0, 0, -2.5), CFrame.new(0, 0, -1.5), 4, 0.05)
+
+text("front pussy (need name)")
+
+se2("Slow front","181526230", "180612465", "106772613", "106772613","106772613","0",1, 0, CFrame.new(0, 0, -2.5), CFrame.new (0, 0, -1.5), 10, 0.7)
+
+se2("Default front","181526230", "180612465", "106772613", "106772613","106772613","0",1, 0, CFrame.new(0, 0, -2.5), CFrame.new (0, 0, -1.5), 10, 0.4)
+
+se2("Fast front","181526230", "180612465", "106772613", "106772613","106772613","0",1, 0, CFrame.new(0, 0, -2.5), CFrame.new (0, 0, -1.5), 10, 0.2)
+
+se2("Very Fast front","181526230", "180612465", "106772613", "106772613","106772613","0",1, 0, CFrame.new(0, 0, -2.5), CFrame.new (0, 0, -1.5), 10, 0.05)
+
+text("Others")
+
+se2("Kiss","225975820", "283545583", "0", "0","0","0",0.2, 0, CFrame.new(0, 0, -1), CFrame.new (0, 0, -1), 30, 0)
+
+text("Others (without name)")
+
+se("sleepy","282574440", "106772613", "0", "0","0","0",0, 1, CFrame.new(0, 0, 0), CFrame.new (0, 0, 0), 0, 0)
+
+se("lay down","106772613", "181526230", "0", "0","0","0",0, 1, CFrame.new(0, 0, 0), CFrame.new (0, 0, 0), 0, 0)
